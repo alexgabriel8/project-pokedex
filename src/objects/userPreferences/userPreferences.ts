@@ -21,12 +21,12 @@ const userPreferences = {
     value: boolean,
   ) {
     try {
-      if (!AcceptedPreferences[preference as keyof typeof AcceptedPreferences])
+      if (!AcceptedPreferences[preference as AcceptedPreferences])
         throw new Error(`Invalid preference: "${preference}"`);
       if (![false, true].includes(value))
         throw new Error(`Invalid preference value: ${value}`);
 
-      this.preferences[preference as keyof typeof AcceptedPreferences] = value;
+      this.preferences[preference as AcceptedPreferences] = value;
       saveOnLocalStorage(userPreferencesLocalStorageKey, this.preferences);
     } catch (err) {
       console.error(err);
