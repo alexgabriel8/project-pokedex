@@ -1,6 +1,6 @@
 type AcceptedThemes = "light" | "dark";
 
-type ThemeProperties = {
+type TTheme = {
   name: string;
   primary: string;
   secondary: string;
@@ -26,12 +26,8 @@ type ThemeProperties = {
   };
 };
 
-type TTheme = {
-  AcceptedThemes: ThemeProperties;
-};
-
 type TThemes = {
-  [key in AcceptedThemes]: ThemeProperties;
+  [key in AcceptedThemes]: TTheme;
 };
 
-export type { AcceptedThemes, ThemeProperties, TTheme, TThemes };
+export type { AcceptedThemes, TTheme, TThemes };
