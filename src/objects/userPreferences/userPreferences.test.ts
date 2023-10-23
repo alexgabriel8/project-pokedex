@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { userPreferences } from "./userPreferences";
 
-import { userPreferencesLocalStorageKey } from "./userPreferences";
+import { userPreferencesLocalStorageKey } from "../../constants/localStorageAccessKeys";
 import { defaultPreferences } from "./defaultPreferences";
 import { AcceptedPreferences } from "./userPreferences.types";
 

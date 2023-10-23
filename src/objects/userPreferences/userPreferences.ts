@@ -1,5 +1,7 @@
 import { defaultPreferences } from "./defaultPreferences";
 
+import { userPreferencesLocalStorageKey } from "../../constants/localStorageAccessKeys";
+
 import {
   getLocalStorageItem,
   saveOnLocalStorage,
@@ -10,8 +12,6 @@ import {
   AcceptedPreferences,
   isTypePreferences,
 } from "./userPreferences.types";
-
-const userPreferencesLocalStorageKey = "userPreferences";
 
 const userPreferences = {
   preferences: {} as TPreferences,
