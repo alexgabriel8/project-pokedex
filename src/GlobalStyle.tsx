@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const reset = `
     html {
         min-height: 100vh;
     }
-    
+
     * {
         padding: 0;
         margin: 0;
@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     img {
         max-width: 100%;
     }
+`;
+
+const GlobalStyle = createGlobalStyle`
+    ${reset}
 `;
 
 export default GlobalStyle;
