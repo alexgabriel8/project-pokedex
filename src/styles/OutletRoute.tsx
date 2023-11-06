@@ -1,23 +1,18 @@
 import styled from "styled-components";
+import { noScrollBars } from "./noScrollBars";
 
 const OutletRoute = styled.div`
-    position: relative;
-    overflow-y: scroll;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
-    
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    &&::-webkit-scrollbar{
-        display: none;
-    }
-`
+  ${noScrollBars};
 
-export { OutletRoute }
+  position: relative;
+  overflow-y: scroll;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export { OutletRoute };

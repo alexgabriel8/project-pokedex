@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router-dom";
 
 import Router from "./routes/Router.tsx";
 import { userPreferences } from "./objects/userPreferences/userPreferences.ts";
-import GlobalStyle from "./GlobalStyle.tsx";
+import GlobalStyle from "./styles/GlobalStyle.tsx";
 import { ThemeProvider } from "./context/ThemeContext/ThemeContext.tsx";
 
 userPreferences.loadInitialPreferences();

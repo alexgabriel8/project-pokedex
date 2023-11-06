@@ -4,6 +4,6 @@ const noScrollBars = `
     &&::-webkit-scrollbar {
     display: none;
     }
-`
+`;
 
-export { noScrollBars }
+export { noScrollBars };

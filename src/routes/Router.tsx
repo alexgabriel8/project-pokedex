@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 
 import Root from "./Root";
-import WelcomePage from "./outlet-routes/Welcome";
-import PokemonDetails from "./outlet-routes/PokemonDetails";
+import WelcomePage from "./outlet-routes/Welcome/Welcome";
+import PokemonDetails from "./outlet-routes/PokemonDetails/PokemonDetails";
 
 import Error from "./error-routes/Error";
 import NotFound from "./error-routes/NotFound";
