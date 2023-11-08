@@ -1,5 +1,8 @@
 import { useContext } from "react";
 
+// Components
+import { SocialIcons } from "../../../components/SocialIcons/SocialIcons";
+
 // Styled Components
 import * as S from "./Welcome.styles";
 
@@ -31,6 +34,8 @@ const Welcome = () => {
         <p>
           Created by <strong>Alex Gabriel</strong>
         </p>
+
+        <SocialIcons />
       </footer>
     </S.Welcome>
   );

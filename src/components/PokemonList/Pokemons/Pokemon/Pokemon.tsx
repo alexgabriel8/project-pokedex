@@ -7,7 +7,7 @@ const Pokemon = (props) => (
         <S.ImgWrapper>
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-            alt=""
+            alt="Pókemon image"
           />
         </S.ImgWrapper>
         <S.PokemonName className="name">Iron Leaves</S.PokemonName>
