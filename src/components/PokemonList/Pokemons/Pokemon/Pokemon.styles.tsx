@@ -8,8 +8,9 @@ const Link = styled(ReactRouterDOMLink)`
   justify-content: space-between;
   align-items: center;
 
+  height: 100px;
   @media screen and (min-width: ${smartTv}px) {
-    height: 160px;
+    height: 200px;
   }
 
   padding-right: 30px;
@@ -34,6 +35,7 @@ const ImgWrapper = styled.div`
 
 const PokemonName = styled.span`
   font-size: clamp(0.8rem, 0.8rem + 0.6vw, 2.5rem);
+  text-align: center;
 `;
 
 const PokemonId = styled.span`
