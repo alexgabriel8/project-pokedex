@@ -1,4 +1,9 @@
 const userPreferencesLocalStorageKey = "userPreferences";
 const lastUsedThemeLocalStorageKey = "lastUsedTheme";
+const savedPokemonsLocalStorageKey = "savedPokemons";
 
-export { lastUsedThemeLocalStorageKey, userPreferencesLocalStorageKey };
+export {
+  lastUsedThemeLocalStorageKey,
+  userPreferencesLocalStorageKey,
+  savedPokemonsLocalStorageKey,
+};
