@@ -1,17 +1,23 @@
 import { useContext } from "react";
 
-// Styled components
+// Components
 import * as S from "./PkmListTopBar.styles";
 
 // Context
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 
-const PkmListTopBar = () => {
+type Props = {
+  pokemonsInList: number;
+};
+
+const PkmListTopBar = ({ pokemonsInList }: Props) => {
   const { activeTheme } = useContext(ThemeContext)!;
 
   return (
     <S.PkmListTopBar theme={activeTheme}>
-      <S.ListStatus theme={activeTheme}>Showing 000/000</S.ListStatus>
+      <S.ListStatus theme={activeTheme}>
+        Showing {pokemonsInList}/{pokemonsInList}
+      </S.ListStatus>
     </S.PkmListTopBar>
   );
 };

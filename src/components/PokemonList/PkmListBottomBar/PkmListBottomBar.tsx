@@ -3,22 +3,29 @@ import { useContext } from "react";
 // Context
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 
-// Styled Components
+// Components
 import * as S from "./PkmListBottomBar.styles";
 
-// Components
 import { BottomBarToggler } from "./BottomBarToggler/BottomBarToggler";
+import { AddPkmByInput } from "./AddPkmByInput/AddPkmByInput";
+import { AddPkmByAmount } from "./AddPkmByAmount/AddPkmByAmount";
 
-const PkmListBottomBar = () => {
+type Props = {
+  addPkmsByAmountToList: (input: number) => Promise<void>;
+  addPkmByInputToList: (input: string) => Promise<void>;
+};
+
+const PkmListBottomBar = (props: Props) => {
   const { activeTheme } = useContext(ThemeContext)!;
 
   return (
     <S.BottomBarWrapper>
       <BottomBarToggler />
       <S.PkmListBottomBar theme={activeTheme} className="list-bottom-bar">
-        <button>Search by name/id</button>
-        <br />
-        <button>Search randomly X Pokémons</button>
+        <S.PkmAddersWrapper>
+          <AddPkmByInput addPkmByInputToList={props.addPkmByInputToList} />
+          <AddPkmByAmount addPkmsByAmountToList={props.addPkmsByAmountToList} />
+        </S.PkmAddersWrapper>
       </S.PkmListBottomBar>
     </S.BottomBarWrapper>
   );

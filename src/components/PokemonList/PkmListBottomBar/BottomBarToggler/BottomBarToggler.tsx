@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-// Styled components
+// Components
 import * as S from "./BottomBarToggler.styles";
 
 // Context

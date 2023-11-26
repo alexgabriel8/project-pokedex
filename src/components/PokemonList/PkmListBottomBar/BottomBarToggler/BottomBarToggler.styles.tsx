@@ -3,8 +3,8 @@ import { smartTv } from "../../../../constants/breakpoints";
 
 const BottomBarToggler = styled.button`
   width: 50px;
-  border-radius: 25px 25px 0 0;
   height: 25px;
+  border-radius: 25px 25px 0 0;
   @media (min-width: ${smartTv}px) {
     width: 100px;
     height: 50px;

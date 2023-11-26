@@ -1,12 +1,20 @@
+// Components
 import { Pokemon } from "./Pokemon/Pokemon";
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+// Types
+import { IPokemon } from "../../../types/pokemon.types";
 
-const Pokemons = () => {
+type Props = {
+  pokemons: IPokemon[];
+};
+const Pokemons = ({ pokemons }: Props) => {
   return (
     <ul>
-      {arr.map((id) => (
-        <Pokemon id={id} key={id} />
+      {pokemons.map((pokemon) => (
+        <Pokemon
+          pokemon={pokemon}
+          key={pokemon.id + ` ${Math.random() * 10}`}
+        />
       ))}
     </ul>
   );
