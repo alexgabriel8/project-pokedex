@@ -1,6 +1,7 @@
 # Summary
 
 - [The Project](#the-project)
+   - [Functionalities](#functionalities)
    - [Built With](#built-with)
 - [Using the Project](#using-the-project)
    - [Installation](#installation)
@@ -11,7 +12,17 @@
 
 # The Project
 
-(<b><abbr title="Work in progress">WIP</abbr></b>) This is a Quest, a special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course, having to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/) and exhibit them on a list initially containing 10.
+(<b><abbr title="Work in progress">WIP</abbr></b>) This is a Quest, a special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course where I have to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/) and exhibit them on a list initially containing 10.
+
+## Functionalities
+
+- Obtains initial Pokémons from user's Local Storage or fetches 10 from PokéAPI.
+- Allows searching for a new Pokémon by typing its name or ID.
+- Permits getting between 1 to 10 random Pokémons.
+- (WIP) Sort by ID or name.
+- (WIP) Filter/sort by type(s).
+- (WIP) Toggle between light and dark themes.
+- (WIP) Saves user settings.
 
 ## Built With
 
@@ -30,7 +41,7 @@ Project Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the 
 - <strong>[Vitest](https://vitest.dev/)</strong>: For testing the project.
 
 - Some <strong>[Testing Library](https://testing-library.com/)</strong> libraries:
-   - <strong>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</strong>: Make tests with React Components
+   - <strong>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</strong>: Make tests with React Components.
    - <strong>[User event](https://testing-library.com/docs/user-event/intro/)</strong>: Test events (mouse click, keyboard typing, etc.) with more accuracy.
 - <strong>[ESLint](https://eslint.org/)</strong>: Linter used to detect bugs in code.
 
@@ -39,11 +50,11 @@ Project Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the 
 
 # Using the project
 
-In this section it will be explained how to install and use the project.
+This section will explain how to install and use the project.
 
 ## Installation
 
-Want to test it in your own machine? Follow the following guide:
+Want to test it in your own machine? Check the following guide:
 
 ### Pre-requisites
 
@@ -54,17 +65,19 @@ Want to test it in your own machine? Follow the following guide:
 
 1. (Optional) Fork the project
 
-2. Run `git clone https://github.com/alexgabriel8/results-summary-component.git`
+2. Run in the terminal: `git clone https://github.com/alexgabriel8/results-summary-component.git`
    - <b>If you have forked the project</b>, substitute alexgabriel8 by your username.
 
-3. 
+3. Enter the folder created by the clone and install its dependencies. (Using NPM: `npm i` or `npm install`)
+
+4. After installing, run the `dev` script (Using NPM: `npm run dev`) and paste the resulting URL on the Browser to see the project running!
 
 ## Testing
 
-Run the `test` script in the terminal to run all tests. (I used NPM with `npm run test`)
+Run the `test` script in the terminal to run all tests. (Using NPM: `npm run test`)
 
 ## Linting + Formatting
 
-You can run the `lint` script in the terminal (I used NPM with `npm run lint`) or use VS Code with the ESLint extension to see errors in real time.
+You can run the `lint` script in the terminal (Using NPM: `npm run lint`) or use VS Code with the ESLint extension to see errors in real time.
 
-Running the `format` script with your Package Manager will make Prettier format all files inside the src folder. (I used NPM with `npm run format`)
+Running the `format` script with your Package Manager will make Prettier format all files inside the src folder. (Using NPM: `npm run format`)
