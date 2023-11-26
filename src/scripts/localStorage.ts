@@ -12,15 +12,19 @@ export function getLocalStorageItem(key: string) {
 }
 
 export function saveOnLocalStorage(key: string, value: unknown) {
-  if (!key) return console.error(`Tried to save falsy key. Key: "${key}"`);
-  if (
-    typeof value === "object" &&
-    value !== null &&
-    Object.keys(value).length === 0
-  )
-    return console.error("Tried to save empty object");
+  try {
+    if (!key) throw new Error(`Tried to save falsy key. Key: "${key}"`);
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      Object.keys(value).length === 0
+    )
+      throw new Error("Tried to save empty object");
 
-  ["object", "array"].includes(typeof value)
-    ? localStorage.setItem(key, JSON.stringify(value))
-    : localStorage.setItem(key, value as string);
+    ["object", "array"].includes(typeof value)
+      ? localStorage.setItem(key, JSON.stringify(value))
+      : localStorage.setItem(key, value as string);
+  } catch (err) {
+    console.error(err);
+  }
 }
