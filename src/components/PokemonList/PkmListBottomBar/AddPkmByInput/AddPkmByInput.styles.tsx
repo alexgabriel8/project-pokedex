@@ -13,6 +13,8 @@ const AddPkmByInputWrapper = styled.div`
 `;
 
 const AddPkmByInput = styled.input`
+  width: 100%;
+
   height: 40px;
   padding: 0 35px 0 5px;
   @media (min-width: ${smartTv}px) {
@@ -21,11 +23,13 @@ const AddPkmByInput = styled.input`
     font-size: 25px;
   }
 
-  width: 100%;
-
   color: ${({ theme }) => theme.terciary};
   background-color: ${({ theme }) => theme.primary};
   border-radius: 5px;
+
+  &&::placeholder {
+    opacity: 1;
+  }
 `;
 
 const SearchIcon = styled(SearchSvg)`
