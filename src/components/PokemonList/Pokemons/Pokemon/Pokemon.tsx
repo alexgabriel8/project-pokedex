@@ -37,9 +37,6 @@ const Pokemon = ({ pokemon }: { pokemon: IPokemon }) => {
                   ? (pokemon.sprites.animated as string) // TS doesn't know it can't be null
                   : pokemon.sprites.static
               }
-              className={
-                hasAnimatedSprite && prefersAnimatedSprites ? "animated" : ""
-              }
               alt={uppercasePkmName + " image"}
             />
           </S.ImgWrapper>
