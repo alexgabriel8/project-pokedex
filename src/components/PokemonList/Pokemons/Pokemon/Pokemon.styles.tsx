@@ -15,6 +15,7 @@ const NavLink = styled(ReactRouterDOMNavLink)`
   justify-content: space-between;
   align-items: center;
 
+  padding-left: 5px;
   padding-right: 30px;
 
   height: 100px;
@@ -56,20 +57,20 @@ const Li = styled.li<LiProps>`
 `;
 
 const ImgWrapper = styled.div`
-  width: 96px;
-  height: 96px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  width: 96px;
+  height: 96px;
   @media screen and (min-width: ${smartTv}px) {
     width: 162px;
     height: 162px;
   }
 
   img {
-    min-width: 70%;
-    width: auto;
     max-height: 100%;
+    object-fit: contain;
   }
 `;
 
