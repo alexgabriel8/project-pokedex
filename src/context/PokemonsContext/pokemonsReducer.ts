@@ -9,9 +9,9 @@ type AddPkmsAction = {
   pokemons: IPokemon[];
 };
 
-type TAction = AddPkmAction | AddPkmsAction;
+type TPkmAction = AddPkmAction | AddPkmsAction;
 
-function pokemonListReducer(pokemons: Array<object>, action: TAction) {
+function pokemonsReducer(pokemons: Array<object>, action: TPkmAction) {
   switch (action.type) {
     case "ADD_PKM": {
       if (!action.pokemon)
@@ -32,4 +32,5 @@ function pokemonListReducer(pokemons: Array<object>, action: TAction) {
   }
 }
 
-export { pokemonListReducer };
+export { pokemonsReducer };
+export type { TPkmAction };
