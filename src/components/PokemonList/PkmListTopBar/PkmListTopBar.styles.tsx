@@ -10,6 +10,8 @@ const PkmListTopBar = styled.div`
     height: 100px;
   }
 
+  z-index: 1;
+
   position: sticky;
   top: 0;
 

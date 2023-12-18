@@ -23,11 +23,12 @@ const NavLink = styled(ReactRouterDOMNavLink)`
     height: 200px;
   }
 
-  text-shadow: 0 0 10px #ffffff50;
+  text-shadow: 0 0 10px #ffffff30;
   color: black;
 
   &&.active {
     font-weight: bold;
+    outline: 5px solid #000;
   }
 `;
 
@@ -60,7 +61,8 @@ const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
+  padding: 10px;
   width: 96px;
   height: 96px;
   @media screen and (min-width: ${smartTv}px) {
