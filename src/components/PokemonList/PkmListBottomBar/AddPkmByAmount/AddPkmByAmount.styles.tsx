@@ -18,7 +18,7 @@ const AddPkmByInput = styled.input`
     width: 120px;
     height: 80px;
     padding: 0 60px 0 10px;
-    
+
     font-size: 25px;
   }
 

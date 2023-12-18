@@ -18,7 +18,7 @@ const AddPkmByInput = styled.input`
   height: 40px;
   padding: 0 35px 0 5px;
   @media (min-width: ${smartTv}px) {
-    height: 80px; 
+    height: 80px;
     padding: 0 70px 0 10px;
     font-size: 25px;
   }
