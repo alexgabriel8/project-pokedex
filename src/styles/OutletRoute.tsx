@@ -11,6 +11,7 @@ const OutletRoute = styled.div`
   text-align: center;
 
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 `;
