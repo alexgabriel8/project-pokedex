@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { OutletRoute } from "../../../styles/OutletRoute";
 
 const Welcome = styled(OutletRoute)`
+  gap: 20px;
   justify-content: space-evenly;
   @media (max-height: 600px) {
     justify-content: space-between; // Stops content being clipped at lower heights
