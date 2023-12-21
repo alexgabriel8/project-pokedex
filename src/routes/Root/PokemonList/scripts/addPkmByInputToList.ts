@@ -19,6 +19,10 @@ async function addPkmByInputToList(
       type: "ADD_PKM",
       pokemon: fetchedPokemon,
     });
+    
+    (
+      document.querySelector("#input-add-pkm-by-input") as HTMLInputElement
+    )!.value = ""
   } catch (err) {
     console.error(err);
   } finally {
