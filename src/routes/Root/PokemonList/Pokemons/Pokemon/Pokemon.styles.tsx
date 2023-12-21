@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { NavLink as ReactRouterDOMNavLink } from "react-router-dom";
 
 // Constants
-import { pokemonTypeColorCodes as typeColor } from "../../../../constants/pokemonTypeColorCodes";
+import { pokemonTypeColorCodes as typeColor} from "../../../../../constants/pokemonTypeColorCodes";
 
 // Breakpoints
-import { smartTv } from "../../../../constants/breakpoints";
+import { smartTv } from "../../../../../constants/breakpoints";
 
 // Typings
-import { Types } from "../../../../types/pokemon.types";
+import { Types } from "../../../../../types/pokemon.types";
 
 const NavLink = styled(ReactRouterDOMNavLink)`
   display: flex;

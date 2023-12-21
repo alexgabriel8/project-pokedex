@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 // Context
-import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../context/ThemeContext/ThemeContext";
 
 // Components
 import * as S from "./PkmListBottomBar.styles";

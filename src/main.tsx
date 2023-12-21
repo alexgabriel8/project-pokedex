@@ -8,6 +8,7 @@ import GlobalStyle from "./styles/GlobalStyle.tsx";
 import { ThemeProvider } from "./context/ThemeContext/ThemeContext.tsx";
 import { PokemonsProvider } from "./context/PokemonsContext/PokemonsContext.tsx";
 
+
 userPreferences.loadInitialPreferences();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

@@ -1,6 +1,6 @@
-import { savedPokemonsLocalStorageKey } from "../../../constants/localStorageAccessKeys";
-import { getLocalStorageItem } from "../../../scripts/localStorage";
-import { getPokemon } from "../../../services/getPokemon/getPokemon";
+import { savedPokemonsLocalStorageKey } from "../../../../constants/localStorageAccessKeys";
+import { getLocalStorageItem } from "../../../../scripts/localStorage";
+import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
 async function loadInitialPokemons(dispatch: React.Dispatch<any>) {

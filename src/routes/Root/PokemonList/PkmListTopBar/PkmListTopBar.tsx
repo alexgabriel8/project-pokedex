@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./PkmListTopBar.styles";
 
 // Context
-import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../context/ThemeContext/ThemeContext";
 
 type Props = {
   pokemonsInList: number;

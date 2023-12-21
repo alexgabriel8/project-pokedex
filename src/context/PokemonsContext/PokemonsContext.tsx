@@ -5,13 +5,14 @@ import { pokemonsReducer } from "./pokemonsReducer";
 
 // Scripts
 import { saveOnLocalStorage } from "../../scripts/localStorage";
-import { loadInitialPokemons } from "../../components/PokemonList/scripts/loadInitialPokemons";
+import { loadInitialPokemons } from "../../routes/Root/PokemonList/scripts/loadInitialPokemons";
 
 // Types
 import { TPokemonsContext } from "./PokemonsContext.types";
 
 // Constants
 import { savedPokemonsLocalStorageKey } from "../../constants/localStorageAccessKeys";
+
 
 const PokemonsContext = createContext<TPokemonsContext>(
   [] as unknown as TPokemonsContext,

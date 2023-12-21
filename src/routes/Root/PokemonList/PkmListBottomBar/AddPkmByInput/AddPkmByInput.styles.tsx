@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-import { SearchSvg } from "../../../SvgIcons/SearchSvg";
-import { smartTv } from "../../../../constants/breakpoints";
+// Components
+import { SearchSvg } from "../../../../../components/SvgIcons/SearchSvg";
+
+// Breakpoints
+import { smartTv } from "../../../../../constants/breakpoints";
 
 const AddPkmByInputWrapper = styled.div`
   display: inline-block;

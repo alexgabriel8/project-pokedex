@@ -1,8 +1,8 @@
 // Components
-import { Pokemon } from "./Pokemon/Pokemon";
+import { IPokemon } from "../../../../types/pokemon.types";
 
 // Types
-import { IPokemon } from "../../../types/pokemon.types";
+import { Pokemon } from "./Pokemon/Pokemon";
 
 type Props = {
   pokemons: IPokemon[];

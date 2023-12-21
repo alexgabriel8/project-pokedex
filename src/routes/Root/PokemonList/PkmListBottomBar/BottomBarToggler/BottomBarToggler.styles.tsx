@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { smartTv } from "../../../../constants/breakpoints";
+
+import { smartTv } from "../../../../../constants/breakpoints";
 
 const BottomBarToggler = styled.button`
   width: 50px;

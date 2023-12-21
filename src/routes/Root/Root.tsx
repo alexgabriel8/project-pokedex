@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
-
-import { PokemonList } from "../components/PokemonList/PokemonList";
-import { PkmListToggler } from "../components/PokemonList/PkmListToggler/PkmListToggler";
+import { PokemonList } from "./PokemonList/PokemonList";
+import { PkmListToggler } from "./PokemonList/PkmListToggler/PkmListToggler";
 
 const Root = () => {
   return (

@@ -8,15 +8,15 @@ import { Pokemons } from "./Pokemons/Pokemons";
 import { PkmListBottomBar } from "./PkmListBottomBar/PkmListBottomBar";
 
 // Context
-import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
-import { PokemonsContext } from "../../context/PokemonsContext/PokemonsContext";
+import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { PokemonsContext } from "../../../context/PokemonsContext/PokemonsContext";
 
 // Scripts
 import { addPkmsByAmountToList } from "./scripts/addPkmsByAmountToList";
 import { addPkmByInputToList } from "./scripts/addPkmByInputToList";
 
 // Types
-import { IPokemon } from "../../types/pokemon.types";
+import { IPokemon } from "../../../types/pokemon.types";
 
 const PokemonList = () => {
   const { pokemons, dispatchPokemons } = useContext(PokemonsContext)!;

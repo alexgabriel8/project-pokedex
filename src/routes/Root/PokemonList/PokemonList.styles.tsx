@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 // Breakpoints
-import { smartTv } from "../../constants/breakpoints";
+import { smartTv } from "../../../constants/breakpoints";
 
 // Styles
-import { noScrollBars } from "../../styles/noScrollBars";
+import { noScrollBars } from "../../../styles/noScrollBars";
 
 const PokemonList = styled.div`
   ${noScrollBars};

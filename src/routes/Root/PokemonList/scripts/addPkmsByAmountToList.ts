@@ -1,4 +1,4 @@
-import { getPokemon } from "../../../services/getPokemon/getPokemon";
+import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
 async function addPkmsByAmountToList(

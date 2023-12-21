@@ -1,5 +1,5 @@
-import { slugifyString } from "../../../scripts/slugifyString";
-import { getPokemon } from "../../../services/getPokemon/getPokemon";
+import { slugifyString } from "../../../../scripts/slugifyString";
+import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
 async function addPkmByInputToList(

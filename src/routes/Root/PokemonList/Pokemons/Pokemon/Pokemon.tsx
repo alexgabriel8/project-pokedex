@@ -4,13 +4,13 @@ import { useContext } from "react";
 import * as S from "./Pokemon.styles";
 
 // Objects
-import { userPreferences } from "../../../../objects/userPreferences/userPreferences";
+import { userPreferences } from "../../../../../objects/userPreferences/userPreferences";
 
 // Context
-import { ThemeContext } from "../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
 
 // Types
-import { IPokemon } from "../../../../types/pokemon.types";
+import { IPokemon } from "../../../../../types/pokemon.types";
 
 // Scripts
 import { pkmNameToUppercase } from "./pkmNameToUppercase";

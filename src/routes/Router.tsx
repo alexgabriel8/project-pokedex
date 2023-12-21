@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import Root from "./Root";
+import Root from "./Root/Root";
 import WelcomePage from "./outlet-routes/Welcome/Welcome";
 import PokemonDetails from "./outlet-routes/PokemonDetails/PokemonDetails";
 
