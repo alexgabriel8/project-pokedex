@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: clamp(1.2rem, 1.2rem + 1.3vw, 4rem);
     }
 
+    h2 {
+        font-size: clamp(1.1rem, 1.1rem + 1.3vw, 3.8rem);
+    }
+
     p {
         --f: clamp(1rem, 1rem + 1vw, 3.5rem);
         font-size: var(--f);
