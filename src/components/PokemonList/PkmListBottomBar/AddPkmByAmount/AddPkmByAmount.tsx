@@ -42,6 +42,8 @@ const AddPkmByAmount = (props: Props) => {
       />
       <S.AddPkmByInput
         theme={activeTheme}
+        type="number"
+        autoComplete="off"
         id="input-add-pkm-by-amount"
         value={amount}
         onChange={handleOnChange}

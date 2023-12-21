@@ -25,6 +25,14 @@ const AddPkmByInput = styled.input`
   border-radius: 5px;
   color: ${({ theme }) => theme.terciary};
   background-color: ${({ theme }) => theme.primary};
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+  &&::-webkit-outer-spin-button,
+  &&::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
 `;
 
 const PlusIcon = styled(PlusSvg)`
