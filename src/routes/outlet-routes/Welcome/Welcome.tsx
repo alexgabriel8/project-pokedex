@@ -17,7 +17,7 @@ const Welcome = () => {
     <S.Welcome theme={activeTheme}>
       <h1>Welcome to Project Pokédex {version}!</h1>
 
-      <p>
+      <p className="welcome-text">
         Click on a Pokémon on the list to the left to see more details about him
         here!
         <br />

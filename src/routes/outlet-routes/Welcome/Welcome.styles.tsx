@@ -12,6 +12,10 @@ const Welcome = styled(OutletRoute)`
 
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => (props.theme.name === "light" ? "black" : "white")};
+
+  .welcome-text {
+    max-width: 1000px;
+  }
 `;
 
 export { Welcome };
