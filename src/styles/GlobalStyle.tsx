@@ -45,16 +45,15 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        font-size: clamp(1.2rem, 1.2rem + 1.3vw, 4rem);
+        font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
     }
 
     h2 {
-        font-size: clamp(1.1rem, 1.1rem + 1.3vw, 3.8rem);
+        font-size: clamp(1.3rem, 2vw + 0.8rem, 2.05rem);
     }
 
     p {
-        --f: clamp(1rem, 1rem + 1vw, 3.5rem);
-        font-size: var(--f);
+        font-size: clamp(1rem, 2vw + 0.5rem, 1.85rem);
     }
 
     button {
