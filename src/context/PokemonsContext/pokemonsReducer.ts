@@ -11,7 +11,7 @@ type AddPkmsAction = {
 
 type TPkmAction = AddPkmAction | AddPkmsAction;
 
-function pokemonsReducer(pokemons: Array<object>, action: TPkmAction) {
+function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
   switch (action.type) {
     case "ADD_PKM": {
       if (!action.pokemon)

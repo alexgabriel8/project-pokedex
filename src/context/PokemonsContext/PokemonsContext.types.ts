@@ -1,7 +1,8 @@
+import { IPokemon } from "../../types/pokemon.types";
 import { TPkmAction } from "./pokemonsReducer";
 
 type TPokemonsContext = {
-  pokemons: object[];
+  pokemons: IPokemon[];
   dispatchPokemons: React.Dispatch<TPkmAction>;
 };
 

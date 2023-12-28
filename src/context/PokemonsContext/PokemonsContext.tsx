@@ -13,7 +13,6 @@ import { TPokemonsContext } from "./PokemonsContext.types";
 // Constants
 import { savedPokemonsLocalStorageKey } from "../../constants/localStorageAccessKeys";
 
-
 const PokemonsContext = createContext<TPokemonsContext>(
   [] as unknown as TPokemonsContext,
 );
