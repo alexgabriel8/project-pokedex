@@ -4,7 +4,7 @@ function restructurePkmObject(pokemon: any): IPokemon {
   let newPkm = {
     abilities: [],
     moves: [],
-    stats: [],
+    stats: {},
     sprites: {},
     types: {},
   } as unknown as IPokemon;
