@@ -31,8 +31,8 @@ const AddPkmByInput = styled.input`
   -moz-appearance: textfield;
   &&::-webkit-outer-spin-button,
   &&::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 

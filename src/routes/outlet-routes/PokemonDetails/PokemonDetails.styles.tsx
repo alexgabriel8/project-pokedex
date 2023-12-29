@@ -11,23 +11,23 @@ const PokemonDetails = styled(OutletRoute)`
 
 const Artwork = styled.img`
   max-width: calc(250px + 10vw);
-`
+`;
 
 const DetailedPkmName = styled.h2`
   span {
     font-weight: 400;
   }
-`
+`;
 
 const Genus = styled.p`
   span {
     font-weight: bold;
   }
-`
+`;
 
 type TypesProps = {
-  $types: TPokemon.Types
-}
+  $types: TPokemon.Types;
+};
 
 const Types = styled.ul<TypesProps>`
   margin: 10px 0;
@@ -40,27 +40,24 @@ const Types = styled.ul<TypesProps>`
     color: white;
     padding: 10px;
     border-radius: 15px;
-    text-shadow: 0 0 5px #000000A0;
+    text-shadow: 0 0 5px #000000a0;
     text-transform: capitalize;
   }
-  
+
   .primary-type {
     background-color: ${({ $types }) => pokemonTypeColorCodes[$types.primary]};
   }
 
   .secondary-type {
-    background-color: ${
-      ({ $types }) => $types.secondary
-      ? pokemonTypeColorCodes[$types.secondary]
-      : ""
-    };
+    background-color: ${({ $types }) =>
+      $types.secondary ? pokemonTypeColorCodes[$types.secondary] : ""};
   }
-`
+`;
 
 const PokemonDescription = styled.p`
   max-width: 1200px;
   margin: 10px 0;
-`
+`;
 
 const PokemonInfoInRow = styled.div`
   display: flex;
@@ -79,6 +76,14 @@ const PokemonInfoInRow = styled.div`
   .generation {
     text-transform: uppercase;
   }
-`
+`;
 
-export { PokemonDetails, Artwork, DetailedPkmName, Genus, Types, PokemonDescription , PokemonInfoInRow };
+export {
+  PokemonDetails,
+  Artwork,
+  DetailedPkmName,
+  Genus,
+  Types,
+  PokemonDescription,
+  PokemonInfoInRow,
+};

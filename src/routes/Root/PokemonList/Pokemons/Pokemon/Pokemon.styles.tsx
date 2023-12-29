@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink as ReactRouterDOMNavLink } from "react-router-dom";
 
 // Constants
-import { pokemonTypeColorCodes as typeColor} from "../../../../../constants/pokemonTypeColorCodes";
+import { pokemonTypeColorCodes as typeColor } from "../../../../../constants/pokemonTypeColorCodes";
 
 // Breakpoints
 import { smartTv } from "../../../../../constants/breakpoints";

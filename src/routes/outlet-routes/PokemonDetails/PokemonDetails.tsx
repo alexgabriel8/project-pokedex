@@ -27,27 +27,32 @@ const PokemonDetails = () => {
         <h2>Fetching Pokémon {urlId} details...</h2>
       </S.PokemonDetails>
     );
-  }
-  else if (pokemon === "error") {
+  } else if (pokemon === "error") {
     return (
       <S.PokemonDetails theme={activeTheme}>
         <h2>Failed to fetch Pokémon {urlId}</h2>
-        <p><code>{fetchError as string}</code></p>
+        <p>
+          <code>{fetchError as string}</code>
+        </p>
       </S.PokemonDetails>
     );
-  }
-  else if (typeof pokemon === "object") {
+  } else if (typeof pokemon === "object") {
     const { name, id, height, weight } = pokemon;
     const artwork = pokemon.sprites.artwork;
     const genus = pokemon.speciesInfo!.genera.match(/\w+/i);
     const primaryType = pokemon.types.primary;
     const secondaryType = pokemon.types.secondary;
-    const habitat =
-      pokemon.speciesInfo?.habitat
-        ? pokemon.speciesInfo?.habitat.replace("-", " ")
-        : "None"
-    const generation = pokemon.speciesInfo?.generation.replace("generation-", "");
-    const description = pokemon.speciesInfo?.description.replace("", " "); {/* The API is sending "U+000c" in the Pkm description for some reason. */}
+    const habitat = pokemon.speciesInfo?.habitat
+      ? pokemon.speciesInfo?.habitat.replace("-", " ")
+      : "None";
+    const generation = pokemon.speciesInfo?.generation.replace(
+      "generation-",
+      "",
+    );
+    const description = pokemon.speciesInfo?.description.replace("", " ");
+    {
+      /* The API is sending "U+000c" in the Pkm description for some reason. */
+    }
 
     return (
       <S.PokemonDetails theme={activeTheme}>
@@ -60,11 +65,11 @@ const PokemonDetails = () => {
         </S.Genus>
         <S.Types $types={pokemon.types}>
           <li className="primary-type">{primaryType}</li>
-          {
-            secondaryType
-              ? <li className="secondary-type">{secondaryType}</li>
-              : ""
-          }
+          {secondaryType ? (
+            <li className="secondary-type">{secondaryType}</li>
+          ) : (
+            ""
+          )}
         </S.Types>
         <PokemonStats stats={pokemon.stats} />
         <S.PokemonInfoInRow>
@@ -75,7 +80,8 @@ const PokemonDetails = () => {
             <b>Height</b>: {height} <span className="measure">m</span>
           </p>
           <p>
-            <b>Weight</b>: {weight.toLocaleString()} <span className="measure">kg</span>
+            <b>Weight</b>: {weight.toLocaleString()}{" "}
+            <span className="measure">kg</span>
           </p>
           <p>
             <b>Generation</b>: <span className="generation">{generation}</span>
