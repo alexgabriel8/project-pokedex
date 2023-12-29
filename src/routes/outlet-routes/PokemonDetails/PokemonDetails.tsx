@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 
 // Components
@@ -6,61 +6,32 @@ import * as S from "./PokemonDetails.styles";
 import { PokemonStats } from "./components/PokemonStats/PokemonStats";
 
 // Scripts
-import { getPokemon } from "../../../services/getPokemon/getPokemon";
-import { getPokemonSpecies } from "../../../services/getPokemon/getPokemonSpecies";
 import { pkmNameToUppercase } from "../../Root/PokemonList/Pokemons/Pokemon/pkmNameToUppercase";
 
 // Context
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 
 // Types
-import { IPokemon } from "../../../types/pokemon.types";
-
-
-const fetchPkmWithSpecies = (id: string) => {
-  const [pokemon, setPokemon] = useState<string | IPokemon>("");
-  const [fetchError, setFetchError] = useState(false);
-
-  useEffect(() => {
-    setPokemon("loading");
-
-    getPokemon(id)
-      .then((result) => {
-        getPokemonSpecies(id, result).then((pkmWithSpecies) => {
-          setPokemon(pkmWithSpecies);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        setPokemon("error");
-        setFetchError(err.message);
-      });
-  }, [id]);
-
-  return [
-    pokemon,
-    fetchError 
-  ]
-}
+import { PokemonAbilities } from "./components/PokemonAbilities/PokemonAbilities";
+import { useFetchPkmWithSpecies } from "./hooks/useFetchPkmWithSpecies";
 
 const PokemonDetails = () => {
   const { activeTheme } = useContext(ThemeContext)!;
 
-  const params = useParams();
-  const id = params.id!;
-  const [ pokemon, fetchError ] = fetchPkmWithSpecies(id);
+  const urlId = useParams().id!;
+  const [pokemon, fetchError] = useFetchPkmWithSpecies(urlId);
 
   if (pokemon === "loading") {
     return (
       <S.PokemonDetails theme={activeTheme}>
-        <h2>Fetching Pokémon {id} details...</h2>
+        <h2>Fetching Pokémon {urlId} details...</h2>
       </S.PokemonDetails>
     );
   }
   else if (pokemon === "error") {
     return (
       <S.PokemonDetails theme={activeTheme}>
-        <h2>Failed to fetch Pokémon {id}</h2>
+        <h2>Failed to fetch Pokémon {urlId}</h2>
         <p><code>{fetchError as string}</code></p>
       </S.PokemonDetails>
     );
@@ -111,6 +82,7 @@ const PokemonDetails = () => {
           </p>
         </S.PokemonInfoInRow>
         <S.PokemonDescription>{description}</S.PokemonDescription>
+        <PokemonAbilities abilities={pokemon.abilities} />
       </S.PokemonDetails>
     );
   }
