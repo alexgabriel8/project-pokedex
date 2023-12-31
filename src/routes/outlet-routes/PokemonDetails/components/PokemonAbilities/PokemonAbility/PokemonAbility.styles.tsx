@@ -33,7 +33,7 @@ const PokemonAbility = styled.li`
     }
 
     color: white;
-    opacity: 0.5;
+    opacity: 0.6;
     text-shadow: 0 0 10px #000000;
   }
 
