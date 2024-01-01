@@ -32,7 +32,7 @@ const themes: TThemes = {
     primary: "#0B132B",
     secondary: "#292929",
     secondaryDarker: "#1B1A1A",
-    terciary: "#6D23A0",
+    terciary: "#D26DD2",
 
     status: {
       danger: "#E00025",
