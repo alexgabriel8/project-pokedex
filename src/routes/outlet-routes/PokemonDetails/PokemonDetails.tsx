@@ -4,16 +4,19 @@ import { useParams } from "react-router-dom";
 // Components
 import * as S from "./PokemonDetails.styles";
 import { PokemonStats } from "./components/PokemonStats/PokemonStats";
+import { PokemonMovesList } from "./components/PokemonMovesList/PokemonMovesList";
 
 // Scripts
 import { pkmNameToUppercase } from "../../Root/PokemonList/Pokemons/Pokemon/pkmNameToUppercase";
+
+// Hooks
+import { useFetchPkmWithSpecies } from "./hooks/useFetchPkmWithSpecies";
 
 // Context
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 
 // Types
 import { PokemonAbilities } from "./components/PokemonAbilities/PokemonAbilities";
-import { useFetchPkmWithSpecies } from "./hooks/useFetchPkmWithSpecies";
 
 const PokemonDetails = () => {
   const { activeTheme } = useContext(ThemeContext)!;
@@ -89,6 +92,7 @@ const PokemonDetails = () => {
         </S.PokemonInfoInRow>
         <S.PokemonDescription>{description}</S.PokemonDescription>
         <PokemonAbilities abilities={pokemon.abilities} />
+        <PokemonMovesList moves={pokemon.moves}/>
       </S.PokemonDetails>
     );
   }

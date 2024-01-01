@@ -7,8 +7,7 @@ const handleAbilityDescriptionScroll = (
     e.currentTarget.scrollHeight - e.currentTarget.clientHeight - 1;
 
   if (!isAtTop && !isAtBottom) {
-    e.currentTarget.classList.add("shadow-at-top");
-    e.currentTarget.classList.add("shadow-at-bottom");
+    e.currentTarget.classList.add("shadow-at-top", "shadow-at-bottom");
   } else if (isAtBottom) {
     e.currentTarget.classList.add("shadow-at-top");
     e.currentTarget.classList.remove("shadow-at-bottom");
