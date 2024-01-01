@@ -7,7 +7,7 @@ async function getPkmMoveDescription(url: string) {
 
     for(let i = 0; i < json.effect_entries.length; i++) {
         if(json.effect_entries[i].language.name === "en") {
-            moveDescription = json.effect_entries[i].effect
+            moveDescription = json.effect_entries[i].short_effect
             i = json.effect_entries.length
         }
     }
