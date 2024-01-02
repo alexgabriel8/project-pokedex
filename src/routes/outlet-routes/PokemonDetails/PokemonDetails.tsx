@@ -42,16 +42,11 @@ const PokemonDetails = () => {
   } else if (typeof pokemon === "object") {
     const { name, id, height, weight } = pokemon;
     const artwork = pokemon.sprites.artwork;
-    const genus = pokemon.speciesInfo!.genera.match(/\w+/i);
+    const genus = pokemon.speciesInfo!.genera;
     const primaryType = pokemon.types.primary;
     const secondaryType = pokemon.types.secondary;
-    const habitat = pokemon.speciesInfo?.habitat
-      ? pokemon.speciesInfo?.habitat.replace("-", " ")
-      : "None";
-    const generation = pokemon.speciesInfo?.generation.replace(
-      "generation-",
-      "",
-    );
+    const habitat = pokemon.speciesInfo?.habitat.replace("-", " ");
+    const generation = pokemon.speciesInfo?.generation;
     const description = pokemon.speciesInfo?.description.replace("", " ");
     {
       /* The API is sending "U+000c" in the Pkm description for some reason. */
@@ -83,7 +78,7 @@ const PokemonDetails = () => {
             <b>Height</b>: {height} <span className="measure">m</span>
           </p>
           <p>
-            <b>Weight</b>: {weight.toLocaleString()}{" "}
+            <b>Weight</b>: {weight.toLocaleString()}
             <span className="measure">kg</span>
           </p>
           <p>

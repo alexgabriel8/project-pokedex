@@ -2,7 +2,7 @@ import { baseUrl } from "../../constants/baseUrl";
 import { restructurePkmObject } from "./restructurePkmObject";
 const maxPkmId = 1017;
 
-async function getPokemon(input: string | null = null) {
+async function getPokemon(input: string | number | null = null) {
   let json;
 
   if (!input) {

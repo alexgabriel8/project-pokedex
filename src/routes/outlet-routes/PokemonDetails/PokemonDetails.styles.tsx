@@ -21,6 +21,7 @@ const DetailedPkmName = styled.h2`
 
 const Genus = styled.p`
   span {
+    text-transform: capitalize;
     font-weight: bold;
   }
 `;
