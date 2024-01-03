@@ -7,7 +7,7 @@ const OutletRoute = styled.div`
   position: relative;
   overflow-y: scroll;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
 
   display: flex;
