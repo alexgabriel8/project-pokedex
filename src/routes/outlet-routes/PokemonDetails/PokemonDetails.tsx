@@ -42,6 +42,7 @@ const PokemonDetails = () => {
   } else if (typeof pokemon === "object") {
     const { name, id, height, weight } = pokemon;
     const artwork = pokemon.sprites.artwork;
+    const sprite = pokemon.sprites.static;
     const genus = pokemon.speciesInfo!.genera;
     const primaryType = pokemon.types.primary;
     const secondaryType = pokemon.types.secondary;
@@ -54,7 +55,13 @@ const PokemonDetails = () => {
 
     return (
       <S.PokemonDetails theme={activeTheme}>
-        <S.Artwork src={artwork} alt={`${name} artwork`} />
+        {
+          artwork
+            ? <S.Artwork src={artwork} alt={`${name}'s artwork`} />
+            : sprite
+              ? <S.Artwork src={sprite} alt={`${name}'s sprite`} />
+              : <p style={{color: activeTheme.status.danger}}>No image available</p>
+        }
         <S.DetailedPkmName>
           {pkmNameToUppercase(name)} <span className="id">#{id}</span>
         </S.DetailedPkmName>
