@@ -29,10 +29,11 @@ const PokemonMovesListContainer = styled.section<PokemonMovesListContainerProps>
 
     background-color: ${({ theme }) => theme.secondary};
 
-    width: 330px;
+    width: 100%;
+    max-width: 330px;
     min-height: 600px;
     @media (min-width: ${smartTv}px) {
-        width: 660px;
+        max-width: 660px;
         min-height: 1200px;
     }
 
