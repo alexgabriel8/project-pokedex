@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import * as S from "./PokemonDetails.styles";
 import { PokemonStats } from "./components/PokemonStats/PokemonStats";
 import { PokemonMovesList } from "./components/PokemonMovesList/PokemonMovesList";
+import { PreviousNextPokemons } from "./components/PreviousNextPokemons/PreviousNextPokemons";
 
 // Scripts
 import { pkmNameToUppercase } from "../../Root/PokemonList/Pokemons/Pokemon/pkmNameToUppercase";
@@ -55,6 +56,7 @@ const PokemonDetails = () => {
 
     return (
       <S.PokemonDetails theme={activeTheme}>
+        <PreviousNextPokemons currentPkmId={pokemon.id} />
         {
           artwork
             ? <S.Artwork src={artwork} alt={`${name}'s artwork`} />

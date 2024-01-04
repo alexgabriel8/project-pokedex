@@ -13,7 +13,7 @@ const PkmListToggler = () => {
     document.querySelector(".pokemon-list")?.classList.toggle("hidden");
   };
 
-  return <S.PkmListToggler theme={activeTheme} onClick={handleClick} />;
+  return <S.PkmListToggler id="pokemon-list-toggler" theme={activeTheme} onClick={handleClick} />;
 };
 
 export { PkmListToggler };
