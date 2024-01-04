@@ -10,23 +10,60 @@
    - [Testing](#testing)
    - [Linting + Formatting](#linting--formatting)
 
-# The Project
+# The Project (Work in Progress)
 
 (<b><abbr title="Work in progress">WIP</abbr></b>) This is a Quest, a special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course where I have to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/) and exhibit them on a list initially containing 10.
 
-## Functionalities
+<img src="./readme-assets/welcome-desktop-light.png" width="500"> <img src="./readme-assets/welcome-desktop-dark.png" width="500">
 
-- Obtains initial Pokémons from user's Local Storage or fetches 10 from PokéAPI.
-- Allows searching for a new Pokémon by typing its name or ID.
-- Permits getting between 1 to 10 random Pokémons.
-- (WIP) Sort by ID or name.
-- (WIP) Filter/sort by type(s).
-- (WIP) Toggle between light and dark themes.
-- (WIP) Saves user settings.
+## Functionalities
+<details>
+
+   <summary>A list of Pokémons that:</summary>
+
+   - Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
+
+   - Can be increased by typing the Pokémon's name or ID or by letting the App get 1 to 10 random ones.
+
+   - Exhibits amount of Pokémons inside it.
+
+   - (WIP) Can sort Pokémons by ID, name or type(s).
+
+   - (WIP) Can filter by type(s).
+
+</details>
+
+<details>
+
+<summary>Page containing details of a Pokémon:</summary>
+
+   - Shows Pokemon artwork, name, ID, Genus, types, stats, habitat, height, weight, generation, description, abilities and moves.
+
+   - Shows previous and next Pokémons based on the ID of the current Pokémon.
+
+</details>
+
+<details>
+
+   <summary>Theme:</summary>
+
+   - Starts with light or dark theme depending on user's preference.
+   - (WIP) Toggle between light and dark themes.
+
+</details>
+
+<details>
+
+<summary>(WIP) Saves user preferences:</summary>
+
+   - (WIP) Let user choose animated or static sprites for the Pokémon List.
+   - (WIP) Allow to save or not Pokémon List in Local Storage.
+
+</details>
 
 ## Built With
 
-Project Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the following technologies:
+Project kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the following technologies:
 
 - <strong>HTML5, CSS3</strong>: Provides necessary structure and styling for the app.
 
