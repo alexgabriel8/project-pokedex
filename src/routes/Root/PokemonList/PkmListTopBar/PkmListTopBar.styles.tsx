@@ -15,7 +15,7 @@ const PkmListTopBar = styled.div`
   position: sticky;
   top: 0;
 
-  background-color: ${(props) => props.theme.primary + "90"};
+  background-color: ${({ theme }) => theme.primary + "90"};
 
   backdrop-filter: blur(1px);
 `;
@@ -26,7 +26,7 @@ const ListStatus = styled.span`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  color: ${(props) => (props.theme.name === "light" ? "black" : "white")};
+  color: ${({ theme }) => (theme.name === "light" ? "black" : "white")};
 
   font-size: clamp(0.6rem, 0.6rem + 0.4vw, 3rem);
 `;

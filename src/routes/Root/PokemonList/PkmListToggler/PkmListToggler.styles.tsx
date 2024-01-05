@@ -18,7 +18,7 @@ const PkmListToggler = styled.button`
     border-radius: 0 50px 50px 0;
   }
 
-  background-color: ${(props) => props.theme.terciary + "A0"};
+  background-color: ${({ theme }) => theme.terciary + "A0"};
 `;
 
 export { PkmListToggler };

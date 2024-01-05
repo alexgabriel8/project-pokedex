@@ -7,7 +7,7 @@ import { pokemonTypeColorCodes as typeColor } from "../../../../../constants/pok
 // Breakpoints
 import { smartTv } from "../../../../../constants/breakpoints";
 
-// Typings
+// Types
 import { Types } from "../../../../../types/pokemon.types";
 
 const NavLink = styled(ReactRouterDOMNavLink)`

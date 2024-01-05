@@ -16,11 +16,10 @@ type Props = {
 }
 
 const PreviousNextPokemon = ({position, pkmId}: Props) => {
-    if(pkmId === 0) return <div></div>;
-
     const { activeTheme } = useContext(ThemeContext)!;
-    
     const [ pokemon, fetchError ] = useFetchAdjacentPokemon(pkmId);
+
+    if(pkmId === 0) return <div></div>;
 
     return (
         <S.PreviousNextPokemonContainer className={`${position} ${typeof pokemon === "object" && "has-pokemon"}`}>

@@ -1,8 +1,8 @@
 // Components
-import { IPokemon } from "../../../../types/pokemon.types";
+import { Pokemon } from "./Pokemon/Pokemon";
 
 // Types
-import { Pokemon } from "./Pokemon/Pokemon";
+import { IPokemon } from "../../../../types/pokemon.types";
 
 type Props = {
   pokemons: IPokemon[];
@@ -10,12 +10,14 @@ type Props = {
 const Pokemons = ({ pokemons }: Props) => {
   return (
     <ul>
-      {pokemons.map((pokemon) => (
-        <Pokemon
-          pokemon={pokemon}
-          key={pokemon.id + ` ${Math.random() * 10}`}
-        />
-      ))}
+      {
+        pokemons.map((pokemon) => (
+          <Pokemon
+            pokemon={pokemon}
+            key={pokemon.id + ` ${Math.random() * 10}`}
+          />
+        ))
+      }
     </ul>
   );
 };

@@ -6,12 +6,18 @@ import { PlusSvg } from "../../../../../components/SvgIcons/PlusSvg";
 // Breakpoints
 import { smartTv } from "../../../../../constants/breakpoints";
 
+// Types
+import { TTheme } from "../../../../../constants/themes/themes.types";
+
 const AddPkmByInputWrapper = styled.div`
   display: inline-block;
   position: relative;
 `;
 
-const AddPkmByInput = styled.input`
+type AddPkmByInputProps = {
+  theme: TTheme;
+}
+const AddPkmByInput = styled.input<AddPkmByInputProps>`
   width: 60px;
   height: 40px;
   padding: 0 30px 0 5px;
@@ -24,6 +30,7 @@ const AddPkmByInput = styled.input`
   }
 
   border-radius: 5px;
+
   color: ${({ theme }) => theme.terciary};
   background-color: ${({ theme }) => theme.primary};
 
@@ -36,7 +43,10 @@ const AddPkmByInput = styled.input`
   }
 `;
 
-const PlusIcon = styled(PlusSvg)`
+type PlusIconProps = {
+  theme: TTheme;
+}
+const PlusIcon = styled(PlusSvg)<PlusIconProps>`
   position: absolute;
   right: 5px;
   top: 50%;

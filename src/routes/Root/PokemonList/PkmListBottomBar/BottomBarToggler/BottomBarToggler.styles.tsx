@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
+// Breakpoints
 import { smartTv } from "../../../../../constants/breakpoints";
 
-const BottomBarToggler = styled.button`
+// Types
+import { TTheme } from "../../../../../constants/themes/themes.types";
+
+type BottomBarTogglerProps = {
+  theme: TTheme;
+}
+
+const BottomBarToggler = styled.button<BottomBarTogglerProps>`
   width: 50px;
   height: 25px;
   border-radius: 25px 25px 0 0;
@@ -12,7 +20,7 @@ const BottomBarToggler = styled.button`
     border-radius: 50px 50px 0 0;
   }
 
-  background-color: ${(props) => props.theme.primary};
+  background-color: ${({ theme }) => theme.primary};
 
   position: relative;
   left: 50%;

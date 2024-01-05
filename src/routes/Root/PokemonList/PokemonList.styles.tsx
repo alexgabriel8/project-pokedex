@@ -6,19 +6,26 @@ import { smartTv } from "../../../constants/breakpoints";
 // Styles
 import { noScrollBars } from "../../../styles/noScrollBars";
 
-const PokemonList = styled.div`
+// Types
+import { TTheme } from "../../../constants/themes/themes.types";
+
+type PokemonListProps = {
+  theme: TTheme;
+}
+
+const PokemonList = styled.div<PokemonListProps>`
   ${noScrollBars};
 
   overflow-y: scroll;
 
-  background-color: ${(props) => props.theme.terciary};
+  background-color: ${({ theme }) => theme.terciary};
 
   flex-shrink: 0;
   flex-basis: 350px;
   &&.hidden {
     flex-basis: 0px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     flex-shrink: 0.2;
   }
   @media screen and (min-width: ${smartTv}px) {

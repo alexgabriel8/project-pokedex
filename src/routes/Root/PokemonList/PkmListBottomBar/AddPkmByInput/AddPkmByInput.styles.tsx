@@ -6,16 +6,23 @@ import { SearchSvg } from "../../../../../components/SvgIcons/SearchSvg";
 // Breakpoints
 import { smartTv } from "../../../../../constants/breakpoints";
 
+// Types
+import { TTheme } from "../../../../../constants/themes/themes.types";
+
 const AddPkmByInputWrapper = styled.div`
   display: inline-block;
   position: relative;
+
   flex-basis: 250px;
   @media (min-width: ${smartTv}px) {
     flex-basis: 500px;
   }
 `;
 
-const AddPkmByInput = styled.input`
+type AddPkmByInputProps = {
+  theme: TTheme;
+}
+const AddPkmByInput = styled.input<AddPkmByInputProps>`
   width: 100%;
 
   height: 40px;
@@ -35,7 +42,10 @@ const AddPkmByInput = styled.input`
   }
 `;
 
-const SearchIcon = styled(SearchSvg)`
+type SearchIconProps = {
+  theme: TTheme;
+}
+const SearchIcon = styled(SearchSvg)<SearchIconProps>`
   width: 25px;
   height: 25px;
   @media (min-width: ${smartTv}px) {
@@ -47,6 +57,7 @@ const SearchIcon = styled(SearchSvg)`
   right: 5px;
   top: 50%;
   transform: translate(0, -50%);
+
   fill: ${({ theme }) => theme.terciary};
 
   cursor: pointer;

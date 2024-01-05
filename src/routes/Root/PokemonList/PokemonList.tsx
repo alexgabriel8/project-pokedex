@@ -2,7 +2,6 @@ import { useContext } from "react";
 
 // Components
 import * as S from "./PokemonList.styles";
-
 import { PkmListTopBar } from "./PkmListTopBar/PkmListTopBar";
 import { Pokemons } from "./Pokemons/Pokemons";
 import { PkmListBottomBar } from "./PkmListBottomBar/PkmListBottomBar";
@@ -15,9 +14,6 @@ import { PokemonsContext } from "../../../context/PokemonsContext/PokemonsContex
 import { addPkmsByAmountToList } from "./scripts/addPkmsByAmountToList";
 import { addPkmByInputToList } from "./scripts/addPkmByInputToList";
 
-// Types
-import { IPokemon } from "../../../types/pokemon.types";
-
 const PokemonList = () => {
   const { pokemons, dispatchPokemons } = useContext(PokemonsContext)!;
 
@@ -26,8 +22,7 @@ const PokemonList = () => {
   return (
     <S.PokemonList className="pokemon-list hidden" theme={activeTheme}>
       <PkmListTopBar pokemonsInList={pokemons.length} />
-      <Pokemons pokemons={pokemons as unknown as IPokemon[]} />{" "}
-      {/* Remove bad typing */}
+      <Pokemons pokemons={pokemons} />
       <PkmListBottomBar
         addPkmByInputToList={(input) =>
           addPkmByInputToList(dispatchPokemons, input)
