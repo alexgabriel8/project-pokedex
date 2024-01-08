@@ -15,15 +15,9 @@ const themes: TThemes = {
 
     modalTogglerButton: {
       circleBorder: "#150F0F",
-      backgroundBorder: "#313131",
-
-      disabled: {
-        background: "#FFFFFF",
-      },
-
-      enabled: {
-        background: "#5C5C5C",
-      },
+      circleBackground: "#313131",
+      backgroundDisabled: "#FFFFFF",
+      backgroundEnabled: "#5C5C5C",
     },
   },
 
@@ -40,16 +34,10 @@ const themes: TThemes = {
     },
 
     modalTogglerButton: {
-      circleBorder: "#0F0F0F",
-      backgroundBorder: "#731AA9",
-
-      disabled: {
-        background: "#4C2E60",
-      },
-
-      enabled: {
-        background: "#BC59FF",
-      },
+      circleBorder: "#BC59FF",
+      circleBackground: "#9D28E3",
+      backgroundDisabled: "#4C2E60",
+      backgroundEnabled: "#BC59FF",
     },
   },
 };

@@ -16,15 +16,9 @@ type TTheme = {
 
   modalTogglerButton: {
     circleBorder: string;
-    backgroundBorder: string;
-
-    disabled: {
-      background: string;
-    };
-
-    enabled: {
-      background: string;
-    };
+    circleBackground: string;
+    backgroundDisabled: string;
+    backgroundEnabled: string;
   };
 };
 
@@ -49,31 +43,17 @@ function isTypeTTheme(object: any): object is TTheme {
 
   if (!bothHaveSameProperties(Object.keys(object), Object.keys(themes.light)))
     return false;
-  if (
+  else if (
     !bothHaveSameProperties(
       Object.keys(object.status),
       Object.keys(themes.light.status),
     )
   )
     return false;
-  if (
+  else if (
     !bothHaveSameProperties(
       Object.keys(object.modalTogglerButton),
       Object.keys(themes.light.modalTogglerButton),
-    )
-  )
-    return false;
-  if (
-    !bothHaveSameProperties(
-      Object.keys(object.modalTogglerButton.enabled),
-      Object.keys(themes.light.modalTogglerButton.enabled),
-    )
-  )
-    return false;
-  if (
-    !bothHaveSameProperties(
-      Object.keys(object.modalTogglerButton.disabled),
-      Object.keys(themes.light.modalTogglerButton.disabled),
     )
   )
     return false;
