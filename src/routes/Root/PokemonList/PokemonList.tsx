@@ -20,7 +20,7 @@ const PokemonList = () => {
   const { activeTheme } = useContext(ThemeContext)!;
 
   return (
-    <S.PokemonList className="pokemon-list hidden" theme={activeTheme}>
+    <S.PokemonList className="pokemon-list" theme={activeTheme}>
       <PkmListTopBar pokemonsInList={pokemons.length} />
       <Pokemons pokemons={pokemons} />
       <PkmListBottomBar

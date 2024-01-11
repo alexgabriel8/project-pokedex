@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Show animated sprites", "type": "toggle"
+    },
+    {
+        "name": "Save list in machine", "type": "toggle"
+    },
+    {
+        "name": "Clear Pokémon list", "type": "confirm"
+    }
+]
