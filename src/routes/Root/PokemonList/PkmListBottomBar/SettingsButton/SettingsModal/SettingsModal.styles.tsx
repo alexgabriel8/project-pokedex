@@ -34,6 +34,9 @@ const SettingsModalWrapper = styled.div`
 `
 
 const SettingsModalContainer = styled.div<Props>`
+    padding: 10px;
+    margin: 10px;
+
     height: 100%;
 
     width: 500px;

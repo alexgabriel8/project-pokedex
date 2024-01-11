@@ -45,7 +45,7 @@ const Cancel = styled(XMarkSvg)<Props>`
 
     fill: ${({ theme }) => theme.status.danger};
 
-    filter: brightness(150%);    
+    filter: brightness(50%);
 
     cursor: pointer;
 `

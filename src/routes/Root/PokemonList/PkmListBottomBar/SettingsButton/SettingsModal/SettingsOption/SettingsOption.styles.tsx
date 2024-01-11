@@ -46,6 +46,8 @@ type TogglerIconProps = {
 const SettingsOptionTogglerIcon = styled.div<TogglerIconProps>`
     position: relative;
 
+    flex-shrink: 0;
+
     width: 50px;
     height: 20px;
     @media (min-width: ${smartTv}px) {
