@@ -3,9 +3,6 @@ import { useContext } from "react";
 // Components
 import * as S from "./Pokemon.styles";
 
-// Objects
-import { userPreferences } from "../../../../../objects/userPreferences/userPreferences";
-
 // Context
 import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
 
@@ -19,7 +16,7 @@ const Pokemon = ({ pokemon }: { pokemon: IPokemon }) => {
   const { activeTheme } = useContext(ThemeContext)!;
 
   const uppercasePkmName = pkmNameToUppercase(pokemon.name);
-  const prefersAnimatedSprites = userPreferences.preferences.pkmAnimatedSprites;
+  const prefersAnimatedSprites = true;
   const hasAnimatedSprite = !!pokemon.sprites.animated;
 
   return (
@@ -30,7 +27,11 @@ const Pokemon = ({ pokemon }: { pokemon: IPokemon }) => {
           to={`pokemon/${pokemon.id}`}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          <S.ImgWrapper>
+          <S.ImgWrapper
+            className={
+              prefersAnimatedSprites && hasAnimatedSprite ? "animated" : ""
+            }
+          >
             <img
               src={
                 prefersAnimatedSprites && hasAnimatedSprite

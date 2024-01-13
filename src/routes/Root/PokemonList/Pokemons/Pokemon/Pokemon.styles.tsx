@@ -62,14 +62,17 @@ const ImgWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 10px;
   width: 96px;
   height: 96px;
   @media screen and (min-width: ${smartTv}px) {
     width: 162px;
     height: 162px;
   }
-
+  
+  &&.animated {
+    padding: 10px;
+  }
+  
   img {
     max-height: 100%;
     object-fit: contain;
