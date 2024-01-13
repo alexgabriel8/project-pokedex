@@ -30,7 +30,9 @@ const PkmListBottomBar = styled.div`
     backdrop-filter: blur(1px);
   }
   &&.hidden {
-    background-color: transparent;
+    pointer-events: none;
+    opacity: 0;
+
     margin-top: -300px;
     @media (min-width: ${smartTv}px) {
       margin-top: -450px;
@@ -39,7 +41,7 @@ const PkmListBottomBar = styled.div`
 
   transition:
     margin-top 0.5s,
-    background-color 0.5s;
+    opacity 0.5s;
 `;
 
 const PkmAddersWrapper = styled.div`
