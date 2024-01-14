@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 // Breakpoints
-import { smartTv } from "../../../../../../../constants/breakpoints";
+import { smartTv } from "../../../../../../../../constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../../../constants/themes/themes.types";
+import { TTheme } from "../../../../../../../../constants/themes/themes.types";
 
 const SettingsOptionContainer = styled.li`
     position: relative;

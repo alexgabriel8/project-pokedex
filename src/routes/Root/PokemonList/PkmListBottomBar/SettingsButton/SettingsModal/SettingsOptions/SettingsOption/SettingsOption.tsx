@@ -9,38 +9,36 @@ import { handleToggleOptionclick } from "./scripts/handleToggleOptionClick";
 import { handleConfirmOptionClick } from "./scripts/handleConfirmOptionClick";
 
 // Context
-import { ThemeContext } from "../../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../../../../../context/ThemeContext/ThemeContext";
 
-type Props = {
-    children: string;
-    type: "toggle" | "confirm";
-    index: number;
-}
-const SettingsOption = ({children, type, index}: Props) => {
+// Types
+import { SettingsOptionProps } from "./SettingsOption.types";
+
+const SettingsOption = (props: SettingsOptionProps) => {
     const { activeTheme } = useContext(ThemeContext)!;
 
-    const selector = `setting-option-${index + 1}`
+    const selector = `setting-option-${props.index + 1}`;
 
     return (
         <S.SettingsOptionContainer
             id={selector}
             theme={activeTheme}
             onClick={
-                type === "toggle"
-                    ? handleToggleOptionclick
+                props.type === "toggle"
+                    ? (e) => handleToggleOptionclick(e, props.updateSetting)
                     : handleConfirmOptionClick
             }
         >
-            <p>{children}</p>
+            <p>{props.children}</p>
             {
-                type === "toggle" &&
+                props.type === "toggle" &&
                     <S.SettingsOptionTogglerIcon
-                        className="toggler-icon"
+                        className={`toggler-icon ${props.settingValue === true ? "active" : ""}`}
                         theme={activeTheme}
                     />
             }
             {
-                type === "confirm" &&
+                props.type === "confirm" &&
                     <SettingsOptionConfirmation selector={selector} />
             }
         </S.SettingsOptionContainer>        

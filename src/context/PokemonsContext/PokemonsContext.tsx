@@ -4,14 +4,10 @@ import { createContext, useReducer, useRef, useEffect } from "react";
 import { pokemonsReducer } from "./pokemonsReducer";
 
 // Scripts
-import { saveOnLocalStorage } from "../../scripts/localStorage";
 import { loadInitialPokemons } from "../../routes/Root/PokemonList/scripts/loadInitialPokemons";
 
 // Types
 import { TPokemonsContext } from "./PokemonsContext.types";
-
-// Constants
-import { savedPokemonsLocalStorageKey } from "../../constants/localStorageAccessKeys";
 
 const PokemonsContext = createContext<TPokemonsContext>(
   [] as unknown as TPokemonsContext,
@@ -27,12 +23,6 @@ const PokemonsProvider = ({ children }: React.PropsWithChildren) => {
 
     loadInitialPokemons(dispatchPokemons);
   }, []);
-
-  useEffect(() => {
-    if (pokemons.length < 10) return;
-
-    saveOnLocalStorage(savedPokemonsLocalStorageKey, pokemons);
-  }, [pokemons]);
 
   return (
     <PokemonsContext.Provider value={{ pokemons, dispatchPokemons }}>

@@ -2,19 +2,21 @@ import { useContext } from "react";
 
 // Components
 import * as S from "./SettingsModal.styles";
-import { SettingsOption } from "./SettingsOption/SettingsOption";
+import { SettingsOptions } from "./SettingsOptions/SettingsOptions";
 
 // Scripts
 import { handleCloseSettings } from "../scripts/handleCloseSettings";
 
+// Hooks
+import { useSaveSettingsToLocalStorage } from "./hooks/useSaveSettingsToLocalStorage";
+
 // Contexts
 import { ThemeContext } from "../../../../../../context/ThemeContext/ThemeContext";
 
-// JSON
-import options from "./settings-options.json"
-
 const SettingsModal = () => {
     const { activeTheme } = useContext(ThemeContext)!;
+
+    useSaveSettingsToLocalStorage();
 
     return (
         <S.SettingsModalWrapper
@@ -26,20 +28,11 @@ const SettingsModal = () => {
                 onClick={(e) => e.stopPropagation()}
                 theme={activeTheme}
             >
-                <S.CloseSettings onClick={handleCloseSettings} theme={activeTheme} />
-                <ul>
-                    {
-                        options.map(({name, type}, i) => (
-                            <SettingsOption
-                                key={name}
-                                index={i}
-                                type={type as "toggle" | "confirm"}
-                            >
-                                {name}
-                            </SettingsOption>
-                        ))
-                    }
-                </ul>
+                <S.CloseSettings
+                    onClick={handleCloseSettings}
+                    theme={activeTheme}
+                />
+                <SettingsOptions />
             </S.SettingsModalContainer>
         </S.SettingsModalWrapper>
     )

@@ -8,8 +8,11 @@ type AddPkmsAction = {
   type: "ADD_PKMS";
   pokemons: IPokemon[];
 };
+type ClearListAction = {
+  type: "CLEAR_LIST"
+}
 
-type TPkmAction = AddPkmAction | AddPkmsAction;
+type TPkmAction = AddPkmAction | AddPkmsAction | ClearListAction;
 
 function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
   switch (action.type) {
@@ -25,6 +28,10 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
           "Dispatched ADD_PKMS action without providing pokemons",
         );
       return [...pokemons, ...action.pokemons];
+    }
+
+    case "CLEAR_LIST": {
+      return []
     }
 
     default:

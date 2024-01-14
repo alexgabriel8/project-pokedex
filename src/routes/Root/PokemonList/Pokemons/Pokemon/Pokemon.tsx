@@ -5,6 +5,7 @@ import * as S from "./Pokemon.styles";
 
 // Context
 import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { SettingsContext } from "../../../../../context/SettingsContext/SettingsContext";
 
 // Types
 import { IPokemon } from "../../../../../types/pokemon.types";
@@ -14,9 +15,10 @@ import { pkmNameToUppercase } from "./pkmNameToUppercase";
 
 const Pokemon = ({ pokemon }: { pokemon: IPokemon }) => {
   const { activeTheme } = useContext(ThemeContext)!;
+  const { settings } = useContext(SettingsContext)!;
 
   const uppercasePkmName = pkmNameToUppercase(pokemon.name);
-  const prefersAnimatedSprites = true;
+  const prefersAnimatedSprites = settings.pkmAnimatedSprites;
   const hasAnimatedSprite = !!pokemon.sprites.animated;
 
   return (

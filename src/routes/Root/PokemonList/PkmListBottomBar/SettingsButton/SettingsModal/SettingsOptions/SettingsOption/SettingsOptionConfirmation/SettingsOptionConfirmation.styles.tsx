@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 // Components
-import { XMarkSvg } from "../../../../../../../../components/SvgIcons/XMarkSvg";
-import { CheckSvg } from "../../../../../../../../components/SvgIcons/CheckSvg";
+import { CheckSvg } from "../../../../../../../../../components/SvgIcons/CheckSvg";
+import { XMarkSvg } from "../../../../../../../../../components/SvgIcons/XMarkSvg";
 
 // Breakpoints
-import { smartTv } from "../../../../../../../../constants/breakpoints";
+import { smartTv } from "../../../../../../../../../constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../../../../constants/themes/themes.types";
+import { TTheme } from "../../../../../../../../../constants/themes/themes.types";
 
 type Props = {
     theme: TTheme;

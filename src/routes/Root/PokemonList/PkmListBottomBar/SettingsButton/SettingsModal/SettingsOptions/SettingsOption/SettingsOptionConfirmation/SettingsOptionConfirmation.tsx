@@ -7,12 +7,18 @@ import * as S from "./SettingsOptionConfirmation.styles";
 import { handleConfirmSettingApply } from "./handleConfirmSettingApply";
 
 // Context
-import { ThemeContext } from "../../../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../../../../../../context/ThemeContext/ThemeContext";
+import { PokemonsContext } from "../../../../../../../../../context/PokemonsContext/PokemonsContext";
 
 type SvgClickEvent = React.UIEvent<SVGAElement>;
 
 const SettingsOptionConfirmation = ({selector}: {selector: string}) => {
+    const { dispatchPokemons } = useContext(PokemonsContext)!;
     const { activeTheme } = useContext(ThemeContext)!;
+
+    const clearPkmList = () => {
+        dispatchPokemons({type: "CLEAR_LIST"})
+    }
 
     return(
         <S.SettingsOptionConfirmationContainer className="confirm-setting-apply hidden" theme={activeTheme}>
@@ -24,7 +30,7 @@ const SettingsOptionConfirmation = ({selector}: {selector: string}) => {
            <p>Are you sure?</p>
 
            <S.Confirm
-            onClick={(e: SvgClickEvent) => handleConfirmSettingApply(e, true, selector)}
+            onClick={(e: SvgClickEvent) => handleConfirmSettingApply(e, true, selector, clearPkmList)}
             theme={activeTheme}
            />
         </S.SettingsOptionConfirmationContainer>

@@ -6,7 +6,7 @@ import { PkmListTopBar } from "./PkmListTopBar/PkmListTopBar";
 import { Pokemons } from "./Pokemons/Pokemons";
 import { PkmListBottomBar } from "./PkmListBottomBar/PkmListBottomBar";
 
-// Context
+// Contexts
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 import { PokemonsContext } from "../../../context/PokemonsContext/PokemonsContext";
 
@@ -14,10 +14,14 @@ import { PokemonsContext } from "../../../context/PokemonsContext/PokemonsContex
 import { addPkmsByAmountToList } from "./scripts/addPkmsByAmountToList";
 import { addPkmByInputToList } from "./scripts/addPkmByInputToList";
 
+// Hooks
+import { useSaveListToLocalStorage } from "./hooks/useSaveListToLocalStorage";
+
 const PokemonList = () => {
   const { pokemons, dispatchPokemons } = useContext(PokemonsContext)!;
-
   const { activeTheme } = useContext(ThemeContext)!;
+
+  useSaveListToLocalStorage();
 
   return (
     <S.PokemonList className="pokemon-list" theme={activeTheme}>
