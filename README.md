@@ -93,10 +93,10 @@
 
 <details>
 
-   <summary>(WIP) Saves user preferences:</summary>
+   <summary>Saves user preferences:</summary>
 
-      - (WIP) Let user choose animated or static sprites for the Pokémon List.
-      - (WIP) Allow to save or not Pokémon List in Local Storage.
+   - Let user choose animated or static sprites for the Pokémon List.
+   - Allow to save or not Pokémon List in Local Storage.
 
 </details>
 
