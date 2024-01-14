@@ -7,6 +7,8 @@ const BottomBarWrapper = styled.div`
   position: sticky;
   bottom: 0;
 
+  z-index: 1;
+
   input {
     transition: filter 0.5s;
   }
