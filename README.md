@@ -93,10 +93,11 @@
 
 <details>
 
-   <summary>Saves user preferences:</summary>
+   <summary>Settings:</summary>
 
    - Let user choose animated or static sprites for the Pokémon List.
    - Allow to save or not Pokémon List in Local Storage.
+   - Empty the Pokémon List.
 
 </details>
 
