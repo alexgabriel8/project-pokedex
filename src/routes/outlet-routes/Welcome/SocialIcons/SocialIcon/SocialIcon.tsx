@@ -7,7 +7,7 @@ import * as S from "./SocialIcon.styles";
 import { TSocialIcon } from "../icons-info.types";
 
 // Context
-import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
 
 type SocialIconProps = {
   icon: TSocialIcon;

@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-import { smartTv } from "../../../constants/breakpoints";
+// Breakpoints
+import { smartTv } from "../../../../../constants/breakpoints";
 
-const Link = styled.a`
+// Types
+import { TTheme } from "../../../../../constants/themes/themes.types";
+
+type Props = {
+  theme: TTheme;
+}
+
+const Link = styled.a<Props>`
   border-radius: 50%;
 
   &&:hover {
@@ -12,7 +20,7 @@ const Link = styled.a`
   transition: background-color 0.3s;
 `;
 
-const SocialIconSvg = styled.svg`
+const SocialIconSvg = styled.svg<Props>`
   display: block; // Remove extra spacing generated to <a> wrapping it
 
   width: 45px;

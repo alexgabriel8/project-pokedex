@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 // Components
-import { SocialIcons } from "../../../components/SocialIcons/SocialIcons";
+import { SocialIcons } from "./SocialIcons/SocialIcons";
 
 // Styled Components
 import * as S from "./Welcome.styles";
