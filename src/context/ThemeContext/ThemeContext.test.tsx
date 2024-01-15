@@ -61,7 +61,7 @@ describe("Theme Provider", () => {
 
     getByText("Current theme: dark");
     expect(
-      JSON.parse(localStorage.getItem(lastUsedThemeLocalStorageKey)!),
-    ).toStrictEqual(themes.dark);
+      localStorage.getItem(lastUsedThemeLocalStorageKey),
+    ).toStrictEqual(themes.dark.name);
   });
 });
