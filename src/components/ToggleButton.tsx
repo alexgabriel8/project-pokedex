@@ -41,6 +41,8 @@ const ToggleButton = styled.div`
         }
     }
 
+    cursor: pointer;
+
     transition: background-color 0.25s;
 `
 

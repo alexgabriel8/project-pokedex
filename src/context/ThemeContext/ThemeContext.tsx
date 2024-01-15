@@ -1,10 +1,14 @@
 import { useState, useEffect, createContext } from "react";
 
-import { TThemeContext } from "./ThemeContext.types";
+// Scripts
+import { saveOnLocalStorage } from "../../scripts/localStorage";
 import { loadInitialTheme } from "./loadInitialTheme";
 
-import { saveOnLocalStorage } from "../../scripts/localStorage";
+// Constants
 import { lastUsedThemeLocalStorageKey } from "../../constants/localStorageAccessKeys";
+
+// Types
+import { TThemeContext } from "./ThemeContext.types";
 
 const ThemeContext = createContext<TThemeContext | null>(null);
 
@@ -12,7 +16,7 @@ const ThemeProvider = ({ children }: React.PropsWithChildren) => {
   const [activeTheme, setActiveTheme] = useState(loadInitialTheme());
 
   useEffect(() => {
-    saveOnLocalStorage(lastUsedThemeLocalStorageKey, activeTheme);
+    saveOnLocalStorage(lastUsedThemeLocalStorageKey, activeTheme.name);
   }, [activeTheme]);
 
   return (

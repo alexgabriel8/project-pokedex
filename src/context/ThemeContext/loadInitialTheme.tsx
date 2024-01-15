@@ -1,17 +1,21 @@
 import { getLocalStorageItem } from "../../scripts/localStorage";
+
+// Constants
+import { themes } from "../../constants/themes/themes";
 import { lastUsedThemeLocalStorageKey } from "../../constants/localStorageAccessKeys";
 
-import { TTheme, isTypeTTheme } from "../../constants/themes/themes.types";
-import { themes } from "../../constants/themes/themes";
+// Types
+import { TTheme } from "../../constants/themes/themes.types";
 
 function loadInitialTheme(): TTheme {
   const initialTheme = getLocalStorageItem(lastUsedThemeLocalStorageKey);
 
-  if (!initialTheme || !isTypeTTheme(initialTheme)) {
-    if (window.matchMedia("(prefers-color-scheme: light)").matches)
-      return themes.light;
-    else return themes.dark;
-  } else return initialTheme;
+  if(initialTheme === "light") return themes.light;
+  else if (initialTheme === "dark") return themes.dark;
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? themes.light
+    : themes.dark
 }
 
 export { loadInitialTheme };
