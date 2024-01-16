@@ -9,7 +9,7 @@ import { handleToggleOptionclick } from "./scripts/handleToggleOptionClick";
 import { handleConfirmOptionClick } from "./scripts/handleConfirmOptionClick";
 
 // Context
-import { ThemeContext } from "../../../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "../../../../../../../../../context/ThemeContext/ThemeContext";
 
 // Types
 import { SettingsOptionProps } from "./SettingsOption.types";

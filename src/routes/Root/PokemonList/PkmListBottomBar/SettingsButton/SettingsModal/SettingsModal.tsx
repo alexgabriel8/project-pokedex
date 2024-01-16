@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 // Components
 import * as S from "./SettingsModal.styles";
-import { SettingsOptions } from "./SettingsOptions/SettingsOptions";
+import { SettingsOptions } from "./components/SettingsOptions/SettingsOptions";
 
 // Scripts
 import { handleCloseSettings } from "../scripts/handleCloseSettings";

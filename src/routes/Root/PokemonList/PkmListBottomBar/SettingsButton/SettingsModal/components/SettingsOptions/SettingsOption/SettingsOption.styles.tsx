@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 // Components
-import { ToggleButton } from "../../../../../../../../components/ToggleButton";
+import { ToggleButton } from "../../../../../../../../../components/ToggleButton";
 
 // Breakpoints
-import { smartTv } from "../../../../../../../../constants/breakpoints";
+import { smartTv } from "../../../../../../../../../constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../../../../constants/themes/themes.types";
+import { TTheme } from "../../../../../../../../../constants/themes/themes.types";
 
 const SettingsOptionContainer = styled.li`
     position: relative;

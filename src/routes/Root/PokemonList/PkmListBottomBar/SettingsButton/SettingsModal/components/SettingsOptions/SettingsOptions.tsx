@@ -4,13 +4,13 @@ import { useContext } from "react";
 import { SettingsOption } from "./SettingsOption/SettingsOption";
 
 // Context
-import { SettingsContext } from "../../../../../../../context/SettingsContext/SettingsContext";
+import { SettingsContext } from "../../../../../../../../context/SettingsContext/SettingsContext";
 
 // Hooks
-import { useGetSettingValue } from "../../../../../../../context/SettingsContext/hooks/useGetSettingValue";
+import { useGetSettingValue } from "../../../../../../../../context/SettingsContext/hooks/useGetSettingValue";
 
 // Types
-import { Settings } from "../../../../../../../types/settings.types";
+import { Settings } from "../../../../../../../../types/settings.types";
 
 const SettingsOptions = () => {
     const { settings, setSettings } = useContext(SettingsContext)!;
