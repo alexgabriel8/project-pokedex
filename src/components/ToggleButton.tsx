@@ -31,12 +31,12 @@ const ToggleButton = styled.div<Props>`
     cursor: pointer;
 
     .toggler-circle {
-        transform: translate(-5px, -4px);
+        transform: translate(-5px, -6px);
     }
     &&.active .toggler-circle {
-        transform: translate(100%, -4px);
+        transform: translate(100%, -6px);
         @media (min-width: ${smartTv}px) {
-            transform: translate(100%, -8px);
+            transform: translate(100%, -12px);
         }
     }
 
@@ -46,13 +46,13 @@ const ToggleButton = styled.div<Props>`
 const ToggleButtonCircle = styled.span<Props>`
     position: absolute;
 
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     @media (min-width: ${smartTv}px) {
         && {
-            width: 50px;
-            height: 50px;
-            transform: translate(-10px, -8px);
+            width: 60px;
+            height: 60px;
+            transform: translate(-10px, -12px);
         }
     }
 
