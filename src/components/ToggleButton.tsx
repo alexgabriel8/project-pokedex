@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
+// Breakpoints
 import { smartTv } from "../constants/breakpoints";
 
-const ToggleButton = styled.div`
+// Types
+import { TTheme } from "../constants/themes/themes.types";
+
+type Props = {
+    theme: TTheme;
+}
+const ToggleButton = styled.div<Props>`
     position: relative;
 
     width: 50px;
@@ -14,36 +21,48 @@ const ToggleButton = styled.div`
 
     border-radius: 20px;
 
-    &&::before {
-        display: block;
-        content: "";
-        
-        position: absolute;
-        transform: translate(-5px, -4px);
-        
-        width: 25px;
-        height: 25px;
-        @media (min-width: ${smartTv}px) {
-            width: 50px;
-            height: 50px;
-            transform: translate(-10px, -8px);
-        }
+    border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
 
-        border-radius: 50%;
-
-        transition: transform 0.2s;
+    background-color: ${({ theme }) => theme.modalTogglerButton.backgroundDisabled};
+    &&.active {
+        background-color: ${({ theme }) => theme.modalTogglerButton.backgroundEnabled};
     }
 
-    &&.active::before {
+    cursor: pointer;
+
+    .toggler-circle {
+        transform: translate(-5px, -4px);
+    }
+    &&.active .toggler-circle {
         transform: translate(100%, -4px);
         @media (min-width: ${smartTv}px) {
             transform: translate(100%, -8px);
         }
     }
 
-    cursor: pointer;
-
     transition: background-color 0.25s;
 `
 
-export { ToggleButton }
+const ToggleButtonCircle = styled.span<Props>`
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+    @media (min-width: ${smartTv}px) {
+        && {
+            width: 50px;
+            height: 50px;
+            transform: translate(-10px, -8px);
+        }
+    }
+
+    border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
+
+    background-color: ${({ theme }) => theme.modalTogglerButton.circleBackground};
+
+    border-radius: 50%;
+
+    transition: transform 0.2s;
+`
+
+export { ToggleButton, ToggleButtonCircle }

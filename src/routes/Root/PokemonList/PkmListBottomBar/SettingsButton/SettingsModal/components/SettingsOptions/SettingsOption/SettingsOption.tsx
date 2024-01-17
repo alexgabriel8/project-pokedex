@@ -3,6 +3,7 @@ import { useContext } from "react";
 // Components
 import * as S from "./SettingsOption.styles";
 import { SettingsOptionConfirmation } from "./SettingsOptionConfirmation/SettingsOptionConfirmation";
+import { ToggleButton, ToggleButtonCircle } from "../../../../../../../../../components/ToggleButton";
 
 // Scripts
 import { handleToggleOptionclick } from "./scripts/handleToggleOptionClick";
@@ -32,10 +33,15 @@ const SettingsOption = (props: SettingsOptionProps) => {
             <p>{props.children}</p>
             {
                 props.type === "toggle" &&
-                    <S.SettingsOptionTogglerIcon
+                    <ToggleButton
                         className={`toggler-icon ${props.settingValue === true ? "active" : ""}`}
                         theme={activeTheme}
-                    />
+                    >
+                        <ToggleButtonCircle
+                            className="toggler-circle"
+                            theme={activeTheme}
+                        />
+                    </ToggleButton>
             }
             {
                 props.type === "confirm" &&

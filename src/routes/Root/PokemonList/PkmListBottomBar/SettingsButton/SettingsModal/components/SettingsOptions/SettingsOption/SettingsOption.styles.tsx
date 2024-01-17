@@ -1,13 +1,7 @@
 import styled from "styled-components";
 
-// Components
-import { ToggleButton } from "../../../../../../../../../components/ToggleButton";
-
 // Breakpoints
 import { smartTv } from "../../../../../../../../../constants/breakpoints";
-
-// Types
-import { TTheme } from "../../../../../../../../../constants/themes/themes.types";
 
 const SettingsOptionContainer = styled.li`
     position: relative;
@@ -43,24 +37,4 @@ const SettingsOptionContainer = styled.li`
     }
 `
 
-type TogglerIconProps = {
-    theme: TTheme;
-}
-const SettingsOptionTogglerIcon = styled(ToggleButton)<TogglerIconProps>`
-    flex-shrink: 0;
-
-    background-color: ${({ theme }) => theme.modalTogglerButton.backgroundDisabled};
-    &&.active {
-        background-color: ${({ theme }) => theme.modalTogglerButton.backgroundEnabled};
-    }
-
-    border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
-
-    &&::before {
-        background-color: ${({ theme }) => theme.modalTogglerButton.circleBackground};
-
-        border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
-    }
-`
-
-export { SettingsOptionContainer, SettingsOptionTogglerIcon };
+export { SettingsOptionContainer };
