@@ -87,7 +87,7 @@
    <summary>Theme:</summary>
 
    - Starts with light or dark theme depending on user's preference.
-   - (WIP) Toggle between light and dark themes.
+   - Toggle between light and dark themes.
 
 </details>
 
@@ -103,13 +103,13 @@
 
 ## Built With
 
-Project kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the following technologies:
+Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the following technologies:
 
 - <strong>HTML5, CSS3</strong>: Provides necessary structure and styling for the app.
 
 - <strong>JavaScript + [TypeScript](https://www.typescriptlang.org/)</strong>: JS allows interactions with the app and TS makes JS code type-safe, less prone to bugs.
 
-- <strong>[React](https://react.dev/)</strong>: Transforms the app into a <abbr title="Single Page Application">SPA</abbr>, making the user experience smoother.
+- <strong>[React](https://react.dev/)</strong>: Makes the user experience smoother by turning the App in a <abbr title="Single Page Application">SPA</abbr> and forces code to be written as components, facilitating maintanence and development of new features.
 
    - <strong>[Styled Components](https://styled-components.com/)</strong>: Isolate styles, making them easier to be created, maintaned and escalated.
 
