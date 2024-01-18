@@ -12,6 +12,10 @@ const ThemeTogglerContainer = styled.div`
 
     left: 10px;
     bottom: 20px;
+    @media (min-width: ${smartTv}px) {
+        left: 20px;
+        bottom: 40px;
+    }
 
     svg {
         position: relative;
