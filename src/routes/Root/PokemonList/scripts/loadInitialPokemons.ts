@@ -1,13 +1,20 @@
+// Constants
 import { savedPokemonsLocalStorageKey } from "../../../../constants/localStorageAccessKeys";
-import { getLocalStorageItem } from "../../../../scripts/localStorage";
+
+// Scripts
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
+import { getLocalStorageItem } from "../../../../scripts/localStorage";
 import { allowInputUse } from "./toggleInputUsage";
 
-async function loadInitialPokemons(dispatch: React.Dispatch<any>) {
+// Types
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
+import { IPokemon } from "../../../../types/pokemon.types";
+
+async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
   try {
     allowInputUse(false);
 
-    let initialPokemons = getLocalStorageItem(savedPokemonsLocalStorageKey);
+    const initialPokemons = getLocalStorageItem(savedPokemonsLocalStorageKey) as unknown as IPokemon[];
     if (!initialPokemons) {
       for (let i = 0; i < 10; i++) {
         const fetchedPokemon = await getPokemon();
@@ -17,8 +24,7 @@ async function loadInitialPokemons(dispatch: React.Dispatch<any>) {
           pokemon: fetchedPokemon,
         });
       }
-    } else
-      dispatch({
+    } else dispatch({
         type: "ADD_PKMS",
         pokemons: initialPokemons,
       });

@@ -1,8 +1,12 @@
+// Scripts
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
+// Types
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
+
 async function addPkmsByAmountToList(
-  dispatch: React.Dispatch<any>,
+  dispatch: React.Dispatch<TPkmAction>,
   amount: number,
 ) {
   try {

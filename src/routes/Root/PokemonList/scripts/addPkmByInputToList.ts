@@ -1,9 +1,13 @@
+// Scripts
 import { slugifyString } from "../../../../scripts/slugifyString";
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
+// Types
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
+
 async function addPkmByInputToList(
-  dispatch: React.Dispatch<any>,
+  dispatch: React.Dispatch<TPkmAction>,
   input: string,
 ) {
   if (input === "") return;
@@ -20,9 +24,8 @@ async function addPkmByInputToList(
       pokemon: fetchedPokemon,
     });
 
-    (document.querySelector(
-      "#input-add-pkm-by-input",
-    ) as HTMLInputElement)!.value = "";
+    const addPkmInput = document.querySelector("#input-add-pkm-by-input") as HTMLInputElement
+    addPkmInput.value = "";
   } catch (err) {
     console.error(err);
   } finally {
