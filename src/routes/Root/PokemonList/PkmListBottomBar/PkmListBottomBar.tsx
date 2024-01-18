@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { BottomBarToggler } from "./BottomBarToggler/BottomBarToggler";
 import { AddPkmByInput } from "./AddPkmByInput/AddPkmByInput";
 import { AddPkmByAmount } from "./AddPkmByAmount/AddPkmByAmount";
+import { ThemeToggler } from "./ThemeToggler/ThemeToggler";
 import { SettingsButton } from "./SettingsButton/SettingsButton";
 
 // Context
@@ -28,6 +29,7 @@ const PkmListBottomBar = (props: Props) => {
           <AddPkmByInput addPkmByInputToList={props.addPkmByInputToList} />
           <AddPkmByAmount addPkmsByAmountToList={props.addPkmsByAmountToList} />
         </S.PkmAddersWrapper>
+        <ThemeToggler />
         <SettingsButton />
       </S.PkmListBottomBar>
     </S.BottomBarWrapper>

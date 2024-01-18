@@ -7,6 +7,8 @@ const reset = `
         border: none;
         outline: none;
         box-sizing: border-box;
+
+        transition: background-color 0.3s ease-in, color 0.3s ease-in;
     }
 
     a {
