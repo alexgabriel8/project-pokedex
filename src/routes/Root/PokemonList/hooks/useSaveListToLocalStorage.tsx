@@ -17,6 +17,8 @@ const useSaveListToLocalStorage = () => {
     const allowSave = settings.savePkmListInLocalStorage;
 
     useEffect(() => {
+        if(pokemons.length === 0) return
+        
         if(allowSave) saveOnLocalStorage(savedPokemonsLocalStorageKey, pokemons);
     }, [pokemons, allowSave])
 }

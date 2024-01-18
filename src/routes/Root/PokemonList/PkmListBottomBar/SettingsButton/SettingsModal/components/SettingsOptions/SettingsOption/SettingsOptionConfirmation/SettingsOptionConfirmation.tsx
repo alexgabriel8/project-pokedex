@@ -6,6 +6,9 @@ import * as S from "./SettingsOptionConfirmation.styles";
 // Scripts
 import { handleConfirmSettingApply } from "./handleConfirmSettingApply";
 
+// Constants
+import { savedPokemonsLocalStorageKey } from "../../../../../../../../../../constants/localStorageAccessKeys";
+
 // Context
 import { ThemeContext } from "../../../../../../../../../../context/ThemeContext/ThemeContext";
 import { PokemonsContext } from "../../../../../../../../../../context/PokemonsContext/PokemonsContext";
@@ -18,6 +21,7 @@ const SettingsOptionConfirmation = ({selector}: {selector: string}) => {
 
     const clearPkmList = () => {
         dispatchPokemons({type: "CLEAR_LIST"})
+        localStorage.removeItem(savedPokemonsLocalStorageKey)
     }
 
     return(
