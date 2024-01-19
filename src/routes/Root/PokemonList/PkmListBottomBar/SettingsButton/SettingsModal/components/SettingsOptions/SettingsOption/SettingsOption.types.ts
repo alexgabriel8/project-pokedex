@@ -1,8 +1,10 @@
+import { Settings } from "../../../../../../../../../types/settings.types";
+
 type ToggleOption = {
     children: string;
     type: "toggle";
+    setting: keyof Settings
     settingValue: boolean;
-    updateSetting: () => void;
     index: number;
 }
 

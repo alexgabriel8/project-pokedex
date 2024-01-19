@@ -9,6 +9,9 @@ import { ToggleButton, ToggleButtonCircle } from "../../../../../../../../../com
 import { handleToggleOptionclick } from "./scripts/handleToggleOptionClick";
 import { handleConfirmOptionClick } from "./scripts/handleConfirmOptionClick";
 
+// Hooks
+import { useUpdateSettingValue } from "../../../../../../../../../context/SettingsContext/hooks/useUpdateSettingValue";
+
 // Context
 import { ThemeContext } from "../../../../../../../../../context/ThemeContext/ThemeContext";
 
@@ -18,6 +21,9 @@ import { SettingsOptionProps } from "./SettingsOption.types";
 const SettingsOption = (props: SettingsOptionProps) => {
     const { activeTheme } = useContext(ThemeContext)!;
 
+    let updateSettingValue: null | (() => void) = null;
+    if (props.type === "toggle") updateSettingValue = useUpdateSettingValue(props.setting, props.settingValue)
+
     const selector = `setting-option-${props.index + 1}`;
 
     return (
@@ -26,7 +32,7 @@ const SettingsOption = (props: SettingsOptionProps) => {
             theme={activeTheme}
             onClick={
                 props.type === "toggle"
-                    ? (e) => handleToggleOptionclick(e, props.updateSetting)
+                    ? (e) => handleToggleOptionclick(e, updateSettingValue!)
                     : handleConfirmOptionClick
             }
         >
