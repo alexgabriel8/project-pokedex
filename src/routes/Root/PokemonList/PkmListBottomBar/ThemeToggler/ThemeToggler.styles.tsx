@@ -10,10 +10,10 @@ import { smartTv } from "../../../../../constants/breakpoints";
 const ThemeTogglerContainer = styled.div`
     position: absolute;
 
-    left: 10px;
+    left: 20px;
     bottom: 20px;
     @media (min-width: ${smartTv}px) {
-        left: 20px;
+        left: 40px;
         bottom: 40px;
     }
 
