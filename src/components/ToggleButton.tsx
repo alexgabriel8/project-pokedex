@@ -31,7 +31,7 @@ const ToggleButton = styled.div<Props>`
     cursor: pointer;
 
     .toggler-circle {
-        transform: translate(-5px, -6px);
+        transform: translate(-40%, -6px);
     }
     &&.active .toggler-circle {
         transform: translate(100%, -6px);
@@ -52,7 +52,7 @@ const ToggleButtonCircle = styled.span<Props>`
         && {
             width: 60px;
             height: 60px;
-            transform: translate(-10px, -12px);
+            transform: translate(-40%, -12px);
         }
     }
 
