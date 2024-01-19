@@ -12,6 +12,7 @@ import { Ability } from "../../../../../types/pokemon.types";
 
 const PokemonAbilities = ({ abilities }: { abilities: Ability[] }) => {
   const { activeTheme } = useContext(ThemeContext)!;
+  
   return (
     <S.PkmAbilitiesWrapper>
       <h2 className="title">Abilities</h2>

@@ -1,5 +1,5 @@
 function abilityHasScrolling(querySelector: string) {
-  let element = document.querySelector(querySelector)!;
+  const element = document.querySelector(querySelector)!;
   const isAtTop = element.scrollTop === 0;
 
   if (isAtTop && element.scrollHeight !== element.clientHeight)

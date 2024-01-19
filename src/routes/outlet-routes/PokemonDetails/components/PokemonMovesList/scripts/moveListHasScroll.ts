@@ -1,5 +1,5 @@
 function moveListHasScroll() {
-    let moveList = document.querySelector("#pokemon-moves-list")!;
+    const moveList = document.querySelector("#pokemon-moves-list")!;
 
     const isAtTop = moveList.scrollTop === 0;
 

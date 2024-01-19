@@ -22,7 +22,7 @@ const PokemonMovesList = ({ moves }: {moves: PkmTypes.Move[]}) => {
 
     useEffect(() => {
         moveListHasScroll()
-    }, [])
+    }, [activeTheme])
 
     return (
         <S.PokemonMovesListContainer

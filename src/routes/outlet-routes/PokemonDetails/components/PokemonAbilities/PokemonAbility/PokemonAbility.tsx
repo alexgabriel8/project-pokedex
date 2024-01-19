@@ -4,11 +4,13 @@ import * as S from "./PokemonAbility.styles";
 // Scripts
 import { handleAbilityDescriptionScroll } from "./scripts/handleAbilityDescriptionScroll";
 
+// Hooks
+import { useAbilityHasScrolling } from "./hooks/useAbilityHasScrolling";
+import { useFetchPkmAbilityDescription } from "./hooks/useFetchPkmAbility";
+
 // Types
 import { TTheme } from "../../../../../../constants/themes/themes.types";
 import { Ability } from "../../../../../../types/pokemon.types";
-import { useFetchPkmAbilityDescription } from "./hooks/useFetchPkmAbility";
-import { useAbilityHasScrolling } from "./hooks/useAbilityHasScrolling";
 
 type Props = {
   ability: Ability;
