@@ -39,6 +39,7 @@ const AddPkmByInput = styled.input<AddPkmByInputProps>`
 
   &&::placeholder {
     opacity: 1;
+    color: ${({ theme }) => theme.terciary};
   }
 `;
 
