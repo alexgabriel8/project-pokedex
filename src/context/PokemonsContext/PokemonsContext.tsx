@@ -1,10 +1,10 @@
-import { createContext, useReducer, useRef, useEffect } from "react";
+import { createContext, useReducer } from "react";
 
 // Reducer
 import { pokemonsReducer } from "./pokemonsReducer";
 
-// Scripts
-import { loadInitialPokemons } from "../../routes/Root/PokemonList/scripts/loadInitialPokemons";
+// Hooks
+import { useLoadInitialPokemons } from "./useLoadInitialPokemons";
 
 // Types
 import { TPokemonsContext } from "./PokemonsContext.types";
@@ -16,13 +16,7 @@ const PokemonsContext = createContext<TPokemonsContext>(
 const PokemonsProvider = ({ children }: React.PropsWithChildren) => {
   const [pokemons, dispatchPokemons] = useReducer(pokemonsReducer, []);
 
-  const loadInitialPokemonsCalled = useRef(false);
-  useEffect(() => {
-    if (loadInitialPokemonsCalled.current === true) return;
-    loadInitialPokemonsCalled.current = true;
-
-    loadInitialPokemons(dispatchPokemons);
-  }, []);
+  useLoadInitialPokemons(dispatchPokemons);
 
   return (
     <PokemonsContext.Provider value={{ pokemons, dispatchPokemons }}>
