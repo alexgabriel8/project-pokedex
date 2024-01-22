@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { describe, expect, it } from "vitest";
 
 // Constants
@@ -23,7 +24,7 @@ describe("Invalid Settings", () => {
     })
 
     it("Should return false if a property is missing", () => {
-        let invalidSettings = {...defaultSettings}
+        const invalidSettings = {...defaultSettings}
         delete invalidSettings.pkmAnimatedSprites
 
         expect(isValidSettings(invalidSettings)).toBe(false)
