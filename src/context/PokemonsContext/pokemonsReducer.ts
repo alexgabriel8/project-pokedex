@@ -15,6 +15,8 @@ type ClearListAction = {
 type TPkmAction = AddPkmAction | AddPkmsAction | ClearListAction;
 
 function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
+  if(!action?.type) throw new Error(`Invalid action`)
+
   switch (action.type) {
     case "ADD_PKM": {
       if (!action.pokemon)
@@ -34,8 +36,7 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
       return []
     }
 
-    default:
-      throw new Error(`Unknown action: ${action["type"]}`);
+    default: throw new Error(`Unknown action: ${String(action["type"])}`);
   }
 }
 
