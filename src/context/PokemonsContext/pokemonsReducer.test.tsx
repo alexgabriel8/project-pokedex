@@ -7,7 +7,7 @@ import { useReducer } from "react";
 import { PokemonsContext } from "./PokemonsContext";
 
 // Constants
-import mockPkms from "../../../tests/mockPkms.json";
+import { mockedPkms } from "../../../tests/mockedPkms";
 
 // Reducer
 import { pokemonsReducer } from "./pokemonsReducer";
@@ -71,9 +71,9 @@ describe("Actions", () => {
         it("Should add Pokémon to State", async () => {
             const user = userEvent.setup();
 
-            const validDispatch = {
+            const validDispatch: TPkmAction = {
                 type: "ADD_PKM",
-                pokemon: mockPkms[0]
+                pokemon: mockedPkms.structured[0]
             }
 
             render(
@@ -83,7 +83,7 @@ describe("Actions", () => {
             const dispatchBtn = screen.getByText("Dispatch")
             await user.click(dispatchBtn)
 
-            screen.getByText(mockPkms[0].name)
+            screen.getByText(mockedPkms.structured[0].name)
         })
 
         it("Should throw error if Pokémon isn't passed", async () => {
@@ -111,7 +111,7 @@ describe("Actions", () => {
 
             const validDispatch = {
                 type: "ADD_PKMS",
-                pokemons: mockPkms
+                pokemons: mockedPkms.structured
             }
 
             render(
@@ -121,8 +121,8 @@ describe("Actions", () => {
             const dispatchBtn = screen.getByText("Dispatch");
             await user.click(dispatchBtn);
             
-            screen.getByText(mockPkms[0].name)
-            screen.getByText(mockPkms[1].name)
+            screen.getByText(mockedPkms.structured[0].name)
+            screen.getByText(mockedPkms.structured[1].name)
         })
 
         it("Should throw error if Pokémons are not passed", async () => {
@@ -153,7 +153,7 @@ describe("Actions", () => {
 
             const addPkmsDispatch = {
                 type: "ADD_PKMS",
-                pokemons: mockPkms
+                pokemons: [...mockedPkms.structured]
             }
 
             const { rerender } = render(
@@ -163,8 +163,8 @@ describe("Actions", () => {
             const dispatchBtn = screen.getByText("Dispatch");
             await user.click(dispatchBtn);
 
-            screen.getByText(mockPkms[0].name);
-            screen.getByText(mockPkms[1].name);
+            screen.getByText(mockedPkms.structured[0].name);
+            screen.getByText(mockedPkms.structured[1].name);
 
             rerender(
                 <Dispatcher dispatch={validDispatch as unknown as TPkmAction} />
@@ -172,7 +172,7 @@ describe("Actions", () => {
 
             await user.click(dispatchBtn);
             
-            expect(screen.queryByText(mockPkms[0].name)).toBeNull()
+            expect(screen.queryByText(mockedPkms.structured[0].name)).toBeNull()
         })
     })
 })
