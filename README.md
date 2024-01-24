@@ -65,11 +65,12 @@
 
    <summary>A list of Pokémons that:</summary>
 
-   - Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
-   - Can be increased by typing the Pokémon's name or ID or by letting the App get 1 to 10 random ones.
-   - Exhibits amount of Pokémons inside it.
-   - (WIP) Can sort Pokémons by ID, name or type(s).
-   - (WIP) Can filter by type(s).
+   - [X] Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
+   - [X] Can be increased by typing the Pokémon's name or ID or by letting the App get 1 to 10 random ones.
+   - [X] Exhibits amount of Pokémons inside it.
+   - [ ] Allows deleting a Pokémon from it.
+   - [ ] Can sort Pokémons by ID, name or type(s).
+   - [ ] Can filter by type(s).
 
 </details>
 
@@ -77,8 +78,8 @@
 
    <summary>Page containing details of a Pokémon:</summary>
 
-      - Shows Pokemon artwork, name, ID, Genus, types, stats, habitat, height, weight, generation, description, abilities and moves.
-      - Shows previous and next Pokémons based on the ID of the current Pokémon.
+   - [X] Shows Pokemon artwork, name, ID, Genus, types, stats, habitat, height, weight, generation, description, abilities and moves.
+   - [X] Shows previous and next Pokémons based on the ID of the current Pokémon.
 
 </details>
 
@@ -86,8 +87,8 @@
 
    <summary>Theme:</summary>
 
-   - Starts with light or dark theme depending on user's preference.
-   - Toggle between light and dark themes.
+   - [X] Starts with light or dark theme depending on user's preference.
+   - [X] Toggle between light and dark themes.
 
 </details>
 
@@ -95,9 +96,9 @@
 
    <summary>Settings:</summary>
 
-   - Let user choose animated or static sprites for the Pokémon List.
-   - Allow to save or not Pokémon List in Local Storage.
-   - Empty the Pokémon List.
+   - [X] Let user choose animated or static sprites for the Pokémon List.
+   - [X] Allow to save or not Pokémon List in Local Storage.
+   - [X] Empty the Pokémon List.
 
 </details>
 
