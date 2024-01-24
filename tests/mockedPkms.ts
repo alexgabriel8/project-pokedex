@@ -2,7 +2,7 @@ import { IPokemon } from "../src/types/pokemon.types";
 
 type TMockPkms = {
     structured: IPokemon[];
-    unstructured: object;
+    unstructured: object[];
 }
 
 const mockedPkms: TMockPkms = {
