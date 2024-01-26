@@ -14,7 +14,7 @@ type Move = {
 type Sprites = {
   static: string;
   animated: string | null;
-  artwork: string;
+  artwork: string | null;
 };
 
 type Stats = {

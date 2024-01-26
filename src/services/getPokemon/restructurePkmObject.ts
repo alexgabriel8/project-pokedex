@@ -1,7 +1,8 @@
 import { Stats, IPokemon } from "../../types/pokemon.types";
+import { PokeAPI } from "pokeapi-types";
 
-function restructurePkmObject(pokemon: any): IPokemon {
-  let newPkm = {
+function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
+  const newPkm = {
     abilities: [],
     moves: [],
     stats: {},
@@ -14,7 +15,7 @@ function restructurePkmObject(pokemon: any): IPokemon {
   newPkm.weight = pokemon.weight;
   newPkm.id = pokemon.id;
 
-  pokemon.abilities.forEach((ability: any) => {
+  pokemon.abilities.forEach((ability: PokeAPI.PokemonAbility) => {
     newPkm.abilities.push({
       name: ability.ability.name,
       url: ability.ability.url,
@@ -22,7 +23,7 @@ function restructurePkmObject(pokemon: any): IPokemon {
     });
   });
 
-  pokemon.moves.forEach((move: any) => {
+  pokemon.moves.forEach((move: PokeAPI.PokemonMove) => {
     newPkm.moves.push({
       name: move.move.name,
       url: move.move.url,
@@ -32,13 +33,14 @@ function restructurePkmObject(pokemon: any): IPokemon {
   newPkm.sprites.static = pokemon.sprites.front_default;
 
   newPkm.sprites.artwork =
-    pokemon.sprites.other["official-artwork"].front_default;
+    pokemon.sprites.other?.["official-artwork"]?.front_default ?? null;
 
+  // pokeapi-types does not have animated in its type definitions
   newPkm.sprites.animated =
-    pokemon.sprites.versions["generation-v"]["black-white"].animated
-      .front_default ?? null;
+    pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated // @ts-ignore
+      ?.front_default as string ?? null;
 
-  pokemon.stats.forEach((stat: any) => {
+  pokemon.stats.forEach((stat: PokeAPI.PokemonStat) => {
     if (stat.stat.name === "special-attack")
       newPkm.stats.spAttack = stat.base_stat;
     else if (stat.stat.name === "special-defense")

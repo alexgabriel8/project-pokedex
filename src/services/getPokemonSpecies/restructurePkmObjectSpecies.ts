@@ -1,6 +1,7 @@
+import { PokeAPI } from "pokeapi-types";
 import { IPokemon, SpeciesInfo } from "../../types/pokemon.types";
 
-function restructurePkmObjectSpecies(pokemon: IPokemon, species: any) {
+function restructurePkmObjectSpecies(pokemon: IPokemon, species: PokeAPI.PokemonSpecies) {
   pokemon.speciesInfo = {} as unknown as SpeciesInfo;
 
   pokemon.speciesInfo.generation = species.generation.name.replace(
@@ -20,7 +21,7 @@ function restructurePkmObjectSpecies(pokemon: IPokemon, species: any) {
 
   for (let i = 0; i < species.genera.length; i++) {
     if (species.genera[i].language.name === "en") {
-      pokemon.speciesInfo.genera = species.genera[i].genus.match(/\w+/i);
+      pokemon.speciesInfo.genera = species.genera[i].genus.match(/\w+/i)![0];
       i = species.genera.length;
     }
   }
