@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
-import { Ability } from "../../../../../../../types/pokemon.types";
+
+// Scripts
 import { getPkmAbilityDescription } from "../../../../../../../services/getPkmAbilityDescription/getPkmAbilityDescription";
+
+// Types
+import { Ability } from "../../../../../../../types/pokemon.types";
 
 const useFetchPkmAbilityDescription = (ability: Ability) => {
   const [abilityDesc, setAbilityDesc] = useState("");
@@ -15,9 +19,9 @@ const useFetchPkmAbilityDescription = (ability: Ability) => {
       getPkmAbilityDescription(ability.url)
         .then((fetchedAbilityDesc) => {
           ability.description = fetchedAbilityDesc;
-          setAbilityDesc(fetchedAbilityDesc);
+          setAbilityDesc(fetchedAbilityDesc as string);
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           setFetchError("Error: " + err.message);
         });
     }
