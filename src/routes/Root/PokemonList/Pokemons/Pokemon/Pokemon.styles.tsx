@@ -10,17 +10,17 @@ import { smartTv } from "../../../../../constants/breakpoints";
 // Types
 import { Types } from "../../../../../types/pokemon.types";
 
-const NavLink = styled(ReactRouterDOMNavLink)`
+type NavLinkProps = {
+  $pkmTypes: Types;
+};
+const NavLink = styled(ReactRouterDOMNavLink)<NavLinkProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding-left: 5px;
-  padding-right: 30px;
-
-  height: 100px;
+  padding: 10px 15px;
   @media screen and (min-width: ${smartTv}px) {
-    height: 200px;
+    padding: 20px 30px;
   }
 
   text-shadow: 0 0 10px #ffffff30;
@@ -30,18 +30,9 @@ const NavLink = styled(ReactRouterDOMNavLink)`
     font-weight: bold;
     outline: 5px solid #000;
   }
-`;
 
-type LiProps = {
-  $pkmTypes: Types;
-};
-const Li = styled.li<LiProps>`
-  margin: 5px 0;
   &&:hover {
     filter: brightness(120%);
-  }
-  @media (min-width: ${smartTv}px) {
-    margin: 10px 0;
   }
 
   background: linear-gradient(
@@ -53,6 +44,15 @@ const Li = styled.li<LiProps>`
           : typeColor[$pkmTypes.primary]}
       50%
   );
+`;
+
+const Li = styled.li`
+  position: relative;
+
+  margin: 5px 0;
+  @media (min-width: ${smartTv}px) {
+    margin: 10px 0;
+  }
 
   transition: filter 0.1s;
 `;
@@ -67,10 +67,6 @@ const ImgWrapper = styled.div`
   @media screen and (min-width: ${smartTv}px) {
     width: 162px;
     height: 162px;
-  }
-  
-  &&.animated {
-    padding: 10px;
   }
   
   img {
