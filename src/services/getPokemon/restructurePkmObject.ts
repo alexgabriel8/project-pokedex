@@ -35,9 +35,8 @@ function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
   newPkm.sprites.artwork =
     pokemon.sprites.other?.["official-artwork"]?.front_default ?? null;
 
-  // pokeapi-types does not have animated in its type definitions
   newPkm.sprites.animated =
-    pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated // @ts-ignore
+    pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated // @ts-expect-error - pokeapi-types don't have animated in its type definitions
       ?.front_default as string ?? null;
 
   pokemon.stats.forEach((stat: PokeAPI.PokemonStat) => {
