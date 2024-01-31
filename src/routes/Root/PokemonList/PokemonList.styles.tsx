@@ -26,7 +26,7 @@ const PokemonList = styled.div<PokemonListProps>`
     flex-basis: 0px;
   }
   @media screen and (max-width: 400px) {
-    flex-shrink: 0.2;
+    max-width: 87vw;
   }
   @media screen and (min-width: ${smartTv}px) {
     flex-basis: 700px;
