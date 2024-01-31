@@ -4,7 +4,7 @@ import { createContext, useReducer } from "react";
 import { pokemonsReducer } from "./pokemonsReducer";
 
 // Hooks
-import { useLoadInitialPokemons } from "./useLoadInitialPokemons";
+import { useLoadInitialPokemons } from "./hooks/useLoadInitialPokemons";
 
 // Types
 import { TPokemonsContext } from "./PokemonsContext.types";
