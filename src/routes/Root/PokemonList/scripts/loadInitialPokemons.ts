@@ -7,7 +7,7 @@ import { getLocalStorageItem } from "../../../../scripts/localStorage";
 import { allowInputUse } from "./toggleInputUsage";
 
 // Types
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 import { IPokemon } from "../../../../types/pokemon.types";
 
 async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {

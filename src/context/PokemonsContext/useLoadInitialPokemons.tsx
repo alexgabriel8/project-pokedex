@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { loadInitialPokemons } from "../../routes/Root/PokemonList/scripts/loadInitialPokemons";
 
 // Types
-import { TPkmAction } from "./pokemonsReducer";
+import { TPkmAction } from "./pokemonsReducer.types";
 
 const useLoadInitialPokemons = (dispatchPokemons: React.Dispatch<TPkmAction>) => {
     const loadInitialPokemonsCalled = useRef(false);

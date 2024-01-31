@@ -1,18 +1,5 @@
 import { IPokemon } from "../../types/pokemon.types";
-
-type AddPkmAction = {
-  type: "ADD_PKM";
-  pokemon: IPokemon;
-};
-type AddPkmsAction = {
-  type: "ADD_PKMS";
-  pokemons: IPokemon[];
-};
-type ClearListAction = {
-  type: "CLEAR_LIST"
-}
-
-type TPkmAction = AddPkmAction | AddPkmsAction | ClearListAction;
+import { TPkmAction } from "./pokemonsReducer.types";
 
 function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
   if(!action?.type) throw new Error(`Invalid action`)
@@ -30,6 +17,11 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
           "Dispatched ADD_PKMS action without providing pokemons",
         );
       return [...pokemons, ...action.pokemons];
+    }
+    
+    case "REMOVE_PKM": {
+      if(!action.id) throw new Error("Dispatched REMOVE_PKM without providing ID")
+      return pokemons.filter(pkm => pkm.id !== action.id)
     }
 
     case "CLEAR_LIST": {

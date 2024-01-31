@@ -1,5 +1,5 @@
 import { IPokemon } from "../../types/pokemon.types";
-import { TPkmAction } from "./pokemonsReducer";
+import { TPkmAction } from "./pokemonsReducer.types";
 
 type TPokemonsContext = {
   pokemons: IPokemon[];

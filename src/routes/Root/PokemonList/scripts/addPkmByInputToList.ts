@@ -1,10 +1,10 @@
 // Scripts
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 import { slugifyString } from "../../../../scripts/slugifyString";
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
 // Types
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
 
 async function addPkmByInputToList(
   dispatch: React.Dispatch<TPkmAction>,

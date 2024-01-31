@@ -3,7 +3,7 @@ import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { allowInputUse } from "./toggleInputUsage";
 
 // Types
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer";
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 
 async function addPkmsByAmountToList(
   dispatch: React.Dispatch<TPkmAction>,
