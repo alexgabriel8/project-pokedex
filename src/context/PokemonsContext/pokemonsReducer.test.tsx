@@ -14,6 +14,7 @@ import { pokemonsReducer } from "./pokemonsReducer";
 
 // Types
 import { TPkmAction } from "./pokemonsReducer";
+import { AddPkmsAction, RemovePkmAction } from "./pokemonsReducer.types";
 
 const Dispatcher = ({dispatch}: {dispatch: TPkmAction}) => {
     const [ pokemons, dispatchPokemons ] = useReducer(pokemonsReducer, [])
@@ -140,6 +141,59 @@ describe("Actions", () => {
             await expect(async () => {
                 await user.click(dispatchBtn);
             }).rejects.toThrow("Dispatched ADD_PKMS action without providing pokemons")
+        })
+    })
+
+    describe("REMOVE_PKM", () => {
+        it("Should remove Pokémon from state", async () => {
+            const user = userEvent.setup();
+
+            const addPkmsDispatch: AddPkmsAction = {
+                type: "ADD_PKMS",
+                pokemons: mockedPkms.structured
+            }
+
+            const validDispatch: RemovePkmAction = {
+                type: "REMOVE_PKM",
+                pkmIndex: 0
+            }
+
+            const { rerender } = render(
+                <Dispatcher dispatch={addPkmsDispatch} />
+            )
+
+            const dispatchBtn = screen.getByText("Dispatch");
+
+            await user.click(dispatchBtn);
+
+            screen.getByText(mockedPkms.structured[0].name);
+            screen.getByText(mockedPkms.structured[1].name);
+
+            rerender(
+                <Dispatcher dispatch={validDispatch} />
+            );
+
+            await user.click(dispatchBtn);
+
+            expect(screen.queryByText(mockedPkms.structured[0].name)).toBeNull();
+            screen.getByText(mockedPkms.structured[1].name);
+        })
+
+        it("Should throw error if ID is not provided", async () => {
+            const user = userEvent.setup();
+
+            const invalidDispatch = {
+                type: "REMOVE_PKM",
+            }
+
+            render(
+                <Dispatcher dispatch={invalidDispatch as unknown as TPkmAction} />
+            )
+
+            const dispatchBtn = screen.getByText("Dispatch");
+            await expect(async () => {
+                await user.click(dispatchBtn);
+            }).rejects.toThrow("Dispatched REMOVE_PKM without providing ID")
         })
     })
 

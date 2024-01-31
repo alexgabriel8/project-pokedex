@@ -20,8 +20,9 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction) {
     }
     
     case "REMOVE_PKM": {
-      if(!action.id) throw new Error("Dispatched REMOVE_PKM without providing ID")
-      return pokemons.filter(pkm => pkm.id !== action.id)
+      if(typeof action.pkmIndex !== "number") throw new Error("Dispatched REMOVE_PKM without providing ID")
+
+      return pokemons.filter((_, i) => i !== action.pkmIndex)
     }
 
     case "CLEAR_LIST": {

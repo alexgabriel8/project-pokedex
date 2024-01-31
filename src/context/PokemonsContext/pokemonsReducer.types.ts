@@ -10,7 +10,7 @@ type AddPkmsAction = {
 };
 type RemovePkmAction = {
     type: "REMOVE_PKM";
-    id: number;
+    pkmIndex: number;
 }
 type ClearListAction = {
     type: "CLEAR_LIST"

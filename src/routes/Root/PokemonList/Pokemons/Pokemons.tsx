@@ -7,19 +7,18 @@ import { IPokemon } from "../../../../types/pokemon.types";
 type Props = {
   pokemons: IPokemon[];
 };
-const Pokemons = ({ pokemons }: Props) => {
-  return (
-    <ul>
-      {
-        pokemons.map((pokemon) => (
-          <Pokemon
-            pokemon={pokemon}
-            key={pokemon.id + ` ${Math.random() * 10}`}
-          />
-        ))
-      }
-    </ul>
-  );
-};
+const Pokemons = ({ pokemons }: Props) => (
+  <ul>
+    {
+      pokemons.map((pokemon, i) => (
+        <Pokemon
+          pokemon={pokemon}
+          pkmIndex={i}
+          key={pokemon.id + ` ${Math.random() * 10}`}
+        />
+      ))
+    }
+  </ul>
+);
 
 export { Pokemons };

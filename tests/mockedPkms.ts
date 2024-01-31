@@ -110,7 +110,7 @@ const mockedPkms: TMockPkms = {
             "name": "charmander",
             "height": 7,
             "weight": 222,
-            "id": 802
+            "id": 4
         }
     ],
     "unstructured": [
