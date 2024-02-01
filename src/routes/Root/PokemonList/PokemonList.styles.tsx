@@ -32,6 +32,17 @@ const PokemonList = styled.div<PokemonListProps>`
     flex-basis: 700px;
   }
 
+  &&.disabled {
+    .pokemon .remove-pkm,
+    #add-pkm-by-amount,
+    #add-pkm-by-input {
+      pointer-events: none;
+      filter: brightness(40%);
+      
+      transition: filter .5s;
+    }
+  }
+
   transition: flex-basis 0.5s;
 `;
 

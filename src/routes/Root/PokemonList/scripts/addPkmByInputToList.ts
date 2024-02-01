@@ -1,10 +1,10 @@
 // Scripts
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 import { slugifyString } from "../../../../scripts/slugifyString";
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
-import { allowInputUse } from "./toggleInputUsage";
+import { allowPkmListInteraction } from "./allowPkmListInteraction";
 
 // Types
+import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 
 async function addPkmByInputToList(
   dispatch: React.Dispatch<TPkmAction>,
@@ -13,9 +13,8 @@ async function addPkmByInputToList(
   if (input === "") return;
 
   try {
-    allowInputUse(false);
+    allowPkmListInteraction(false);
 
-    input = input.trim();
     input = slugifyString(input);
 
     const fetchedPokemon = await getPokemon(input);
@@ -29,7 +28,7 @@ async function addPkmByInputToList(
   } catch (err) {
     console.error(err);
   } finally {
-    allowInputUse(true);
+    allowPkmListInteraction(true);
   }
 }
 

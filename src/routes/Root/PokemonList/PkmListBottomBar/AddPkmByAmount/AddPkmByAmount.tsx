@@ -36,17 +36,15 @@ const AddPkmByAmount = (props: Props) => {
   };
 
   return (
-    <S.AddPkmByInputWrapper>
+    <S.AddPkmByInputWrapper id="add-pkm-by-amount">
       <S.PlusIcon
         onClick={() => props.addPkmsByAmountToList(amount)}
-        id="icon-add-pkm-by-amount"
         theme={activeTheme}
       />
       <S.AddPkmByInput
         theme={activeTheme}
         type="number"
         autoComplete="off"
-        id="input-add-pkm-by-amount"
         value={amount}
         onChange={handleOnChange}
         onKeyDown={handleKeyDown}

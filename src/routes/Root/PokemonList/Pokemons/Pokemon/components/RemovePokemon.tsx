@@ -18,7 +18,11 @@ const RemovePokemon = ({pkmIndex}: Props) => {
     const removePokemon = useRemovePokemon(pkmIndex);
     const handleClick = () => removePokemon();
 
-    return <S.RemovePokemonContainer onClick={handleClick} theme={activeTheme} />   
+    return <S.RemovePokemonContainer
+            onClick={handleClick}
+            theme={activeTheme}
+            className="remove-pkm"
+           />   
 }
 
 export { RemovePokemon };

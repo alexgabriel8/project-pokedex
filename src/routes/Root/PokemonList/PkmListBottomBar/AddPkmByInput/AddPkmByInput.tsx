@@ -17,9 +17,8 @@ const AddPkmByInput = (props: Props) => {
   };
 
   return (
-    <S.AddPkmByInputWrapper>
+    <S.AddPkmByInputWrapper id="add-pkm-by-input">
       <S.SearchIcon
-        id="icon-add-pkm-by-input"
         theme={activeTheme}
         onClick={() =>
           props.addPkmByInputToList(

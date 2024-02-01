@@ -4,15 +4,15 @@ import { savedPokemonsLocalStorageKey } from "../../../../constants/localStorage
 // Scripts
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
 import { getLocalStorageItem } from "../../../../scripts/localStorage";
-import { allowInputUse } from "./toggleInputUsage";
 
 // Types
 import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
 import { IPokemon } from "../../../../types/pokemon.types";
+import { allowPkmListInteraction } from "./allowPkmListInteraction";
 
 async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
   try {
-    allowInputUse(false);
+    allowPkmListInteraction(false);
 
     const initialPokemons = getLocalStorageItem(savedPokemonsLocalStorageKey) as unknown as IPokemon[];
     if (!initialPokemons) {
@@ -31,7 +31,7 @@ async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
   } catch (error) {
     console.error(error);
   } finally {
-    allowInputUse(true);
+    allowPkmListInteraction(true);
   }
 }
 

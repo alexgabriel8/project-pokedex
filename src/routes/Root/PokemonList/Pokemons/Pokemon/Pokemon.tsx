@@ -29,7 +29,7 @@ const Pokemon = ({ pokemon, pkmIndex }: Props) => {
 
   return (
     <>
-      <S.Li >
+      <S.Li className="pokemon">
         <S.NavLink
           theme={activeTheme}
           $pkmTypes={pokemon.types}

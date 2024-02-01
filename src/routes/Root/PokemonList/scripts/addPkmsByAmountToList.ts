@@ -1,6 +1,6 @@
 // Scripts
 import { getPokemon } from "../../../../services/getPokemon/getPokemon";
-import { allowInputUse } from "./toggleInputUsage";
+import { allowPkmListInteraction } from "./allowPkmListInteraction";
 
 // Types
 import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
@@ -10,7 +10,7 @@ async function addPkmsByAmountToList(
   amount: number,
 ) {
   try {
-    allowInputUse(false);
+    allowPkmListInteraction(false);
 
     for (let i = 0; i < amount; i++) {
       const fetchedPokemon = await getPokemon();
@@ -22,7 +22,7 @@ async function addPkmsByAmountToList(
   } catch (err) {
     console.log(err);
   } finally {
-    allowInputUse(true);
+    allowPkmListInteraction(true);
   }
 }
 
