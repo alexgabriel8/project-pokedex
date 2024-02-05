@@ -66,7 +66,7 @@ const CloseSettings = styled(XMarkSvg)<Props>`
 
     align-self: flex-end;
 
-    fill: ${({ theme }) => theme.terciary};
+    fill: ${({ theme }) => theme.status.danger};
 
     cursor: pointer;
 `
