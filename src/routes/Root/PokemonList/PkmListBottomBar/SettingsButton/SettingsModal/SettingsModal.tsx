@@ -4,32 +4,32 @@ import { useContext } from "react";
 import * as S from "./SettingsModal.styles";
 import { SettingsOptions } from "./components/SettingsOptions/SettingsOptions";
 
-// Scripts
-import { handleCloseSettings } from "../scripts/handleCloseSettings";
-
 // Hooks
 import { useSaveSettingsToLocalStorage } from "./hooks/useSaveSettingsToLocalStorage";
 
 // Contexts
 import { ThemeContext } from "../../../../../../context/ThemeContext/ThemeContext";
 
-const SettingsModal = () => {
+type Props = {
+    closeSettings: React.MouseEventHandler;
+}
+
+const SettingsModal = ({ closeSettings }: Props) => {
     const { activeTheme } = useContext(ThemeContext)!;
 
     useSaveSettingsToLocalStorage();
 
     return (
         <S.SettingsModalWrapper
-            className="hidden"
             id="settings-modal"
-            onClick={handleCloseSettings}
+            onClick={closeSettings}
         >
             <S.SettingsModalContainer
                 onClick={(e) => e.stopPropagation()}
                 theme={activeTheme}
             >
                 <S.CloseSettings
-                    onClick={handleCloseSettings}
+                    onClick={closeSettings}
                     theme={activeTheme}
                 />
                 <SettingsOptions />
@@ -38,5 +38,4 @@ const SettingsModal = () => {
     )
 }
 
-
-export { SettingsModal }
+export { SettingsModal };

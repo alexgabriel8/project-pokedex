@@ -27,10 +27,6 @@ const SettingsModalWrapper = styled.div`
     align-items: center;
 
     background-color: #292929A0;
-
-    &&.hidden {
-        display: none;
-    }
 `
 
 const SettingsModalContainer = styled.div<Props>`
