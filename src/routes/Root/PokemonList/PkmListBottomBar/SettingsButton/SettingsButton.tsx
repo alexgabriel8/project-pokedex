@@ -14,7 +14,7 @@ import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
 
 const SettingsButton = () => {
     const { activeTheme } = useContext(ThemeContext)!;
-    const [ showModal, setShowModal ] = useState(true);
+    const [ showModal, setShowModal ] = useState(false);
 
     const openSettings = useOpenSettings(setShowModal);
     const closeSettings = useCloseSettings(setShowModal);
