@@ -68,7 +68,7 @@
    - [X] Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
    - [X] Can be increased by typing the Pokémon's name or ID or by letting the App get 1 to 10 random ones.
    - [X] Exhibits amount of Pokémons inside it.
-   - [ ] Allows deleting a Pokémon from it.
+   - [X] Allows deleting a Pokémon from it.
    - [ ] Can sort Pokémons by ID, name or type(s).
    - [ ] Can filter by type(s).
 
