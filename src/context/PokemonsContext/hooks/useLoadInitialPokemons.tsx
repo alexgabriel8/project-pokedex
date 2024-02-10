@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 // Hooks
-import { loadInitialPokemons } from "../../../routes/Root/PokemonList/scripts/loadInitialPokemons";
+import { loadInitialPokemons } from "@routes/Root/PokemonList/scripts/loadInitialPokemons";
 
 // Types
 import { TPkmAction } from "../pokemonsReducer.types";

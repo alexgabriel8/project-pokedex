@@ -7,7 +7,7 @@ import { SettingsContext } from "../SettingsContext"
 import { defaultSettings } from "../defaultSettings";
 
 // Types
-import { Settings } from "../../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 const useUpdateSettingValue = (setting: keyof Settings, value: boolean) => {
     const { settings, setSettings } = useContext(SettingsContext)!;

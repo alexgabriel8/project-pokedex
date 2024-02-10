@@ -1,4 +1,4 @@
-import { TThemes } from "./themes.types";
+import { TThemes } from "../../types/themes.types";
 
 const themes: TThemes = {
   light: {

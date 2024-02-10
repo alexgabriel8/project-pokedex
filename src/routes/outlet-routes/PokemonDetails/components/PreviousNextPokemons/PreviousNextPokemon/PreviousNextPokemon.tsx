@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { useFetchAdjacentPokemon } from "./useFetchAdjacentPokemon";
 
 // Context
-import { ThemeContext } from "../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
     position: "left" | "right";

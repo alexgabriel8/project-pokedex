@@ -5,7 +5,7 @@ import { loadInitialSettings } from "./loadInitialSettings";
 
 // Constants
 import { defaultSettings } from "../defaultSettings";
-import { userSettingsLocalStorageKey } from "../../../constants/localStorageAccessKeys";
+import { userSettingsLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 describe("Settings not present in Local Storage", () => {
     it("Should return default settings", () => {

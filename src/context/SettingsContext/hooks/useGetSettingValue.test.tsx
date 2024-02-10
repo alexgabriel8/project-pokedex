@@ -11,7 +11,7 @@ import { defaultSettings } from "../defaultSettings";
 import { SettingsProvider } from "../SettingsContext";
 
 // Types
-import { Settings } from "../../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 const SettingValue = ({setting}: {setting: keyof Settings}) => (
     String(useGetSettingValue(setting))

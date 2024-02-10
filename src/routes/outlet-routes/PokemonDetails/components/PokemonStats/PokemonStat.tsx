@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./PokemonStat.styles";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const PokemonStat = ({ stat, value }: { stat: string; value: number }) => {
   const { activeTheme } = useContext(ThemeContext)!;

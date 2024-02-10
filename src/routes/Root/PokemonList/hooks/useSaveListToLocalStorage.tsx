@@ -1,14 +1,14 @@
 import { useContext, useEffect } from "react"
 
 // Scripts
-import { saveOnLocalStorage } from "../../../../scripts/localStorage";
+import { saveOnLocalStorage } from "@scripts/localStorage";
 
 // Constants
-import { savedPokemonsLocalStorageKey } from "../../../../constants/localStorageAccessKeys";
+import { savedPokemonsLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 // Context
-import { PokemonsContext } from "../../../../context/PokemonsContext/PokemonsContext"
-import { SettingsContext } from "../../../../context/SettingsContext/SettingsContext";
+import { PokemonsContext } from "@context/PokemonsContext/PokemonsContext"
+import { SettingsContext } from "@context/SettingsContext/SettingsContext";
 
 const useSaveListToLocalStorage = () => {
     const { pokemons } = useContext(PokemonsContext)!;

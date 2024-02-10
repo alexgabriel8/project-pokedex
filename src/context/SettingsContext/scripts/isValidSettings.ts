@@ -2,7 +2,7 @@
 import { defaultSettings } from "../defaultSettings";
 
 // Types
-import { Settings } from "../../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 function isBoolean(value: unknown) {
     return value === true || value === false

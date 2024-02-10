@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./BottomBarToggler.styles";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const BottomBarToggler = () => {
   const { activeTheme } = useContext(ThemeContext)!;

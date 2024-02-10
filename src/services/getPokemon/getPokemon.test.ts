@@ -1,13 +1,13 @@
 import { it, expect } from "vitest";
 
 // Mocks
-import { fetchPokeAPIMock } from "../../../tests/mocks/fetchPokeAPIMock";
+import { fetchPokeAPIMock } from "@tests/mocks/fetchPokeAPIMock";
 
 // Scripts
 import { getPokemon } from "./getPokemon";
 
 // Constants
-import { mockedPkms } from "../../../tests/mockedPkms"
+import { mockedPkms } from "@tests/mockedPkms"
 
 it("Should fetch Pokémon", async () => {
     fetchPokeAPIMock.getPokemon.withPokemon();

@@ -8,7 +8,7 @@ import { PreviousNextPokemon } from "./PreviousNextPokemon/PreviousNextPokemon";
 import { useIsPokemonListOpen } from "./useIsPokemonListOpen";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const PreviousNextPokemons = ({currentPkmId}: {currentPkmId: number}) => {
     const { activeTheme } = useContext(ThemeContext)!;

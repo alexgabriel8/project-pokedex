@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./PkmListToggler.styles";
 
 // Context
-import { ThemeContext } from "../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const PkmListToggler = () => {
   const { activeTheme } = useContext(ThemeContext)!;

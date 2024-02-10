@@ -1,4 +1,4 @@
-import { Settings } from "../../../../../../../../../types/settings.types";
+import { Settings } from "@types/settings.types";
 
 type ToggleOption = {
     children: string;

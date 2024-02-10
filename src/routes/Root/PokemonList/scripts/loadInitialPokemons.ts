@@ -1,14 +1,14 @@
 // Constants
-import { savedPokemonsLocalStorageKey } from "../../../../constants/localStorageAccessKeys";
+import { savedPokemonsLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 // Scripts
-import { getPokemon } from "../../../../services/getPokemon/getPokemon";
-import { getLocalStorageItem } from "../../../../scripts/localStorage";
+import { getPokemon } from "@services/getPokemon/getPokemon";
+import { getLocalStorageItem } from "@scripts/localStorage";
+import { allowPkmListInteraction } from "./allowPkmListInteraction";
 
 // Types
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
-import { IPokemon } from "../../../../types/pokemon.types";
-import { allowPkmListInteraction } from "./allowPkmListInteraction";
+import { TPkmAction } from "@context/PokemonsContext/pokemonsReducer.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
   try {

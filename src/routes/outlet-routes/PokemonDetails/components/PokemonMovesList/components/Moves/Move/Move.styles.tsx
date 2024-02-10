@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-import { smartTv } from "../../../../../../../../constants/breakpoints";
+// Breakpoints
+import { smartTv } from "@constants/breakpoints";
 
-const MoveContainer = styled.li`
+// Types
+import { TTheme } from "@typings/themes.types";
+
+type Props = {
+    theme: TTheme;
+}
+
+const MoveContainer = styled.li<Props>`
     text-transform: capitalize;
 
     color: white;

@@ -4,10 +4,10 @@ import { useContext } from "react";
 import * as S from "./RemovePokemon.styles";
 
 // Hooks
-import { useRemovePokemon } from "../../../../../../context/PokemonsContext/hooks/useRemovePokemon";
+import { useRemovePokemon } from "@contewxt/PokemonsContext/hooks/useRemovePokemon";
 
 // Context
-import { ThemeContext } from "../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
     pkmIndex: number;

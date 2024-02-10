@@ -1,12 +1,15 @@
+import { useContext } from "react";
+
 // Components
-import * as S from "./Moves.styles"
-import { Move } from "./Move/Move"
-import { MoveContainer } from "./Move/Move.styles"
+import * as S from "./Moves.styles";
+import { Move } from "./Move/Move";
+import { MoveContainer } from "./Move/Move.styles";
 
 // Types
-import * as PkmTypes from "../../../../../../../types/pokemon.types"
-import { useContext } from "react"
-import { ThemeContext } from "../../../../../../../context/ThemeContext/ThemeContext"
+import * as PkmTypes from "@typings/pokemon.types";
+
+// Context
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Moves = ({ moves }: {moves: PkmTypes.Move[]}) => {
     const { activeTheme } = useContext(ThemeContext)!;

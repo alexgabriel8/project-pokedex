@@ -1,11 +1,14 @@
 import { afterEach, describe, expect, it } from "vitest";
 
+// Scripts
 import { loadInitialTheme } from "./loadInitialTheme";
-import { themes } from "../../constants/themes/themes";
 
-import { lastUsedThemeLocalStorageKey } from "../../constants/localStorageAccessKeys";
+// Constants
+import { themes } from "@constants/themes/themes";
+import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys";
 
-import { matchMediaMock } from "../../../tests/mocks/matchMediaMock";
+// Mocks
+import { matchMediaMock } from "@tests/mocks/matchMediaMock";
 
 describe("Load initial theme", () => {
   afterEach(() => {

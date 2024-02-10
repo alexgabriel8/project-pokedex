@@ -1,4 +1,4 @@
-import { Stats, IPokemon } from "../../types/pokemon.types";
+import { Stats, IPokemon } from "@typings/pokemon.types";
 import { PokeAPI } from "pokeapi-types";
 
 function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {

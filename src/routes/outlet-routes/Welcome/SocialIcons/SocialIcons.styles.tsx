@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { smartTv } from "../../../../constants/breakpoints";
+
+// Breakpoints
+import { smartTv } from "@constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 // Scripts
-import { getPkmAbilityDescription } from "../../../../../../../services/getPkmAbilityDescription/getPkmAbilityDescription";
+import { getPkmAbilityDescription } from "@services/getPkmAbilityDescription/getPkmAbilityDescription";
 
 // Types
-import { Ability } from "../../../../../../../types/pokemon.types";
+import { Ability } from "@typings/pokemon.types";
 
 const useFetchPkmAbilityDescription = (ability: Ability) => {
   const [abilityDesc, setAbilityDesc] = useState("");

@@ -7,10 +7,10 @@ import { SocialIcons } from "./SocialIcons/SocialIcons";
 import * as S from "./Welcome.styles";
 
 // Context
-import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Welcome = () => {
-  const version = import.meta.env.VITE_APP_VERSION;
+  const version = import.meta.env.VITE_APP_VERSION as string;
   const { activeTheme } = useContext(ThemeContext)!;
 
   return (

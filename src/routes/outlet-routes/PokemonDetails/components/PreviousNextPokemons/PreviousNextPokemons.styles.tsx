@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 // Breakpoitns
-import { smartTv } from "../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type PreviousNextPokemonsContainerProps = {
     theme: TTheme;

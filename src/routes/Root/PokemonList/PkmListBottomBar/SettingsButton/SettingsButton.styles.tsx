@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 // Components
-import { GearSvg } from "../../../../../components/SvgIcons/GearSvg";
+import { GearSvg } from "@components/SvgIcons/GearSvg";
 
 // Breakpoints
-import { smartTv } from "../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type SettingsButtonCotainerProps = {
     theme: TTheme;

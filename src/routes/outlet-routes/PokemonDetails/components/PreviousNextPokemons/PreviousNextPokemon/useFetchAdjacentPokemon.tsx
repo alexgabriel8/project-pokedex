@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 // Scripts
-import { getPokemon } from "../../../../../../services/getPokemon/getPokemon";
+import { getPokemon } from "@services/getPokemon/getPokemon";
 
 // Types
-import { IPokemon } from "../../../../../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 const useFetchAdjacentPokemon = (pkmId: number) => {
     const [ pokemon, setPokemon ] = useState<string | IPokemon>("");

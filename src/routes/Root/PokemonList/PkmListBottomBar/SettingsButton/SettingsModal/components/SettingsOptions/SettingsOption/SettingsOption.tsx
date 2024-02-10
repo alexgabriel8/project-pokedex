@@ -3,17 +3,17 @@ import { useContext } from "react";
 // Components
 import * as S from "./SettingsOption.styles";
 import { SettingsOptionConfirmation } from "./SettingsOptionConfirmation/SettingsOptionConfirmation";
-import { ToggleButton, ToggleButtonCircle } from "../../../../../../../../../components/ToggleButton";
+import { ToggleButton, ToggleButtonCircle } from "@components/ToggleButton";
 
 // Scripts
 import { handleToggleOptionclick } from "./scripts/handleToggleOptionClick";
 import { handleConfirmOptionClick } from "./scripts/handleConfirmOptionClick";
 
 // Hooks
-import { useUpdateSettingValue } from "../../../../../../../../../context/SettingsContext/hooks/useUpdateSettingValue";
+import { useUpdateSettingValue } from "@context/SettingsContext/hooks/useUpdateSettingValue";
 
 // Context
-import { ThemeContext } from "../../../../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 // Types
 import { SettingsOptionProps } from "./SettingsOption.types";

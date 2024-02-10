@@ -2,13 +2,13 @@ import { useContext } from "react";
 
 // Components
 import * as S from "./ThemeToggler.styles";
-import { ToggleButton, ToggleButtonCircle } from "../../../../../components/ToggleButton";
+import { ToggleButton, ToggleButtonCircle } from "@components/ToggleButton";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 // Constants
-import { themes } from "../../../../../constants/themes/themes";
+import { themes } from "@constants/themes/themes";
 
 const ThemeToggler = () => {
     const { activeTheme, setActiveTheme } = useContext(ThemeContext)!;

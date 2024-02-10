@@ -7,7 +7,7 @@ import { defaultSettings } from "../defaultSettings";
 import { SettingsContext } from "../SettingsContext"
 
 // Types
-import { Settings } from "../../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 const useGetSettingValue = (setting: keyof Settings) => {
     const { settings } = useContext(SettingsContext)!;

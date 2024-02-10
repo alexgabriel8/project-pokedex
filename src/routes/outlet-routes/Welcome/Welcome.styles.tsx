@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 // Style
-import { OutletRoute } from "../../../styles/OutletRoute";
+import { OutletRoute } from "@styles/OutletRoute";
 
 // Types
-import { TTheme } from "../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;

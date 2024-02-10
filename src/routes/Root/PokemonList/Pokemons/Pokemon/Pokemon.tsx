@@ -5,11 +5,11 @@ import * as S from "./Pokemon.styles";
 import { RemovePokemon } from "./components/RemovePokemon";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
-import { SettingsContext } from "../../../../../context/SettingsContext/SettingsContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { SettingsContext } from "@context/SettingsContext/SettingsContext";
 
 // Types
-import { IPokemon } from "../../../../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 // Scripts
 import { pkmNameToUppercase } from "./pkmNameToUppercase";

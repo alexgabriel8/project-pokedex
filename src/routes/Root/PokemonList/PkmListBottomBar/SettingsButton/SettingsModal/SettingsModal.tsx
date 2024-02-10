@@ -8,7 +8,7 @@ import { SettingsOptions } from "./components/SettingsOptions/SettingsOptions";
 import { useSaveSettingsToLocalStorage } from "./hooks/useSaveSettingsToLocalStorage";
 
 // Contexts
-import { ThemeContext } from "../../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
     closeSettings: React.MouseEventHandler;

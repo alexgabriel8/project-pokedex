@@ -1,6 +1,10 @@
 import { useContext } from "react"
+
+// Context
+import { ThemeContext } from "@context/ThemeContext/ThemeContext"
+
+// Styles
 import * as S from "./PkmMovesListTopBar.styles"
-import { ThemeContext } from "../../../../../../../context/ThemeContext/ThemeContext"
 
 const PkmMovesListTopBar = () => {
     const { activeTheme } = useContext(ThemeContext)!;

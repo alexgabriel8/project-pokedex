@@ -1,4 +1,4 @@
-import { IPokemon } from "../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 type AddPkmAction = {
     type: "ADD_PKM";

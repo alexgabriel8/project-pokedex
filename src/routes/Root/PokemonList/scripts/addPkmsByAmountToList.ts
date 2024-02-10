@@ -1,9 +1,9 @@
 // Scripts
-import { getPokemon } from "../../../../services/getPokemon/getPokemon";
+import { getPokemon } from "@services/getPokemon/getPokemon";
 import { allowPkmListInteraction } from "./allowPkmListInteraction";
 
 // Types
-import { TPkmAction } from "../../../../context/PokemonsContext/pokemonsReducer.types";
+import { TPkmAction } from "@context/PokemonsContext/pokemonsReducer.types";
 
 async function addPkmsByAmountToList(
   dispatch: React.Dispatch<TPkmAction>,

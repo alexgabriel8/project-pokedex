@@ -8,13 +8,13 @@ import { PokemonMovesList } from "./components/PokemonMovesList/PokemonMovesList
 import { PreviousNextPokemons } from "./components/PreviousNextPokemons/PreviousNextPokemons";
 
 // Scripts
-import { pkmNameToUppercase } from "../../Root/PokemonList/Pokemons/Pokemon/pkmNameToUppercase";
+import { pkmNameToUppercase } from "@routes/Root/PokemonList/Pokemons/Pokemon/pkmNameToUppercase";
 
 // Hooks
 import { useFetchPkmWithSpecies } from "./hooks/useFetchPkmWithSpecies";
 
 // Context
-import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 // Types
 import { PokemonAbilities } from "./components/PokemonAbilities/PokemonAbilities";

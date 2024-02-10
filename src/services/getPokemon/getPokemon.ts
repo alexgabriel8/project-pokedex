@@ -1,5 +1,5 @@
 // Constants
-import { baseUrl } from "../../constants/baseUrl";
+import { baseUrl } from "@constants/baseUrl";
 const maxPkmId = 1017;
 
 // Scripts

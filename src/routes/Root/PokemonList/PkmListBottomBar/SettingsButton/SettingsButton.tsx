@@ -6,11 +6,11 @@ import * as S from "./SettingsButton.styles";
 import { SettingsModal } from "./SettingsModal/SettingsModal";
 
 // Scripts
-import { useOpenSettings } from "./scripts/useOpenSettings";
-import { useCloseSettings } from "./scripts/useCloseSettings";
+import { useOpenSettings } from "./hooks/useOpenSettings";
+import { useCloseSettings } from "./hooks/useCloseSettings";
 
 // Contexts
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const SettingsButton = () => {
     const { activeTheme } = useContext(ThemeContext)!;

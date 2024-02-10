@@ -1,9 +1,20 @@
 import styled from "styled-components";
-import { pokemonTypeColorCodes } from "../../../constants/pokemonTypeColorCodes";
-import { OutletRoute } from "../../../styles/OutletRoute";
-import * as TPokemon from "../../../types/pokemon.types";
 
-const PokemonDetails = styled(OutletRoute)`
+// Constants
+import { pokemonTypeColorCodes } from "@constants/pokemonTypeColorCodes";
+
+// Styles
+import { OutletRoute } from "@styles/OutletRoute";
+
+// Types
+import * as TPokemon from "@typings/pokemon.types";
+import { TTheme } from "@typings/themes.types";
+
+type Props = {
+  theme: TTheme;
+}
+
+const PokemonDetails = styled(OutletRoute)<Props>`
   gap: 5px;
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => (props.theme.name === "light" ? "black" : "white")};

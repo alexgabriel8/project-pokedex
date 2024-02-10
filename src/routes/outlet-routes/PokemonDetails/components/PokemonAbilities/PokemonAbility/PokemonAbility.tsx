@@ -9,8 +9,8 @@ import { useAbilityHasScrolling } from "./hooks/useAbilityHasScrolling";
 import { useFetchPkmAbilityDescription } from "./hooks/useFetchPkmAbility";
 
 // Types
-import { TTheme } from "../../../../../../constants/themes/themes.types";
-import { Ability } from "../../../../../../types/pokemon.types";
+import { Ability } from "@typings/pokemon.types";
+import { TTheme } from "@typings/themes.types";
 
 type Props = {
   ability: Ability;

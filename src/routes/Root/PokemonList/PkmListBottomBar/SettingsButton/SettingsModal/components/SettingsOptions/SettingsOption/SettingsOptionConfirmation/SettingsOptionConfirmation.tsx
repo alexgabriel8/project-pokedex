@@ -7,11 +7,11 @@ import * as S from "./SettingsOptionConfirmation.styles";
 import { handleConfirmSettingApply } from "./handleConfirmSettingApply";
 
 // Constants
-import { savedPokemonsLocalStorageKey } from "../../../../../../../../../../constants/localStorageAccessKeys";
+import { savedPokemonsLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 // Context
-import { ThemeContext } from "../../../../../../../../../../context/ThemeContext/ThemeContext";
-import { PokemonsContext } from "../../../../../../../../../../context/PokemonsContext/PokemonsContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { PokemonsContext } from "@context/PokemonsContext/PokemonsContext";
 
 type SvgClickEvent = React.UIEvent<SVGAElement>;
 

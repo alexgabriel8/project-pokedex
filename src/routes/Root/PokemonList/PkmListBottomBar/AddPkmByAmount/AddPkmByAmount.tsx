@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import * as S from "./AddPkmByAmount.styles";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
   addPkmsByAmountToList: (input: number) => Promise<void>;

@@ -12,10 +12,10 @@ import { handlePkmMovesListScroll } from "./scripts/handlePkmMovesListScroll";
 import { moveListHasScroll } from "./scripts/moveListHasScroll";
 
 // Types
-import * as PkmTypes from "../../../../../types/pokemon.types"
+import * as PkmTypes from "@typings/pokemon.types"
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const PokemonMovesList = ({ moves }: {moves: PkmTypes.Move[]}) => {
     const { activeTheme } = useContext(ThemeContext)!

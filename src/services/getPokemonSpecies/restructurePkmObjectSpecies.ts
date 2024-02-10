@@ -1,5 +1,5 @@
 import { PokeAPI } from "pokeapi-types";
-import { IPokemon, SpeciesInfo } from "../../types/pokemon.types";
+import { IPokemon, SpeciesInfo } from "@typings/pokemon.types";
 
 function restructurePkmObjectSpecies(pokemon: IPokemon, species: PokeAPI.PokemonSpecies) {
   pokemon.speciesInfo = {} as unknown as SpeciesInfo;

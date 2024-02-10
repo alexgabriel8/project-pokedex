@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { smartTv } from "../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 const PkmAbilitiesWrapper = styled.section`
   margin: 10px 0%;

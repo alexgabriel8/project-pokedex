@@ -1,11 +1,11 @@
 import { useState, useEffect, createContext } from "react";
 
 // Scripts
-import { saveOnLocalStorage } from "../../scripts/localStorage";
 import { loadInitialTheme } from "./loadInitialTheme";
+import { saveOnLocalStorage } from "@scripts/localStorage";
 
 // Constants
-import { lastUsedThemeLocalStorageKey } from "../../constants/localStorageAccessKeys";
+import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 // Types
 import { TThemeContext } from "./ThemeContext.types";

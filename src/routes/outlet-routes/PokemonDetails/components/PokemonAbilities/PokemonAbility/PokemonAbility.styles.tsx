@@ -1,8 +1,18 @@
 import styled from "styled-components";
-import { smartTv } from "../../../../../../constants/breakpoints";
-import { noScrollBars } from "../../../../../../styles/noScrollBars";
+// Breakpoints
+import { smartTv } from "@constants/breakpoints";
 
-const PokemonAbility = styled.li`
+// Styles
+import { noScrollBars } from "@styles/noScrollBars";
+
+// Types
+import { TTheme } from "@typings/themes.types";
+
+type Props = {
+  theme: TTheme;
+}
+
+const PokemonAbility = styled.li<Props>`
   --top-shadow: inset 0 30px 20px -10px #000000A0;
   --bottom-shadow: inset 0 -30px 20px -10px #000000A0;
   @media (min-width: ${smartTv}px) {

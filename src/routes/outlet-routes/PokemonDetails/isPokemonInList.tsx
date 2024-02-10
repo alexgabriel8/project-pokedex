@@ -1,4 +1,4 @@
-import { IPokemon } from "../../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 const isPokemonInList = (pokemons: IPokemon[], urlId: string | number) => {
   let pokemonInList = null;

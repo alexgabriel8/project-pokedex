@@ -1,4 +1,4 @@
-import { IPokemon } from "../src/types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 type TMockPkms = {
     structured: IPokemon[];

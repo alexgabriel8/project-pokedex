@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // Types
-import { TTheme } from "../../../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 const StatName = styled.span`
   font-weight: bold;

@@ -13,7 +13,7 @@ import { defaultSettings } from "../defaultSettings";
 import { useUpdateSettingValue } from "./useUpdateSettingValue";
 
 // Types
-import { Settings } from "../../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 const UpdateSettingValue = ({setting, value}: {setting: keyof Settings, value: boolean}) => {
     const { settings } = useContext(SettingsContext)!;

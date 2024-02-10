@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // Breakpoints
-import { smartTv } from "../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 const PkmListTopBar = styled.div`
   width: 100%;

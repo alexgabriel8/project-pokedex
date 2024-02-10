@@ -7,10 +7,10 @@ import * as S from "./Move.styles"
 import { handleMoveClick } from "./scripts/handleMoveClick";
 
 // Context
-import { ThemeContext } from "../../../../../../../../context/ThemeContext/ThemeContext"
+import { ThemeContext } from "@context/ThemeContext/ThemeContext"
 
 // Types
-import * as PkmTypes from "../../../../../../../../types/pokemon.types";
+import * as PkmTypes from "@typings/pokemon.types";
 
 const Move = ({move}: {move: PkmTypes.Move}) => {
     const {activeTheme} = useContext(ThemeContext)!;

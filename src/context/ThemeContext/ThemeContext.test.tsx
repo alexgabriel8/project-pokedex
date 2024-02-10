@@ -3,11 +3,16 @@ import { render, cleanup } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { useContext } from "react";
 
+// Context
 import { ThemeContext, ThemeProvider } from "./ThemeContext";
-import { themes } from "../../constants/themes/themes";
-import { lastUsedThemeLocalStorageKey } from "../../constants/localStorageAccessKeys";
 
-import { matchMediaMock } from "../../../tests/mocks/matchMediaMock";
+// Constants
+import { themes } from "@constants/themes/themes";
+import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys";
+
+// Mocks
+import { matchMediaMock } from "@tests/mocks/matchMediaMock";
+
 
 describe("Theme Provider", () => {
   afterEach(() => {

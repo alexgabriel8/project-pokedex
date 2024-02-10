@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 // Breakpoints
-import { smartTv } from "../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 // Styles
-import { noScrollBars } from "../../../styles/noScrollBars";
+import { noScrollBars } from "@styles/noScrollBars";
 
 // Types
-import { TTheme } from "../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type PokemonListProps = {
   theme: TTheme;

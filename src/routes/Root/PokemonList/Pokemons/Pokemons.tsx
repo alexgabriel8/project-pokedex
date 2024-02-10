@@ -2,7 +2,7 @@
 import { Pokemon } from "./Pokemon/Pokemon";
 
 // Types
-import { IPokemon } from "../../../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 type Props = {
   pokemons: IPokemon[];

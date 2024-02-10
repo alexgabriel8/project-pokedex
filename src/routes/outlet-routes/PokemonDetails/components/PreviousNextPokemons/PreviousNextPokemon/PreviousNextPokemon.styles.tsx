@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 // Components
-import { ArrowUpSvg } from "../../../../../../components/SvgIcons/ArrowUpSvg";
+import { ArrowUpSvg } from "@components/SvgIcons/ArrowUpSvg";
 
 // Breakpoints
-import { smartTv } from "../../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
+
+// Types
+import { TTheme } from "@typings/themes.types";
+
+type Props = {
+    theme: TTheme;
+}
 
 const PreviousNextPokemonContainer = styled.div`
     display: flex;
@@ -79,7 +86,7 @@ const PreviousNextPokemonContainer = styled.div`
     }
 `
 
-const ArrowIcon = styled(ArrowUpSvg)`
+const ArrowIcon = styled(ArrowUpSvg)<Props>`
     fill: ${({ theme }) => theme.terciary}
 `
 

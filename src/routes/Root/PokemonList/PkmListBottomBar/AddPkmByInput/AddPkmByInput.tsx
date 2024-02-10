@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./AddPkmByInput.styles";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
   addPkmByInputToList: (input: string) => Promise<void>;

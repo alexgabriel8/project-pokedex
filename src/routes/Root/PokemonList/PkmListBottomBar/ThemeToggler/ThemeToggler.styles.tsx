@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 // Components
-import { MoonSvg } from "../../../../../components/SvgIcons/MoonSvg";
-import { SunSvg } from "../../../../../components/SvgIcons/SunSvg";
+import { MoonSvg } from "@components/SvgIcons/MoonSvg";
+import { SunSvg } from "@components/SvgIcons/SunSvg";
 
 // Breakpoints
-import { smartTv } from "../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 const ThemeTogglerContainer = styled.div`
     position: absolute;

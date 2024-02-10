@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 import { loadInitialSettings } from "./scripts/loadInitialSettings";
 
 // Types
-import { Settings } from "../../types/settings.types";
+import { Settings } from "@typings/settings.types";
 
 const initialPreferences = loadInitialSettings();
 

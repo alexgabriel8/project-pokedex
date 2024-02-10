@@ -3,7 +3,7 @@ import * as S from "./PokemonStats.styles";
 import { PokemonStat } from "./PokemonStat";
 
 // Types
-import * as pkmTypes from "../../../../../types/pokemon.types";
+import * as pkmTypes from "@typings/pokemon.types";
 
 const PokemonStats = ({ stats }: { stats: pkmTypes.Stats }) => (
   <S.Stats>

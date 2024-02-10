@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { smartTv } from "../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 const BottomBarWrapper = styled.div`
   overflow: hidden;

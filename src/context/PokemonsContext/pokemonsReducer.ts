@@ -1,4 +1,5 @@
-import { IPokemon } from "../../types/pokemon.types";
+// Types
+import { IPokemon } from "@typings/pokemon.types";
 import { TPkmAction } from "./pokemonsReducer.types";
 
 function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction): IPokemon[] {

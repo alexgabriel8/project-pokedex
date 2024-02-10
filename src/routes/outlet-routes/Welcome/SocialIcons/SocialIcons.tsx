@@ -2,11 +2,11 @@ import { useContext } from "react";
 
 // Components
 import * as S from "./SocialIcons.styles";
-import { GitHubSVG } from "../../../../components/SvgIcons/social/GitHubSVG";
-// import { LinkedInSVG } from "../../../../components/SvgIcons/social/LinkedInSVG";
+import { GitHubSVG } from "@components/SvgIcons/social/GitHubSVG";
+// import { LinkedInSVG } from "@components/SvgIcons/social/LinkedInSVG";
 
 // Context
-import { ThemeContext } from "../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const SocialIcons = () => {
   const { activeTheme } = useContext(ThemeContext)!;

@@ -2,7 +2,7 @@
 import { SettingsOption } from "./SettingsOption/SettingsOption";
 
 // Hooks
-import { useGetSettingValue } from "../../../../../../../../context/SettingsContext/hooks/useGetSettingValue";
+import { useGetSettingValue } from "@context/SettingsContext/hooks/useGetSettingValue";
 
 const SettingsOptions = () => {
     const animatedSprites = useGetSettingValue("pkmAnimatedSprites");

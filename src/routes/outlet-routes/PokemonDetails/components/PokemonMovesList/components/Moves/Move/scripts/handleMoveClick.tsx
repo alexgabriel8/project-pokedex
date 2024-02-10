@@ -1,8 +1,8 @@
 // Scripts
-import { getPkmMoveDescription } from "../../../../../../../../../services/getPkmMoveDescription"
+import { getPkmMoveDescription } from "@services/getPkmMoveDescription"
 
 // Types
-import { Move as PkmMove} from "../../../../../../../../../types/pokemon.types"
+import { Move as PkmMove} from "@typings/pokemon.types"
 
 function handleMoveClick (e: React.UIEvent<HTMLLIElement>, move: PkmMove) {
  const pokemonMoves = document.querySelectorAll("#pokemon-moves-list #pokemon-moves li");
@@ -15,7 +15,7 @@ function handleMoveClick (e: React.UIEvent<HTMLLIElement>, move: PkmMove) {
  
  e.currentTarget.scrollIntoView({block: "nearest", behavior: "smooth"});
 
- let tagWithMoveDescription = e.currentTarget.querySelector(".move-description")!;
+ const tagWithMoveDescription = e.currentTarget.querySelector(".move-description")!;
 
  if(tagWithMoveDescription?.textContent === "" || tagWithMoveDescription.textContent !== move.description) {
     if(move.description) tagWithMoveDescription.textContent = move.description;

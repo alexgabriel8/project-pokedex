@@ -2,14 +2,14 @@ import { useContext, useEffect, useState } from "react";
 
 // Scripts
 import { isPokemonInList } from "../isPokemonInList";
-import { getPokemonSpecies } from "../../../../services/getPokemonSpecies/getPokemonSpecies";
-import { getPokemon } from "../../../../services/getPokemon/getPokemon";
+import { getPokemonSpecies } from "@services/getPokemonSpecies/getPokemonSpecies";
+import { getPokemon } from "@services/getPokemon/getPokemon";
 
 // Context
-import { PokemonsContext } from "../../../../context/PokemonsContext/PokemonsContext";
+import { PokemonsContext } from "@context/PokemonsContext/PokemonsContext";
 
 // Types
-import { IPokemon } from "../../../../types/pokemon.types";
+import { IPokemon } from "@typings/pokemon.types";
 
 const useFetchPkmWithSpecies = (urlId: string) => {
   const { pokemons } = useContext(PokemonsContext);

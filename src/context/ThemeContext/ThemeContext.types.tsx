@@ -1,4 +1,4 @@
-import { TTheme } from "../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
 type TThemeContext = {
   activeTheme: TTheme;

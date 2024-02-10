@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 // Breakpoints
-import { smartTv } from "../../../../../constants/breakpoints";
+import { smartTv } from "@constants/breakpoints";
 
 // Types
-import { TTheme } from "../../../../../constants/themes/themes.types";
+import { TTheme } from "@typings/themes.types";
 
-type BottomBarTogglerProps = {
+type Props = {
   theme: TTheme;
 }
 
-const BottomBarToggler = styled.button<BottomBarTogglerProps>`
+const BottomBarToggler = styled.button<Props>`
   width: 50px;
   height: 25px;
   border-radius: 25px 25px 0 0;

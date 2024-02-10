@@ -5,10 +5,10 @@ import * as S from "./PokemonAbilities.styles";
 import { PokemonAbility } from "./PokemonAbility/PokemonAbility";
 
 // Context
-import { ThemeContext } from "../../../../../context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 // Types
-import { Ability } from "../../../../../types/pokemon.types";
+import { Ability } from "@typings/pokemon.types";
 
 const PokemonAbilities = ({ abilities }: { abilities: Ability[] }) => {
   const { activeTheme } = useContext(ThemeContext)!;
