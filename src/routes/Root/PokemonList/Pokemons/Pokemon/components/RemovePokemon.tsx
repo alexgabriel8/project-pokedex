@@ -4,7 +4,7 @@ import { useContext } from "react";
 import * as S from "./RemovePokemon.styles";
 
 // Hooks
-import { useRemovePokemon } from "@contewxt/PokemonsContext/hooks/useRemovePokemon";
+import { useRemovePokemon } from "@context/PokemonsContext/hooks/useRemovePokemon";
 
 // Context
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
