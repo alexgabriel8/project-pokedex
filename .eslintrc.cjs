@@ -23,6 +23,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'quotes': ['error', 'double'],
+    'eqeqeq': ['error', 'always'],
+    '@typescript-eslint/no-unnecessary-condition': 'warn',
+    'no-shadow': 'off', 
+    '@typescript-eslint/no-shadow': 'warn',
+    'semi': ["error", "always"],
+    'no-duplicate-imports': 'error'
   },
   settings: {
     react: {
