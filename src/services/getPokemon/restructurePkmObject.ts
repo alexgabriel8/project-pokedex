@@ -1,4 +1,4 @@
-import { Stats, IPokemon } from "@typings/pokemon.types";
+import { Stats, IPokemon, TypesAccepted } from "@typings/pokemon.types";
 import { PokeAPI } from "pokeapi-types";
 
 function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
@@ -37,7 +37,7 @@ function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
 
   newPkm.sprites.animated =
     pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated // @ts-expect-error - pokeapi-types don't have animated in its type definitions
-      ?.front_default as string ?? null;
+      ?.front_default as string;
 
   pokemon.stats.forEach((stat: PokeAPI.PokemonStat) => {
     if (stat.stat.name === "special-attack")
@@ -47,8 +47,8 @@ function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
     else newPkm.stats[stat.stat.name as keyof Stats] = stat.base_stat;
   });
 
-  newPkm.types.primary = pokemon.types[0].type.name;
-  newPkm.types.secondary = pokemon.types[1]?.type?.name ?? null;
+  newPkm.types.primary = pokemon.types[0].type.name as TypesAccepted;
+  newPkm.types.secondary = pokemon.types[1]?.type?.name as TypesAccepted;
 
   return newPkm;
 }
