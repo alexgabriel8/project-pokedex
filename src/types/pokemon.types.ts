@@ -27,9 +27,14 @@ type Stats = {
 };
 
 type Types = {
-  primary: string;
-  secondary: string | null;
+  primary: TypesAccepted;
+  secondary: TypesAccepted | null;
 };
+
+type TypesAccepted =
+"bug" | "dark" | "dragon" | "electric" | "fairy" | "fighting" |
+"fire" | "flying" | "ghost" | "grass" | "ground" | "ice" |
+"normal" | "poison" | "psychic" | "rock" | "steel" | "water"
 
 type SpeciesInfo = {
   description: string;
@@ -51,4 +56,4 @@ interface IPokemon {
   weight: number;
 }
 
-export type { Ability, Move, Sprites, Stats, Types, SpeciesInfo, IPokemon };
+export type { Ability, Move, Sprites, Stats, Types, TypesAccepted, SpeciesInfo, IPokemon };
