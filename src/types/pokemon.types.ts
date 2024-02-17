@@ -47,6 +47,7 @@ interface IPokemon {
   abilities: Ability[];
   height: number;
   id: number;
+  index?: number;
   name: string;
   moves: Move[];
   sprites: Sprites;
