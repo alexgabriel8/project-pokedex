@@ -1,14 +1,14 @@
+// Types
 import { SetStateAction } from "react";
+import { TypesAccepted } from "@typings/pokemon.types";
 
 type TPkmListStatus = {
     isOpen: boolean;
-    filtered: {
-        is: boolean;
-        type1: string | null;
-        type2: string | null;
+    filter: {
+        type1: TypesAccepted | null;
+        type2: TypesAccepted | null;
     };
-    sorted: {
-        is: boolean;
+    sort: {
         by: "name" | "id" | null;
         order: "asc" | "desc" | null;
     };

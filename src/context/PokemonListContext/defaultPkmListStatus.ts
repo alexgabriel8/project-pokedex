@@ -2,13 +2,11 @@ import { TPkmListStatus } from "./PkmListStatusContext.types";
 
 const defaultPkmListStatus: TPkmListStatus = {
     isOpen: false,
-    filtered: {
-        is: false,
+    filter: {
         type1: null,
         type2: null
     },
-    sorted: {
-        is: false,
+    sort: {
         by: null,
         order: null
     },

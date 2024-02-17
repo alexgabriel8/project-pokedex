@@ -7,8 +7,8 @@ import { defaultPkmListStatus } from "./defaultPkmListStatus";
 import { TPkmListStatusContext } from "./PkmListStatusContext.types";
 
 const PkmListStatusContext = createContext<TPkmListStatusContext>({
-    sorted: {},
-    filtered: {}
+    sort: {},
+    filter: {}
 } as unknown as TPkmListStatusContext);
 
 const PkmListStatusProvider = ({children}: React.PropsWithChildren) => {
