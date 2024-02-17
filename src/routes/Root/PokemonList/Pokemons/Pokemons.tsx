@@ -1,24 +1,40 @@
 // Components
+import { useContext } from "react";
 import { Pokemon } from "./Pokemon/Pokemon";
 
-// Types
-import { IPokemon } from "@typings/pokemon.types";
+// Context
+import { PokemonsContext } from "@context/PokemonsContext/PokemonsContext";
+import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 
-type Props = {
-  pokemons: IPokemon[];
+// Scripts
+import { filterPokemons } from "./scripts/filterPokemons";
+
+// Hooks
+import { useUpdatePkmAmountInlist } from "./hooks/useUpdatePkmAmountInList";
+
+const Pokemons = () => {
+  const { pokemons } = useContext(PokemonsContext);
+  const { pkmListStatus, setPkmListStatus } = useContext(PkmListStatusContext);
+  
+  pokemons.map((pokemon, i) => pokemon.index = i);
+
+  const { type1, type2 } = pkmListStatus.filter;
+  const filteredPokemons = type1 ? filterPokemons(pokemons, type1, type2) : pokemons;
+
+  useUpdatePkmAmountInlist(filteredPokemons.length, pokemons.length, setPkmListStatus);
+
+  return (
+    <ul>
+      {
+        filteredPokemons.map((pokemon) => (
+          <Pokemon
+            pokemon={pokemon}
+            key={pokemon.index}
+          />
+        ))
+      }
+    </ul>
+  );
 };
-const Pokemons = ({ pokemons }: Props) => (
-  <ul>
-    {
-      pokemons.map((pokemon, i) => (
-        <Pokemon
-          pokemon={pokemon}
-          pkmIndex={i}
-          key={pokemon.id + ` ${Math.random() * 10}`}
-        />
-      ))
-    }
-  </ul>
-);
 
 export { Pokemons };

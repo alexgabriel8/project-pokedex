@@ -16,10 +16,9 @@ import { pkmNameToUppercase } from "./pkmNameToUppercase";
 
 type Props = {
   pokemon: IPokemon;
-  pkmIndex: number;
 }
 
-const Pokemon = ({ pokemon, pkmIndex }: Props) => {
+const Pokemon = ({ pokemon }: Props) => {
   const { activeTheme } = useContext(ThemeContext)!;
   const { settings } = useContext(SettingsContext)!;
 
@@ -53,7 +52,7 @@ const Pokemon = ({ pokemon, pkmIndex }: Props) => {
           <S.PokemonName className="name">{uppercasePkmName}</S.PokemonName>
           <S.PokemonId className="id">#{pokemon.id}</S.PokemonId>
         </S.NavLink>
-        <RemovePokemon pkmIndex={pkmIndex} />
+        <RemovePokemon pkmIndex={pokemon.index!} />
       </S.Li>
     </>
   );

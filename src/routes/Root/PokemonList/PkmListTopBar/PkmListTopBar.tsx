@@ -5,18 +5,16 @@ import * as S from "./PkmListTopBar.styles";
 
 // Context
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 
-type Props = {
-  pokemonsInList: number;
-};
-
-const PkmListTopBar = ({ pokemonsInList }: Props) => {
+const PkmListTopBar = () => {
   const { activeTheme } = useContext(ThemeContext)!;
+  const { pkmListStatus } = useContext(PkmListStatusContext);
 
   return (
     <S.PkmListTopBar theme={activeTheme}>
       <S.ListStatus theme={activeTheme}>
-        Showing {pokemonsInList}/{pokemonsInList}
+        Showing {pkmListStatus.visiblePokemons}/{pkmListStatus.totalPokemons}
       </S.ListStatus>
     </S.PkmListTopBar>
   );

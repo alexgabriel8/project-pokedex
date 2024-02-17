@@ -18,15 +18,15 @@ import { addPkmByInputToList } from "./scripts/addPkmByInputToList";
 import { useSaveListToLocalStorage } from "./hooks/useSaveListToLocalStorage";
 
 const PokemonList = () => {
-  const { pokemons, dispatchPokemons } = useContext(PokemonsContext)!;
+  const { dispatchPokemons } = useContext(PokemonsContext)!;
   const { activeTheme } = useContext(ThemeContext)!;
 
   useSaveListToLocalStorage();
 
   return (
     <S.PokemonList className="pokemon-list" theme={activeTheme}>
-      <PkmListTopBar pokemonsInList={pokemons.length} />
-      <Pokemons pokemons={pokemons} />
+      <PkmListTopBar />
+      <Pokemons />
       <PkmListBottomBar
         addPkmByInputToList={(input) =>
           addPkmByInputToList(dispatchPokemons, input)

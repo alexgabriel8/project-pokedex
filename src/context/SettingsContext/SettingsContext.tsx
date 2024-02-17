@@ -11,7 +11,7 @@ const initialPreferences = loadInitialSettings();
 type SettingsContext = {
     settings: Settings;
     setSettings: React.Dispatch<React.SetStateAction<Settings>>;
-}
+};
 
 const SettingsContext = createContext<SettingsContext | null>(null);
 
@@ -22,8 +22,7 @@ const SettingsProvider = ({children}: React.PropsWithChildren) => {
         <SettingsContext.Provider value={{ settings, setSettings }}>
             {children}
         </SettingsContext.Provider>
-    )
-}
+    );
+};
 
-
-export { SettingsContext, SettingsProvider }
+export { SettingsContext, SettingsProvider };

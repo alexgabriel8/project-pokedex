@@ -22,7 +22,7 @@ const RemovePokemon = ({pkmIndex}: Props) => {
             onClick={handleClick}
             theme={activeTheme}
             className="remove-pkm"
-           />   
-}
+           />;
+};
 
 export { RemovePokemon };
