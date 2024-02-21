@@ -27,7 +27,7 @@ const PkmListBottomBar = styled.div`
   padding: 10px;
   gap: 10px;
   @media (min-width: ${smartTv}px) {
-    height: 450px;
+    height: 600px;
     padding: 20px;
     gap: 20px;
   }
@@ -42,7 +42,7 @@ const PkmListBottomBar = styled.div`
 
     margin-top: -300px;
     @media (min-width: ${smartTv}px) {
-      margin-top: -450px;
+      margin-top: -600px;
     }
   }
 
