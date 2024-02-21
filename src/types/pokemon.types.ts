@@ -1,3 +1,5 @@
+import { pokemonTypes } from "../constants/pokemonTypes";
+
 type Ability = {
   name: string;
   description?: string;
@@ -31,10 +33,7 @@ type Types = {
   secondary: TypesAccepted | null;
 };
 
-type TypesAccepted =
-"bug" | "dark" | "dragon" | "electric" | "fairy" | "fighting" |
-"fire" | "flying" | "ghost" | "grass" | "ground" | "ice" |
-"normal" | "poison" | "psychic" | "rock" | "steel" | "water"
+type TypesAccepted = typeof pokemonTypes[number];
 
 type SpeciesInfo = {
   description: string;
