@@ -19,12 +19,17 @@ const BottomBarWrapper = styled.div`
 `;
 
 const PkmListBottomBar = styled.div`
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 300px;
   padding: 10px;
+  gap: 10px;
   @media (min-width: ${smartTv}px) {
     height: 450px;
     padding: 20px;
+    gap: 20px;
   }
   background-color: ${(props) => props.theme.primary + "90"};
 
