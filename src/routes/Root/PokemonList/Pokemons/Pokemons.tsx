@@ -19,7 +19,7 @@ const Pokemons = () => {
   pokemons.map((pokemon, i) => pokemon.index = i);
 
   const { type1, type2 } = pkmListStatus.filter;
-  const filteredPokemons = type1 ? filterPokemons(pokemons, type1, type2) : pokemons;
+  const filteredPokemons = type1 || type2 ? filterPokemons(pokemons, type1, type2) : pokemons;
 
   useUpdatePkmAmountInlist(filteredPokemons.length, pokemons.length, setPkmListStatus);
 

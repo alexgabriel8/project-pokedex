@@ -41,7 +41,7 @@ const ToggleButton = styled.div<Props>`
     }
 
     transition: background-color 0.25s;
-`
+`;
 
 const ToggleButtonCircle = styled.span<Props>`
     position: absolute;
@@ -63,6 +63,6 @@ const ToggleButtonCircle = styled.span<Props>`
     border-radius: 50%;
 
     transition: transform 0.2s;
-`
+`;
 
-export { ToggleButton, ToggleButtonCircle }
+export { ToggleButton, ToggleButtonCircle };
