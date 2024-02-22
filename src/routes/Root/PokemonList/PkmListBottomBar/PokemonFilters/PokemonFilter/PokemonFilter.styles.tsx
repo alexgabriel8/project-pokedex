@@ -16,6 +16,8 @@ type Props = {
     theme: TTheme;
 }
 
+const pkmFilterMobileBreakpoint = 400;
+
 const PokemonFilterContainer = styled.div<Props>`
     position: relative;
 
@@ -26,6 +28,9 @@ const PokemonFilterContainer = styled.div<Props>`
         flex-basis: 250px;
         height: 60px;
         padding: 0 10px;
+    }
+    @media (max-width: 400px) {
+        flex-basis: 100px;
     }
 
     background-color: ${({ theme }) => theme.primary};
@@ -46,6 +51,9 @@ const PokemonFilterContainer = styled.div<Props>`
         font-size: 14px;
         @media (min-width: ${smartTv}px) {
             font-size: 28px;
+        }
+        @media (max-width: ${pkmFilterMobileBreakpoint}px) {
+            font-size: 12px;
         }
     }
 
@@ -69,6 +77,9 @@ const PokemonFilterCaret = styled(CaretUpSvg)<Props>`
     width: 20px;
     @media(min-width: ${smartTv}px) {
         width: 40px;
+    }
+    @media (max-width: ${pkmFilterMobileBreakpoint}px) {
+        width: 15px;
     }
 
     transform: rotate(180deg);
@@ -107,6 +118,9 @@ const PokemonFilterOption = styled.li<Props>`
     @media (min-width: ${smartTv}px) {
         padding: 10px 0;
         font-size: 32px;
+    }
+    @media (max-width: ${pkmFilterMobileBreakpoint}px) {
+        font-size: 14px;
     }
        
     &.selected {
