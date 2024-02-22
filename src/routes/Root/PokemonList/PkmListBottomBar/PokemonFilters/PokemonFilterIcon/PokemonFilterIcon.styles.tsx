@@ -47,6 +47,8 @@ const PokemonFilterIconCloser = styled(XMarkSvg)<Props>`
 
     border-radius: 50%;
 
+    flex-shrink: 0;
+
     height: 15px;
     width: 15px;
     @media (min-width: ${smartTv}px) {

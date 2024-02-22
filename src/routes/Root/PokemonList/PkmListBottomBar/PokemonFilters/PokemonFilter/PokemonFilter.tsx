@@ -43,12 +43,11 @@ const PokemonFilter = (props: Props) => {
             onClick={(e) => handleClick(e)}
             id={`filter-${props.index}`}
         >
-            <p className="selected-type">
+            <p className="selected-option">
                 {props.type || (props.index === 1 ? "1st type..." : "2nd type...")}
             </p>
             <S.PokemonFilterCaret theme={activeTheme} className="caret" />
-            <S.PokemonFilterOptions
-            className="filter-options">
+            <S.PokemonFilterOptions className="options">
                 <S.PokemonFilterOption theme={activeTheme}>
                     any
                 </S.PokemonFilterOption>
