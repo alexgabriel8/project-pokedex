@@ -36,7 +36,10 @@ const PokemonList = styled.div<PokemonListProps>`
     .pokemon .remove-pkm,
     #add-pkm-by-amount,
     #add-pkm-by-input,
-    #filter-1, #filter-2 {
+    #filter-1, #filter-2,
+    #filter-icon,
+    .theme-toggler,
+    #settings-button {
       pointer-events: none;
 
       filter: brightness(40%);

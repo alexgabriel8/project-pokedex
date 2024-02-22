@@ -3,6 +3,7 @@ import { useContext } from "react";
 // Components
 import * as S from "./PokemonFilters.styles";
 import { PokemonFilter } from "./PokemonFilter/PokemonFilter";
+import { PokemonFilterIcon } from "./PokemonFilterIcon/PokemonFilterIcon";
 
 // Context
 import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
@@ -39,6 +40,7 @@ const PokemonFilters = () => {
                 setType={(type) => setType(type, 2)}
                 index={2}
             />
+            <PokemonFilterIcon />
         </S.PokemonFiltersContainer>
     );
 };
