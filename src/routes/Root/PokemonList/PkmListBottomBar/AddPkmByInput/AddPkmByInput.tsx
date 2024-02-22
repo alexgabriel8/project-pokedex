@@ -18,6 +18,12 @@ const AddPkmByInput = (props: Props) => {
 
   return (
     <S.AddPkmByInputWrapper id="add-pkm-by-input">
+      <S.AddPkmByInput
+        theme={activeTheme}
+        id="input-add-pkm-by-input"
+        onKeyDown={handleKeyDown}
+        placeholder="Name or ID..."
+      />
       <S.SearchIcon
         theme={activeTheme}
         onClick={() =>
@@ -26,12 +32,6 @@ const AddPkmByInput = (props: Props) => {
               .value,
           )
         }
-      />
-      <S.AddPkmByInput
-        theme={activeTheme}
-        id="input-add-pkm-by-input"
-        onKeyDown={handleKeyDown}
-        placeholder="Name or ID..."
       />
     </S.AddPkmByInputWrapper>
   );

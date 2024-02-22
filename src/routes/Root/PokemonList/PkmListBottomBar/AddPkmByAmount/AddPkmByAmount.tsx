@@ -37,10 +37,6 @@ const AddPkmByAmount = (props: Props) => {
 
   return (
     <S.AddPkmByInputWrapper id="add-pkm-by-amount">
-      <S.PlusIcon
-        onClick={() => props.addPkmsByAmountToList(amount)}
-        theme={activeTheme}
-      />
       <S.AddPkmByInput
         theme={activeTheme}
         type="number"
@@ -51,6 +47,10 @@ const AddPkmByAmount = (props: Props) => {
         min={1}
         max={10}
         step={1}
+      />
+      <S.PlusIcon
+        onClick={() => props.addPkmsByAmountToList(amount)}
+        theme={activeTheme}
       />
     </S.AddPkmByInputWrapper>
   );
