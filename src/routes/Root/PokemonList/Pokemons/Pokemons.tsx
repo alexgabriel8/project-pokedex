@@ -8,20 +8,25 @@ import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusC
 
 // Scripts
 import { filterPokemons } from "./scripts/filterPokemons";
+import { sortPokemons } from "./scripts/sortPokemons";
 
 // Hooks
 import { useUpdatePkmAmountInlist } from "./hooks/useUpdatePkmAmountInList";
 
 const Pokemons = () => {
   const { pokemons } = useContext(PokemonsContext);
-  const { pkmListStatus, setPkmListStatus } = useContext(PkmListStatusContext);
+  const { pkmListStatus } = useContext(PkmListStatusContext);
+  
+  const { type1, type2 } = pkmListStatus.filter;
+  const { by, order } = pkmListStatus.sort;
   
   pokemons.map((pokemon, i) => pokemon.index = i);
 
-  const { type1, type2 } = pkmListStatus.filter;
   const filteredPokemons = type1 || type2 ? filterPokemons(pokemons, type1, type2) : pokemons;
 
-  useUpdatePkmAmountInlist(filteredPokemons.length, pokemons.length, setPkmListStatus);
+  if(by && order) sortPokemons(filteredPokemons, by, order);
+
+  useUpdatePkmAmountInlist(filteredPokemons.length, pokemons.length);
 
   return (
     <ul>

@@ -1,16 +1,18 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 // Context
-import { TPkmListStatus } from "@context/PokemonListContext/PkmListStatusContext.types";
+import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 
-const useUpdatePkmAmountInlist = (visible: number, total: number, setPkmListStatus: React.Dispatch<React.SetStateAction<TPkmListStatus>>) => {
-    useEffect(() => {
-        setPkmListStatus((prevStatus) => ({
-          ...prevStatus,
-          visiblePokemons: visible,
-          totalPokemons: total
-        }));
-      }, [visible, total]);
+const useUpdatePkmAmountInlist = (visible: number, total: number) => {
+  const { setPkmListStatus } = useContext(PkmListStatusContext)!;
+
+  useEffect(() => {
+      setPkmListStatus((prevStatus) => ({
+        ...prevStatus,
+        visiblePokemons: visible,
+        totalPokemons: total
+      }));
+    }, [visible, total]);
 };
 
 export { useUpdatePkmAmountInlist };
