@@ -7,18 +7,18 @@ import { defaultPkmListStatus } from "./defaultPkmListStatus";
 import { TPkmListStatusContext } from "./PkmListStatusContext.types";
 
 const PkmListStatusContext = createContext<TPkmListStatusContext>({
-    sort: {},
-    filter: {}
+  sort: {},
+  filter: {},
 } as unknown as TPkmListStatusContext);
 
-const PkmListStatusProvider = ({children}: React.PropsWithChildren) => {
-    const [ pkmListStatus, setPkmListStatus ] = useState(defaultPkmListStatus);
+const PkmListStatusProvider = ({ children }: React.PropsWithChildren) => {
+  const [pkmListStatus, setPkmListStatus] = useState(defaultPkmListStatus);
 
-    return (
-        <PkmListStatusContext.Provider value={{ pkmListStatus, setPkmListStatus}}>
-            {children}
-        </PkmListStatusContext.Provider>
-    );
+  return (
+    <PkmListStatusContext.Provider value={{ pkmListStatus, setPkmListStatus }}>
+      {children}
+    </PkmListStatusContext.Provider>
+  );
 };
 
 export { PkmListStatusContext, PkmListStatusProvider };

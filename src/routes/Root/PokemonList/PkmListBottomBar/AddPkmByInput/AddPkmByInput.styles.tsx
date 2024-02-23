@@ -21,7 +21,7 @@ const AddPkmByInputWrapper = styled.div`
 
 type AddPkmByInputProps = {
   theme: TTheme;
-}
+};
 const AddPkmByInput = styled.input<AddPkmByInputProps>`
   width: 100%;
 
@@ -45,7 +45,7 @@ const AddPkmByInput = styled.input<AddPkmByInputProps>`
 
 type SearchIconProps = {
   theme: TTheme;
-}
+};
 const SearchIcon = styled(SearchSvg)<SearchIconProps>`
   width: 25px;
   height: 25px;

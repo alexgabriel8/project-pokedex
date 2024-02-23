@@ -3,7 +3,7 @@ import { IPokemon } from "@typings/pokemon.types";
 import { TPkmAction } from "./pokemonsReducer.types";
 
 function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction): IPokemon[] {
-  if(!action?.type) throw new Error(`Invalid action`);
+  if (!action?.type) throw new Error(`Invalid action`);
 
   switch (action.type) {
     case "ADD_PKM": {
@@ -19,9 +19,10 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction): IPokemon[] {
         );
       return [...pokemons, ...action.pokemons];
     }
-    
+
     case "REMOVE_PKM": {
-      if(typeof action.pkmIndex !== "number") throw new Error("Dispatched REMOVE_PKM without providing ID");
+      if (typeof action.pkmIndex !== "number")
+        throw new Error("Dispatched REMOVE_PKM without providing ID");
 
       return pokemons.filter((_, i) => i !== action.pkmIndex);
     }
@@ -30,7 +31,8 @@ function pokemonsReducer(pokemons: IPokemon[], action: TPkmAction): IPokemon[] {
       return [];
     }
 
-    default: throw new Error(`Unknown action: ${String(action["type"])}`);
+    default:
+      throw new Error(`Unknown action: ${String(action["type"])}`);
   }
 }
 

@@ -10,8 +10,8 @@ import { PokeAPI } from "pokeapi-types";
 
 async function getPokemonSpecies(input: string | number, pokemon: IPokemon) {
   const response = await fetch(`${baseUrl}pokemon-species/${input}`);
-  const json = await response.json() as PokeAPI.PokemonSpecies;
-  
+  const json = (await response.json()) as PokeAPI.PokemonSpecies;
+
   return restructurePkmObjectSpecies(pokemon, json);
 }
 

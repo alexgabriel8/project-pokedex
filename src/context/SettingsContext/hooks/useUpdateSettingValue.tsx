@@ -1,7 +1,7 @@
-import { useContext } from "react"
+import { useContext } from "react";
 
 // Context
-import { SettingsContext } from "../SettingsContext"
+import { SettingsContext } from "../SettingsContext";
 
 // Constants
 import { defaultSettings } from "../defaultSettings";
@@ -10,18 +10,20 @@ import { defaultSettings } from "../defaultSettings";
 import { Settings } from "@typings/settings.types";
 
 const useUpdateSettingValue = (setting: keyof Settings, value: boolean) => {
-    const { settings, setSettings } = useContext(SettingsContext)!;
+  const { settings, setSettings } = useContext(SettingsContext)!;
 
-    const validKeys = Object.keys(defaultSettings)
+  const validKeys = Object.keys(defaultSettings);
 
-    if(!validKeys.includes(setting)) throw new Error(`Invalid setting: "${setting}"`);
-    if (![true, false].includes(value)) throw new Error(`Invalid setting value: "${value}"`);
+  if (!validKeys.includes(setting))
+    throw new Error(`Invalid setting: "${setting}"`);
+  if (![true, false].includes(value))
+    throw new Error(`Invalid setting value: "${value}"`);
 
-    const updateSettingValue = () => {
-        setSettings({...settings, [setting]: !value})
-    }
+  const updateSettingValue = () => {
+    setSettings({ ...settings, [setting]: !value });
+  };
 
-    return updateSettingValue
-}
+  return updateSettingValue;
+};
 
-export { useUpdateSettingValue }
+export { useUpdateSettingValue };

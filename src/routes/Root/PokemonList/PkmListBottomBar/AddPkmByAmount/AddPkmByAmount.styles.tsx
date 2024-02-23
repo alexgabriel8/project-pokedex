@@ -16,7 +16,7 @@ const AddPkmByInputWrapper = styled.div`
 
 type AddPkmByInputProps = {
   theme: TTheme;
-}
+};
 const AddPkmByInput = styled.input<AddPkmByInputProps>`
   width: 60px;
   height: 40px;
@@ -45,7 +45,7 @@ const AddPkmByInput = styled.input<AddPkmByInputProps>`
 
 type PlusIconProps = {
   theme: TTheme;
-}
+};
 const PlusIcon = styled(PlusSvg)<PlusIconProps>`
   position: absolute;
   right: 5px;

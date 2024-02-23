@@ -14,7 +14,9 @@ async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
   try {
     allowPkmListInteraction(false);
 
-    const initialPokemons = getLocalStorageItem(savedPokemonsLocalStorageKey) as unknown as IPokemon[];
+    const initialPokemons = getLocalStorageItem(
+      savedPokemonsLocalStorageKey,
+    ) as unknown as IPokemon[];
     if (!initialPokemons) {
       for (let i = 0; i < 10; i++) {
         const fetchedPokemon = await getPokemon();
@@ -24,7 +26,8 @@ async function loadInitialPokemons(dispatch: React.Dispatch<TPkmAction>) {
           pokemon: fetchedPokemon,
         });
       }
-    } else dispatch({
+    } else
+      dispatch({
         type: "ADD_PKMS",
         pokemons: initialPokemons,
       });

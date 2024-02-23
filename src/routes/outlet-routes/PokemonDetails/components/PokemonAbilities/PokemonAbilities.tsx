@@ -12,7 +12,7 @@ import { Ability } from "@typings/pokemon.types";
 
 const PokemonAbilities = ({ abilities }: { abilities: Ability[] }) => {
   const { activeTheme } = useContext(ThemeContext)!;
-  
+
   return (
     <S.PkmAbilitiesWrapper>
       <h2 className="title">Abilities</h2>

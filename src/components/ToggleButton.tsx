@@ -7,62 +7,65 @@ import { smartTv } from "@constants/breakpoints";
 import { TTheme } from "@typings/themes.types";
 
 type Props = {
-    theme: TTheme;
-}
+  theme: TTheme;
+};
+
 const ToggleButton = styled.div<Props>`
-    position: relative;
+  position: relative;
 
-    width: 50px;
-    height: 20px;
+  width: 50px;
+  height: 20px;
+  @media (min-width: ${smartTv}px) {
+    width: 100px;
+    height: 40px;
+  }
+
+  border-radius: 20px;
+
+  border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
+
+  background-color: ${({ theme }) =>
+    theme.modalTogglerButton.backgroundDisabled};
+  &&.active {
+    background-color: ${({ theme }) =>
+      theme.modalTogglerButton.backgroundEnabled};
+  }
+
+  cursor: pointer;
+
+  .toggler-circle {
+    transform: translate(-40%, -6px);
+  }
+  &&.active .toggler-circle {
+    transform: translate(100%, -6px);
     @media (min-width: ${smartTv}px) {
-        width: 100px;
-        height: 40px;
+      transform: translate(100%, -12px);
     }
+  }
 
-    border-radius: 20px;
-
-    border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
-
-    background-color: ${({ theme }) => theme.modalTogglerButton.backgroundDisabled};
-    &&.active {
-        background-color: ${({ theme }) => theme.modalTogglerButton.backgroundEnabled};
-    }
-
-    cursor: pointer;
-
-    .toggler-circle {
-        transform: translate(-40%, -6px);
-    }
-    &&.active .toggler-circle {
-        transform: translate(100%, -6px);
-        @media (min-width: ${smartTv}px) {
-            transform: translate(100%, -12px);
-        }
-    }
-
-    transition: background-color 0.25s;
+  transition: background-color 0.25s;
 `;
 
 const ToggleButtonCircle = styled.span<Props>`
-    position: absolute;
+  position: absolute;
 
-    width: 30px;
-    height: 30px;
-    @media (min-width: ${smartTv}px) {
-        && {
-            width: 60px;
-            height: 60px;
-            transform: translate(-40%, -12px);
-        }
+  width: 30px;
+  height: 30px;
+  @media (min-width: ${smartTv}px) {
+    && {
+      width: 60px;
+      height: 60px;
+      transform: translate(-40%, -12px);
     }
+  }
 
-    border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
+  border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};
 
-    background-color: ${({ theme }) => theme.modalTogglerButton.circleBackground};
+  background-color: ${({ theme }) => theme.modalTogglerButton.circleBackground};
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    transition: transform 0.2s;
+  transition: transform 0.2s;
 `;
 
 export { ToggleButton, ToggleButtonCircle };

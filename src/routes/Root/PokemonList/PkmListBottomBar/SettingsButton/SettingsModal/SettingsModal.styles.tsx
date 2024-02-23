@@ -10,61 +10,61 @@ import { smartTv } from "@constants/breakpoints";
 import { TTheme } from "@typings/themes.types";
 
 type Props = {
-    theme: TTheme;
-}
+  theme: TTheme;
+};
 
 const SettingsModalWrapper = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #292929A0;
-`
+  background-color: #292929a0;
+`;
 
 const SettingsModalContainer = styled.div<Props>`
-    padding: 10px;
-    margin: 10px;
+  padding: 10px;
+  margin: 10px;
 
-    height: 100%;
+  height: 100%;
 
-    width: 500px;
-    max-height: 600px;
-    @media (min-width: ${smartTv}px) {
-        width: 1000px;
-        max-height: 1200px;
-    }
+  width: 500px;
+  max-height: 600px;
+  @media (min-width: ${smartTv}px) {
+    width: 1000px;
+    max-height: 1200px;
+  }
 
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
 
-    background-color: ${({ theme }) => theme.primary};
-    border: 5px solid ${({ theme }) => theme.terciary};
-`
+  background-color: ${({ theme }) => theme.primary};
+  border: 5px solid ${({ theme }) => theme.terciary};
+`;
 
 const CloseSettings = styled(XMarkSvg)<Props>`
-    width: 75px;
-    height: 75px;
-    @media (min-width: ${smartTv}px) {
-        width: 150px;
-        height: 150px;
-    }
+  width: 75px;
+  height: 75px;
+  @media (min-width: ${smartTv}px) {
+    width: 150px;
+    height: 150px;
+  }
 
-    align-self: flex-end;
+  align-self: flex-end;
 
-    fill: ${({ theme }) => theme.status.danger};
+  fill: ${({ theme }) => theme.status.danger};
 
-    cursor: pointer;
-`
+  cursor: pointer;
+`;
 
-export { SettingsModalWrapper, SettingsModalContainer, CloseSettings }
+export { SettingsModalWrapper, SettingsModalContainer, CloseSettings };

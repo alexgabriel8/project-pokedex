@@ -16,7 +16,7 @@ import { pkmNameToUppercase } from "./pkmNameToUppercase";
 
 type Props = {
   pokemon: IPokemon;
-}
+};
 
 const Pokemon = ({ pokemon }: Props) => {
   const { activeTheme } = useContext(ThemeContext)!;

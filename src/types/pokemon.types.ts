@@ -33,7 +33,7 @@ type Types = {
   secondary: TypesAccepted | null;
 };
 
-type TypesAccepted = typeof pokemonTypes[number];
+type TypesAccepted = (typeof pokemonTypes)[number];
 
 type SpeciesInfo = {
   description: string;
@@ -56,4 +56,13 @@ interface IPokemon {
   weight: number;
 }
 
-export type { Ability, Move, Sprites, Stats, Types, TypesAccepted, SpeciesInfo, IPokemon };
+export type {
+  Ability,
+  Move,
+  Sprites,
+  Stats,
+  Types,
+  TypesAccepted,
+  SpeciesInfo,
+  IPokemon,
+};

@@ -5,37 +5,36 @@ import { SettingsOption } from "./SettingsOption/SettingsOption";
 import { useGetSettingValue } from "@context/SettingsContext/hooks/useGetSettingValue";
 
 const SettingsOptions = () => {
-    const animatedSprites = useGetSettingValue("pkmAnimatedSprites");
-    const saveListInLocalStorage = useGetSettingValue("savePkmListInLocalStorage");
+  const animatedSprites = useGetSettingValue("pkmAnimatedSprites");
+  const saveListInLocalStorage = useGetSettingValue(
+    "savePkmListInLocalStorage",
+  );
 
-    return (
-        <ul>
-            <SettingsOption
-                type="toggle"
-                index={0}
-                setting="pkmAnimatedSprites"
-                settingValue={animatedSprites}
-            >
-                Show animated sprites
-            </SettingsOption>
+  return (
+    <ul>
+      <SettingsOption
+        type="toggle"
+        index={0}
+        setting="pkmAnimatedSprites"
+        settingValue={animatedSprites}
+      >
+        Show animated sprites
+      </SettingsOption>
 
-            <SettingsOption
-                type="toggle"
-                index={1}
-                setting="savePkmListInLocalStorage"
-                settingValue={saveListInLocalStorage}
-            >
-                Save list in machine
-            </SettingsOption>
+      <SettingsOption
+        type="toggle"
+        index={1}
+        setting="savePkmListInLocalStorage"
+        settingValue={saveListInLocalStorage}
+      >
+        Save list in machine
+      </SettingsOption>
 
-            <SettingsOption
-                type="confirm"
-                index={2}
-            >
-                Clear list
-            </SettingsOption>
-        </ul>
-    )
-}
+      <SettingsOption type="confirm" index={2}>
+        Clear list
+      </SettingsOption>
+    </ul>
+  );
+};
 
-export { SettingsOptions }
+export { SettingsOptions };

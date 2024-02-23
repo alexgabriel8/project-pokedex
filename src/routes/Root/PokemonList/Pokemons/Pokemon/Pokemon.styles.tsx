@@ -68,7 +68,7 @@ const ImgWrapper = styled.div`
     width: 162px;
     height: 162px;
   }
-  
+
   img {
     max-height: 100%;
     object-fit: contain;

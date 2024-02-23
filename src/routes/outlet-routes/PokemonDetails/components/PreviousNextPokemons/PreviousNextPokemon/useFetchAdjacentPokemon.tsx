@@ -7,24 +7,23 @@ import { getPokemon } from "@services/getPokemon/getPokemon";
 import { IPokemon } from "@typings/pokemon.types";
 
 const useFetchAdjacentPokemon = (pkmId: number) => {
-    const [ pokemon, setPokemon ] = useState<string | IPokemon>("");
-    const [ fetchError, setFetchError ] = useState(false);
+  const [pokemon, setPokemon] = useState<string | IPokemon>("");
+  const [fetchError, setFetchError] = useState(false);
 
-    useEffect(() => {
-        setPokemon("fetching");
+  useEffect(() => {
+    setPokemon("fetching");
 
-        getPokemon(pkmId).then((fetchedPkm) => {
-            setPokemon(fetchedPkm)
-        }).catch((err) => {
-            setFetchError(err.message);
-            setPokemon("error");
-        })
-    }, [pkmId])
+    getPokemon(pkmId)
+      .then((fetchedPkm) => {
+        setPokemon(fetchedPkm);
+      })
+      .catch((err) => {
+        setFetchError(err.message);
+        setPokemon("error");
+      });
+  }, [pkmId]);
 
-    return [
-        pokemon,
-        fetchError
-    ]
-}
+  return [pokemon, fetchError];
+};
 
-export { useFetchAdjacentPokemon }
+export { useFetchAdjacentPokemon };

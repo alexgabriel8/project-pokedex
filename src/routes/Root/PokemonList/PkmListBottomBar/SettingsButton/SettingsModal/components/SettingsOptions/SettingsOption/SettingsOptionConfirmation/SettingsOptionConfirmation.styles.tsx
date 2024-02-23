@@ -11,54 +11,54 @@ import { smartTv } from "@constants/breakpoints";
 import { TTheme } from "@typings/themes.types";
 
 type Props = {
-    theme: TTheme;
-}
+  theme: TTheme;
+};
 
 const SettingsOptionConfirmationContainer = styled.div<Props>`
-    height: 100%;
-    width: 100%;
-    
-    padding: 0 10px;
-    
-    color: white;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    position: absolute;
-    
-    background-color: ${({ theme }) => theme.status.danger};
-    
-    border: 1px solid ${({ theme }) => theme.terciary};
+  height: 100%;
+  width: 100%;
 
-    &&.hidden {        
-        display: none;
-    }
-`
+  padding: 0 10px;
+
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+
+  background-color: ${({ theme }) => theme.status.danger};
+
+  border: 1px solid ${({ theme }) => theme.terciary};
+
+  &&.hidden {
+    display: none;
+  }
+`;
 
 const Cancel = styled(XMarkSvg)<Props>`
-    width: 40px;
-    @media (min-width: ${smartTv}px) {
-        width: 80px;
-    }
+  width: 40px;
+  @media (min-width: ${smartTv}px) {
+    width: 80px;
+  }
 
-    fill: ${({ theme }) => theme.status.danger};
+  fill: ${({ theme }) => theme.status.danger};
 
-    filter: brightness(50%);
+  filter: brightness(50%);
 
-    cursor: pointer;
-`
+  cursor: pointer;
+`;
 
 const Confirm = styled(CheckSvg)<Props>`
-    width: 40px;
-    @media (min-width: ${smartTv}px) {
-        width: 80px;
-    }
+  width: 40px;
+  @media (min-width: ${smartTv}px) {
+    width: 80px;
+  }
 
-    fill: ${({ theme }) => theme.status.success};
+  fill: ${({ theme }) => theme.status.success};
 
-    cursor: pointer;
-`
+  cursor: pointer;
+`;
 
-export { SettingsOptionConfirmationContainer, Cancel, Confirm }
+export { SettingsOptionConfirmationContainer, Cancel, Confirm };

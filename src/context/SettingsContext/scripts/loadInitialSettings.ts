@@ -10,10 +10,13 @@ import { isValidSettings } from "./isValidSettings";
 import { Settings } from "@typings/settings.types";
 
 function loadInitialSettings() {
-    let initialSettings = getLocalStorageItem(userSettingsLocalStorageKey) as unknown as Settings;
-    if (!initialSettings || !isValidSettings(initialSettings)) initialSettings = defaultSettings;
+  let initialSettings = getLocalStorageItem(
+    userSettingsLocalStorageKey,
+  ) as unknown as Settings;
+  if (!initialSettings || !isValidSettings(initialSettings))
+    initialSettings = defaultSettings;
 
-    return initialSettings;
+  return initialSettings;
 }
 
-export { loadInitialSettings }
+export { loadInitialSettings };

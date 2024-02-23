@@ -13,7 +13,6 @@ import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys"
 // Mocks
 import { matchMediaMock } from "@tests/mocks/matchMediaMock";
 
-
 describe("Theme Provider", () => {
   afterEach(() => {
     localStorage.clear();
@@ -65,8 +64,8 @@ describe("Theme Provider", () => {
     await user.click(togglerButton);
 
     getByText("Current theme: dark");
-    expect(
-      localStorage.getItem(lastUsedThemeLocalStorageKey),
-    ).toStrictEqual(themes.dark.name);
+    expect(localStorage.getItem(lastUsedThemeLocalStorageKey)).toStrictEqual(
+      themes.dark.name,
+    );
   });
 });

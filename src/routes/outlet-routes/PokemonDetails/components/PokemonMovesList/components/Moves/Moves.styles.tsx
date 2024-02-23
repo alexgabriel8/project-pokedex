@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { noScrollBars } from "@styles/noScrollBars";
 
 const MovesContainer = styled.ul`
-    ${noScrollBars}
-`
+  ${noScrollBars}
+`;
 
-export { MovesContainer }
+export { MovesContainer };

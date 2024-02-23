@@ -11,31 +11,25 @@ import { useSaveSettingsToLocalStorage } from "./hooks/useSaveSettingsToLocalSto
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
-    closeSettings: React.MouseEventHandler;
-}
+  closeSettings: React.MouseEventHandler;
+};
 
 const SettingsModal = ({ closeSettings }: Props) => {
-    const { activeTheme } = useContext(ThemeContext)!;
+  const { activeTheme } = useContext(ThemeContext)!;
 
-    useSaveSettingsToLocalStorage();
+  useSaveSettingsToLocalStorage();
 
-    return (
-        <S.SettingsModalWrapper
-            id="settings-modal"
-            onClick={closeSettings}
-        >
-            <S.SettingsModalContainer
-                onClick={(e) => e.stopPropagation()}
-                theme={activeTheme}
-            >
-                <S.CloseSettings
-                    onClick={closeSettings}
-                    theme={activeTheme}
-                />
-                <SettingsOptions />
-            </S.SettingsModalContainer>
-        </S.SettingsModalWrapper>
-    )
-}
+  return (
+    <S.SettingsModalWrapper id="settings-modal" onClick={closeSettings}>
+      <S.SettingsModalContainer
+        onClick={(e) => e.stopPropagation()}
+        theme={activeTheme}
+      >
+        <S.CloseSettings onClick={closeSettings} theme={activeTheme} />
+        <SettingsOptions />
+      </S.SettingsModalContainer>
+    </S.SettingsModalWrapper>
+  );
+};
 
 export { SettingsModal };

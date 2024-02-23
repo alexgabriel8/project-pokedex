@@ -8,7 +8,7 @@ import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;
-}
+};
 
 const BottomBarToggler = styled.button<Props>`
   width: 50px;

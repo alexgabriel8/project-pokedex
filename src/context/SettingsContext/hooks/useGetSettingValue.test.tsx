@@ -13,26 +13,25 @@ import { SettingsProvider } from "../SettingsContext";
 // Types
 import { Settings } from "@typings/settings.types";
 
-const SettingValue = ({setting}: {setting: keyof Settings}) => (
-    String(useGetSettingValue(setting))
-)
+const SettingValue = ({ setting }: { setting: keyof Settings }) =>
+  String(useGetSettingValue(setting));
 
 it("Should return setting value", () => {
-    const { getByText } = render(
-        <SettingsProvider>
-            <SettingValue setting="pkmAnimatedSprites" />
-        </SettingsProvider>
-    );
-    
-    getByText(String(defaultSettings.pkmAnimatedSprites))
-})
+  const { getByText } = render(
+    <SettingsProvider>
+      <SettingValue setting="pkmAnimatedSprites" />
+    </SettingsProvider>,
+  );
+
+  getByText(String(defaultSettings.pkmAnimatedSprites));
+});
 
 it("Should throw error on invalid option", () => {
-    expect(() =>
-        render(
-            <SettingsProvider>
-                <SettingValue setting={"invalidOption" as keyof Settings} />
-            </SettingsProvider>
-        )
-    ).toThrow(`Invalid setting: "invalidOption"`)
-})
+  expect(() =>
+    render(
+      <SettingsProvider>
+        <SettingValue setting={"invalidOption" as keyof Settings} />
+      </SettingsProvider>,
+    ),
+  ).toThrow(`Invalid setting: "invalidOption"`);
+});

@@ -10,49 +10,49 @@ import { smartTv } from "@constants/breakpoints";
 import { TTheme } from "@typings/themes.types";
 
 type SettingsButtonCotainerProps = {
-    theme: TTheme;
-}
+  theme: TTheme;
+};
 const SettingsButtonContainer = styled.button<SettingsButtonCotainerProps>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 
-    width: 40px;
-    height: 40px;
-    @media (min-width: ${smartTv}px) {
-        width: 80px;
-        height: 80px;
+  width: 40px;
+  height: 40px;
+  @media (min-width: ${smartTv}px) {
+    width: 80px;
+    height: 80px;
 
-        bottom: 20px;
-        right: 20px;
-    }
+    bottom: 20px;
+    right: 20px;
+  }
 
-    background-color: ${({ theme }) => theme.primary};
-    
-    border-radius: 50%;
+  background-color: ${({ theme }) => theme.primary};
 
-    &&.clicked svg,
-    &&:hover svg {
-        transform: rotate(180deg);
-    }
-`
+  border-radius: 50%;
+
+  &&.clicked svg,
+  &&:hover svg {
+    transform: rotate(180deg);
+  }
+`;
 
 type GearIconProps = {
-    theme: TTheme;
-}
+  theme: TTheme;
+};
 const GearIcon = styled(GearSvg)<GearIconProps>`
-    width: 25px;
-    @media (min-width: ${smartTv}px) {
-        width: 50px;
-    }
-    
-    fill: ${({ theme }) => theme.terciary};
+  width: 25px;
+  @media (min-width: ${smartTv}px) {
+    width: 50px;
+  }
 
-    transition: transform 1s;
-`
+  fill: ${({ theme }) => theme.terciary};
 
-export { SettingsButtonContainer, GearIcon }
+  transition: transform 1s;
+`;
+
+export { SettingsButtonContainer, GearIcon };

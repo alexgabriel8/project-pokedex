@@ -35,9 +35,9 @@ function restructurePkmObject(pokemon: PokeAPI.Pokemon): IPokemon {
   newPkm.sprites.artwork =
     pokemon.sprites.other?.["official-artwork"]?.front_default ?? null;
 
-  newPkm.sprites.animated =
-    pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated // @ts-expect-error - pokeapi-types don't have animated in its type definitions
-      ?.front_default as string;
+  newPkm.sprites.animated = pokemon.sprites.versions?.["generation-v"]?.[
+    "black-white"
+  ]?.animated?.front_default as string; // @ts-expect-error - pokeapi-types don't have animated in its type definitions
 
   pokemon.stats.forEach((stat: PokeAPI.PokemonStat) => {
     if (stat.stat.name === "special-attack")

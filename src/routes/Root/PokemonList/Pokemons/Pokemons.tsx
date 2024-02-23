@@ -16,28 +16,24 @@ import { useUpdatePkmAmountInlist } from "./hooks/useUpdatePkmAmountInList";
 const Pokemons = () => {
   const { pokemons } = useContext(PokemonsContext);
   const { pkmListStatus } = useContext(PkmListStatusContext);
-  
+
   const { type1, type2 } = pkmListStatus.filter;
   const { by, order } = pkmListStatus.sort;
-  
-  pokemons.map((pokemon, i) => pokemon.index = i);
 
-  const filteredPokemons = type1 || type2 ? filterPokemons(pokemons, type1, type2) : [...pokemons];
+  pokemons.map((pokemon, i) => (pokemon.index = i));
 
-  if(by && order) sortPokemons(filteredPokemons, by, order);
+  const filteredPokemons =
+    type1 || type2 ? filterPokemons(pokemons, type1, type2) : [...pokemons];
+
+  if (by && order) sortPokemons(filteredPokemons, by, order);
 
   useUpdatePkmAmountInlist(filteredPokemons.length, pokemons.length);
 
   return (
     <ul>
-      {
-        filteredPokemons.map((pokemon) => (
-          <Pokemon
-            pokemon={pokemon}
-            key={pokemon.index}
-          />
-        ))
-      }
+      {filteredPokemons.map((pokemon) => (
+        <Pokemon pokemon={pokemon} key={pokemon.index} />
+      ))}
     </ul>
   );
 };

@@ -11,12 +11,12 @@ import { TTheme } from "@typings/themes.types";
 function loadInitialTheme(): TTheme {
   const initialTheme = getLocalStorageItem(lastUsedThemeLocalStorageKey);
 
-  if(initialTheme === "light") return themes.light;
+  if (initialTheme === "light") return themes.light;
   else if (initialTheme === "dark") return themes.dark;
 
   return window.matchMedia("(prefers-color-scheme: light)").matches
     ? themes.light
-    : themes.dark
+    : themes.dark;
 }
 
 export { loadInitialTheme };

@@ -7,20 +7,21 @@ import { fetchPokeAPIMock } from "@tests/mocks/fetchPokeAPIMock";
 import { getPokemon } from "./getPokemon";
 
 // Constants
-import { mockedPkms } from "@tests/mockedPkms"
+import { mockedPkms } from "@tests/mockedPkms";
 
 it("Should fetch Pokémon", async () => {
-    fetchPokeAPIMock.getPokemon.withPokemon();
+  fetchPokeAPIMock.getPokemon.withPokemon();
 
-    const pokemon = await getPokemon();
-    expect(pokemon).toStrictEqual(mockedPkms.structured[0])
-})
+  const pokemon = await getPokemon();
+  expect(pokemon).toStrictEqual(mockedPkms.structured[0]);
+});
 
 it("Should throw error on not found Pokémon", async () => {
-    fetchPokeAPIMock.getPokemon.noPokemon();
+  fetchPokeAPIMock.getPokemon.noPokemon();
 
-    const invalidInput = "Picachucks";
+  const invalidInput = "Picachucks";
 
-    await expect(async () => await getPokemon(invalidInput))
-        .rejects.toThrow(`Could not find Pokémon with input "${invalidInput}"`)
-})
+  await expect(async () => await getPokemon(invalidInput)).rejects.toThrow(
+    `Could not find Pokémon with input "${invalidInput}"`,
+  );
+});

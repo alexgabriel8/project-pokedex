@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const useIsPokemonListOpen = () => {
-    const pokemonList = document.querySelector(".pokemon-list")!;
-    const pkmListToggler = document.querySelector("#pokemon-list-toggler")!;
+  const pokemonList = document.querySelector(".pokemon-list")!;
+  const pkmListToggler = document.querySelector("#pokemon-list-toggler")!;
 
-    const [ isListOpen, setIsListOpen ] = useState(false);
+  const [isListOpen, setIsListOpen] = useState(false);
 
-    const handleListTogglerClick = () => {
-        setIsListOpen(pokemonList.classList.contains("hidden"))
-    }
+  const handleListTogglerClick = () => {
+    setIsListOpen(pokemonList.classList.contains("hidden"));
+  };
 
-    useEffect(() => {
-        pkmListToggler.addEventListener("click", handleListTogglerClick);
+  useEffect(() => {
+    pkmListToggler.addEventListener("click", handleListTogglerClick);
 
-        return () => {
-            pkmListToggler.removeEventListener("click", handleListTogglerClick)
-        }
-    }, [])
+    return () => {
+      pkmListToggler.removeEventListener("click", handleListTogglerClick);
+    };
+  }, []);
 
-    return isListOpen
-}
+  return isListOpen;
+};
 
-export { useIsPokemonListOpen }
+export { useIsPokemonListOpen };

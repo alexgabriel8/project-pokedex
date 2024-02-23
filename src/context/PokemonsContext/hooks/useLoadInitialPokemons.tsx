@@ -6,15 +6,17 @@ import { loadInitialPokemons } from "@routes/Root/PokemonList/scripts/loadInitia
 // Types
 import { TPkmAction } from "../pokemonsReducer.types";
 
-const useLoadInitialPokemons = (dispatchPokemons: React.Dispatch<TPkmAction>) => {
-    const loadInitialPokemonsCalled = useRef(false);
+const useLoadInitialPokemons = (
+  dispatchPokemons: React.Dispatch<TPkmAction>,
+) => {
+  const loadInitialPokemonsCalled = useRef(false);
 
-    useEffect(() => {
-      if (loadInitialPokemonsCalled.current === true) return;
-      loadInitialPokemonsCalled.current = true;
-  
-      void loadInitialPokemons(dispatchPokemons);
-    }, []);
-}
+  useEffect(() => {
+    if (loadInitialPokemonsCalled.current === true) return;
+    loadInitialPokemonsCalled.current = true;
 
-export { useLoadInitialPokemons }
+    void loadInitialPokemons(dispatchPokemons);
+  }, []);
+};
+
+export { useLoadInitialPokemons };

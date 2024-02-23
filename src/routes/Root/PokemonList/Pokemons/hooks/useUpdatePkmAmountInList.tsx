@@ -7,12 +7,12 @@ const useUpdatePkmAmountInlist = (visible: number, total: number) => {
   const { setPkmListStatus } = useContext(PkmListStatusContext)!;
 
   useEffect(() => {
-      setPkmListStatus((prevStatus) => ({
-        ...prevStatus,
-        visiblePokemons: visible,
-        totalPokemons: total
-      }));
-    }, [visible, total]);
+    setPkmListStatus((prevStatus) => ({
+      ...prevStatus,
+      visiblePokemons: visible,
+      totalPokemons: total,
+    }));
+  }, [visible, total]);
 };
 
 export { useUpdatePkmAmountInlist };

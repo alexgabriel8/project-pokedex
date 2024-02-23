@@ -5,7 +5,7 @@ async function getPkmAbilityDescription(url: string) {
   if (response.status === 404)
     throw new Error(`Ability from URL "${url}" not found`);
 
-  const json = await response.json() as PokeAPI.Ability;
+  const json = (await response.json()) as PokeAPI.Ability;
 
   if (json.effect_entries.length === 0) return "No description available.";
 

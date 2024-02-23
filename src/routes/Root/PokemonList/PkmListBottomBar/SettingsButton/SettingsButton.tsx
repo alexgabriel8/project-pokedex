@@ -13,27 +13,26 @@ import { useCloseSettings } from "./hooks/useCloseSettings";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const SettingsButton = () => {
-    const { activeTheme } = useContext(ThemeContext)!;
-    const [ showModal, setShowModal ] = useState(false);
+  const { activeTheme } = useContext(ThemeContext)!;
+  const [showModal, setShowModal] = useState(false);
 
-    const openSettings = useOpenSettings(setShowModal);
-    const closeSettings = useCloseSettings(setShowModal);
+  const openSettings = useOpenSettings(setShowModal);
+  const closeSettings = useCloseSettings(setShowModal);
 
-    return (
-        <S.SettingsButtonContainer
-            id="settings-button"
-            onClick={openSettings}
-            theme={activeTheme}
-        >
-            <S.GearIcon theme={activeTheme} />
-            { showModal &&
-                createPortal(
-                    <SettingsModal closeSettings={closeSettings} />,
-                    document.querySelector("#root")!
-                )
-            }
-        </S.SettingsButtonContainer>
-    )
-}
+  return (
+    <S.SettingsButtonContainer
+      id="settings-button"
+      onClick={openSettings}
+      theme={activeTheme}
+    >
+      <S.GearIcon theme={activeTheme} />
+      {showModal &&
+        createPortal(
+          <SettingsModal closeSettings={closeSettings} />,
+          document.querySelector("#root")!,
+        )}
+    </S.SettingsButtonContainer>
+  );
+};
 
 export { SettingsButton };

@@ -10,19 +10,21 @@ import { useRemovePokemon } from "@context/PokemonsContext/hooks/useRemovePokemo
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 type Props = {
-    pkmIndex: number;
-}
-const RemovePokemon = ({pkmIndex}: Props) => {
-    const { activeTheme } = useContext(ThemeContext)!;
+  pkmIndex: number;
+};
+const RemovePokemon = ({ pkmIndex }: Props) => {
+  const { activeTheme } = useContext(ThemeContext)!;
 
-    const removePokemon = useRemovePokemon(pkmIndex);
-    const handleClick = () => removePokemon();
+  const removePokemon = useRemovePokemon(pkmIndex);
+  const handleClick = () => removePokemon();
 
-    return <S.RemovePokemonContainer
-            onClick={handleClick}
-            theme={activeTheme}
-            className="remove-pkm"
-           />;
+  return (
+    <S.RemovePokemonContainer
+      onClick={handleClick}
+      theme={activeTheme}
+      className="remove-pkm"
+    />
+  );
 };
 
 export { RemovePokemon };

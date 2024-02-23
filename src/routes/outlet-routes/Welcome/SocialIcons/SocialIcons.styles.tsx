@@ -8,7 +8,7 @@ import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;
-}
+};
 
 const SocialIconsContainer = styled.div<Props>`
   display: flex;

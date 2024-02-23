@@ -11,7 +11,7 @@ import { TTheme } from "@typings/themes.types";
 
 type PokemonListProps = {
   theme: TTheme;
-}
+};
 
 const PokemonList = styled.div<PokemonListProps>`
   ${noScrollBars};
@@ -36,7 +36,8 @@ const PokemonList = styled.div<PokemonListProps>`
     .pokemon .remove-pkm,
     #add-pkm-by-amount,
     #add-pkm-by-input,
-    #filter-1, #filter-2,
+    #filter-1,
+    #filter-2,
     #filter-icon,
     #pokemon-sorter,
     .theme-toggler,
@@ -44,8 +45,8 @@ const PokemonList = styled.div<PokemonListProps>`
       pointer-events: none;
 
       filter: brightness(40%);
-      
-      transition: filter .5s;
+
+      transition: filter 0.5s;
     }
   }
 

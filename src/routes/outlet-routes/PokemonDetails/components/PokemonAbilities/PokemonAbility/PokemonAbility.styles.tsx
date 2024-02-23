@@ -10,14 +10,14 @@ import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;
-}
+};
 
 const PokemonAbility = styled.li<Props>`
-  --top-shadow: inset 0 30px 20px -10px #000000A0;
-  --bottom-shadow: inset 0 -30px 20px -10px #000000A0;
+  --top-shadow: inset 0 30px 20px -10px #000000a0;
+  --bottom-shadow: inset 0 -30px 20px -10px #000000a0;
   @media (min-width: ${smartTv}px) {
-    --top-shadow: inset 0 60px 40px -20px #000000A0;
-    --bottom-shadow: inset 0 -60px 40px -20px #000000A0;
+    --top-shadow: inset 0 60px 40px -20px #000000a0;
+    --bottom-shadow: inset 0 -60px 40px -20px #000000a0;
   }
 
   display: flex;

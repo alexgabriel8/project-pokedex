@@ -31,6 +31,6 @@ const SocialIcons = () => {
       </a> */}
     </S.SocialIconsContainer>
   );
-}
+};
 
 export { SocialIcons };

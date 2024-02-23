@@ -8,7 +8,7 @@ import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;
-}
+};
 
 const Welcome = styled(OutletRoute)<Props>`
   gap: 20px;

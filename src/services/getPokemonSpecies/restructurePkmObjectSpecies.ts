@@ -1,7 +1,10 @@
 import { PokeAPI } from "pokeapi-types";
 import { IPokemon, SpeciesInfo } from "@typings/pokemon.types";
 
-function restructurePkmObjectSpecies(pokemon: IPokemon, species: PokeAPI.PokemonSpecies) {
+function restructurePkmObjectSpecies(
+  pokemon: IPokemon,
+  species: PokeAPI.PokemonSpecies,
+) {
   pokemon.speciesInfo = {} as unknown as SpeciesInfo;
 
   pokemon.speciesInfo.generation = species.generation.name.replace(
@@ -10,7 +13,7 @@ function restructurePkmObjectSpecies(pokemon: IPokemon, species: PokeAPI.Pokemon
   );
   pokemon.speciesInfo.habitat = species.habitat?.name ?? "Unknown";
 
-  pokemon.speciesInfo.description = "No description available."
+  pokemon.speciesInfo.description = "No description available.";
   for (let i = 0; i < species.flavor_text_entries.length; i++) {
     if (species.flavor_text_entries[i].language.name === "en") {
       pokemon.speciesInfo.description =

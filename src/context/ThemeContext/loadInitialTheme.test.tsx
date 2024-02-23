@@ -30,12 +30,9 @@ describe("Load initial theme", () => {
   describe("Theme present in Local Storage", () => {
     it("Should load it sucessfully", () => {
       matchMediaMock.false();
-      const themeToLoad = themes.light
+      const themeToLoad = themes.light;
 
-      localStorage.setItem(
-        lastUsedThemeLocalStorageKey,
-        themeToLoad.name,
-      );
+      localStorage.setItem(lastUsedThemeLocalStorageKey, themeToLoad.name);
 
       expect(loadInitialTheme()).toStrictEqual(themeToLoad);
     });
@@ -44,8 +41,8 @@ describe("Load initial theme", () => {
       matchMediaMock.false();
 
       localStorage.setItem(lastUsedThemeLocalStorageKey, "D4RK");
-      
+
       expect(loadInitialTheme()).toStrictEqual(themes.dark);
-    })
+    });
   });
 });

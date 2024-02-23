@@ -57,13 +57,13 @@ const PokemonDetails = () => {
     return (
       <S.PokemonDetails theme={activeTheme}>
         <PreviousNextPokemons currentPkmId={pokemon.id} />
-        {
-          artwork
-            ? <S.Artwork src={artwork} alt={`${name}'s artwork`} />
-            : sprite
-              ? <S.Artwork src={sprite} alt={`${name}'s sprite`} />
-              : <p style={{color: activeTheme.status.danger}}>No image available</p>
-        }
+        {artwork ? (
+          <S.Artwork src={artwork} alt={`${name}'s artwork`} />
+        ) : sprite ? (
+          <S.Artwork src={sprite} alt={`${name}'s sprite`} />
+        ) : (
+          <p style={{ color: activeTheme.status.danger }}>No image available</p>
+        )}
         <S.DetailedPkmName>
           {pkmNameToUppercase(name)} <span className="id">#{id}</span>
         </S.DetailedPkmName>
@@ -96,7 +96,7 @@ const PokemonDetails = () => {
         </S.PokemonInfoInRow>
         <S.PokemonDescription>{description}</S.PokemonDescription>
         <PokemonAbilities abilities={pokemon.abilities} />
-        <PokemonMovesList moves={pokemon.moves}/>
+        <PokemonMovesList moves={pokemon.moves} />
       </S.PokemonDetails>
     );
   }

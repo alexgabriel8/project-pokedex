@@ -15,13 +15,13 @@ async function getPokemon(input: string | number | null = null) {
     const randomId = Math.floor(Math.random() * maxPkmId + 1);
 
     const response = await fetch(`${baseUrl}pokemon/${randomId}`);
-    json = await response.json() as PokeAPI.Pokemon;
+    json = (await response.json()) as PokeAPI.Pokemon;
   } else {
     const response = await fetch(`${baseUrl}pokemon/${input}`);
     if (response.status === 404)
       throw new Error(`Could not find Pokémon with input "${input}"`);
 
-    json = await response.json() as PokeAPI.Pokemon;
+    json = (await response.json()) as PokeAPI.Pokemon;
   }
 
   return restructurePkmObject(json);

@@ -12,7 +12,7 @@ import { TTheme } from "@typings/themes.types";
 
 type Props = {
   theme: TTheme;
-}
+};
 
 const PokemonDetails = styled(OutletRoute)<Props>`
   gap: 5px;

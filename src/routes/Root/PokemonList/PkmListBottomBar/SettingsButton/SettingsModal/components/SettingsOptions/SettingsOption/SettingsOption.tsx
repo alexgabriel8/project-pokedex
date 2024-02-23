@@ -19,42 +19,43 @@ import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import { SettingsOptionProps } from "./SettingsOption.types";
 
 const SettingsOption = (props: SettingsOptionProps) => {
-    const { activeTheme } = useContext(ThemeContext)!;
+  const { activeTheme } = useContext(ThemeContext)!;
 
-    let updateSettingValue: null | (() => void) = null;
-    if (props.type === "toggle") updateSettingValue = useUpdateSettingValue(props.setting, props.settingValue)
+  let updateSettingValue: null | (() => void) = null;
+  if (props.type === "toggle")
+    updateSettingValue = useUpdateSettingValue(
+      props.setting,
+      props.settingValue,
+    );
 
-    const selector = `setting-option-${props.index + 1}`;
+  const selector = `setting-option-${props.index + 1}`;
 
-    return (
-        <S.SettingsOptionContainer
-            id={selector}
-            theme={activeTheme}
-            onClick={
-                props.type === "toggle"
-                    ? (e) => handleToggleOptionclick(e, updateSettingValue!)
-                    : handleConfirmOptionClick
-            }
+  return (
+    <S.SettingsOptionContainer
+      id={selector}
+      theme={activeTheme}
+      onClick={
+        props.type === "toggle"
+          ? (e) => handleToggleOptionclick(e, updateSettingValue!)
+          : handleConfirmOptionClick
+      }
+    >
+      <p>{props.children}</p>
+      {props.type === "toggle" && (
+        <ToggleButton
+          className={`toggler-icon ${
+            props.settingValue === true ? "active" : ""
+          }`}
+          theme={activeTheme}
         >
-            <p>{props.children}</p>
-            {
-                props.type === "toggle" &&
-                    <ToggleButton
-                        className={`toggler-icon ${props.settingValue === true ? "active" : ""}`}
-                        theme={activeTheme}
-                    >
-                        <ToggleButtonCircle
-                            className="toggler-circle"
-                            theme={activeTheme}
-                        />
-                    </ToggleButton>
-            }
-            {
-                props.type === "confirm" &&
-                    <SettingsOptionConfirmation selector={selector} />
-            }
-        </S.SettingsOptionContainer>        
-    )
-}
+          <ToggleButtonCircle className="toggler-circle" theme={activeTheme} />
+        </ToggleButton>
+      )}
+      {props.type === "confirm" && (
+        <SettingsOptionConfirmation selector={selector} />
+      )}
+    </S.SettingsOptionContainer>
+  );
+};
 
-export { SettingsOption }
+export { SettingsOption };
