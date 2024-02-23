@@ -22,7 +22,7 @@ const Pokemons = () => {
   
   pokemons.map((pokemon, i) => pokemon.index = i);
 
-  const filteredPokemons = type1 || type2 ? filterPokemons(pokemons, type1, type2) : pokemons;
+  const filteredPokemons = type1 || type2 ? filterPokemons(pokemons, type1, type2) : [...pokemons];
 
   if(by && order) sortPokemons(filteredPokemons, by, order);
 

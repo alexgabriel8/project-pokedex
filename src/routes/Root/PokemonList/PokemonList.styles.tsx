@@ -38,6 +38,7 @@ const PokemonList = styled.div<PokemonListProps>`
     #add-pkm-by-input,
     #filter-1, #filter-2,
     #filter-icon,
+    #pokemon-sorter,
     .theme-toggler,
     #settings-button {
       pointer-events: none;

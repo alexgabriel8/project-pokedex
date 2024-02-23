@@ -6,6 +6,7 @@ import { BottomBarToggler } from "./BottomBarToggler/BottomBarToggler";
 import { AddPkmByInput } from "./AddPkmByInput/AddPkmByInput";
 import { AddPkmByAmount } from "./AddPkmByAmount/AddPkmByAmount";
 import { PokemonFilters } from "./PokemonFilters/PokemonFilters";
+import { PokemonSorter } from "./PokemonSorter/PokemonSorter";
 import { ThemeToggler } from "./ThemeToggler/ThemeToggler";
 import { SettingsButton } from "./SettingsButton/SettingsButton";
 
@@ -29,6 +30,7 @@ const PkmListBottomBar = (props: Props) => {
           <AddPkmByAmount addPkmsByAmountToList={props.addPkmsByAmountToList} />
         </S.PkmAddersWrapper>
         <PokemonFilters />
+        <PokemonSorter />
         <ThemeToggler />
         <SettingsButton />
       </S.PkmListBottomBar>
