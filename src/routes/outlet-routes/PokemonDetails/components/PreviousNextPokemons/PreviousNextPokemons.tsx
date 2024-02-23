@@ -4,20 +4,17 @@ import { useContext } from "react";
 import * as S from "./PreviousNextPokemons.styles";
 import { PreviousNextPokemon } from "./PreviousNextPokemon/PreviousNextPokemon";
 
-// Hooks
-import { useIsPokemonListOpen } from "./useIsPokemonListOpen";
-
 // Context
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 
 const PreviousNextPokemons = ({ currentPkmId }: { currentPkmId: number }) => {
   const { activeTheme } = useContext(ThemeContext)!;
-
-  const isPkmListOpen = useIsPokemonListOpen();
+  const { pkmListStatus } = useContext(PkmListStatusContext);
 
   return (
     <S.PreviousNextPokemonsContainer
-      $isPkmListOpen={isPkmListOpen}
+      $isPkmListOpen={pkmListStatus.isOpen}
       theme={activeTheme}
     >
       <PreviousNextPokemon pkmId={currentPkmId - 1} position="left" />
