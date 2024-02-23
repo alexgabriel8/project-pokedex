@@ -3,7 +3,7 @@ import { useContext } from "react";
 // Components
 import { SocialIcons } from "./SocialIcons/SocialIcons";
 
-// Styled Components
+// Components
 import * as S from "./Welcome.styles";
 
 // Context
@@ -18,16 +18,14 @@ const Welcome = () => {
       <h1>Welcome to Project Pokédex {version}!</h1>
 
       <p className="welcome-text">
-        Click on a Pokémon on the list to the left to see more details about him
-        here!
+        Click on the button to the left to open the Pokémon list then click on a Pokémon to see more details about him here!
         <br />
         <br />
-        To add a new Pokémon: search for his name, id or add between 1 to 10
-        random Pokémons.
+        Add new Pokémons by searching its name, id or between 1 to 10
+        random Pokémons. 
         <br />
         <br />
-        Pokémons can be filtered by type; hidden if he does not meet the filter
-        criteria and the list can be sorted by id or alphabetical order.
+        Pokémons can be filtered by type and sorted by id or alphabetical order.
       </p>
 
       <footer>
