@@ -13,7 +13,11 @@ import { mockedPkms } from "../../../tests/mockedPkms";
 import { pokemonsReducer } from "./pokemonsReducer";
 
 // Types
-import { AddPkmsAction, RemovePkmAction, TPkmAction } from "./pokemonsReducer.types";
+import {
+  AddPkmsAction,
+  RemovePkmAction,
+  TPkmAction,
+} from "./pokemonsReducer.types";
 
 const Dispatcher = ({ dispatch }: { dispatch: TPkmAction }) => {
   const [pokemons, dispatchPokemons] = useReducer(pokemonsReducer, []);

@@ -15,7 +15,7 @@ const PkmListToggler = () => {
     document.querySelector(".pokemon-list")?.classList.toggle("hidden");
     setPkmListStatus((prevStatus) => ({
       ...prevStatus,
-      isOpen: !prevStatus.isOpen
+      isOpen: !prevStatus.isOpen,
     }));
   };
 
