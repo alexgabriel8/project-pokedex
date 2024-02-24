@@ -41,9 +41,7 @@ const GlobalStyle = createGlobalStyle`
     #root {
         display: flex;
         width: 100vw;
-        max-width: 2500px;
         height: 100vh;
-        max-height: 1600px;
     }
 
     h1 {

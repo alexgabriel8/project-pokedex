@@ -30,7 +30,7 @@ const SettingsModalWrapper = styled.div`
 `;
 
 const SettingsModalContainer = styled.div<Props>`
-  padding: 10px;
+  padding: 10px 15px;
   margin: 10px;
 
   height: 100%;
@@ -53,10 +53,8 @@ const SettingsModalContainer = styled.div<Props>`
 `;
 
 const CloseSettings = styled(XMarkSvg)<Props>`
-  width: 75px;
   height: 75px;
   @media (min-width: ${smartTv}px) {
-    width: 150px;
     height: 150px;
   }
 

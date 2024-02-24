@@ -20,6 +20,8 @@ const ToggleButton = styled.div<Props>`
     height: 40px;
   }
 
+  flex-shrink: 0;
+  
   border-radius: 20px;
 
   border: 1px solid ${({ theme }) => theme.modalTogglerButton.circleBorder};

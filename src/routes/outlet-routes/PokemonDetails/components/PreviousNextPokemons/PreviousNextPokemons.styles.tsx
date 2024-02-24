@@ -15,7 +15,7 @@ const PreviousNextPokemonsContainer = styled.div<PreviousNextPokemonsContainerPr
   max-width: 1400px;
   margin-bottom: 50px;
 
-  padding: 0px 15px;
+  padding: 0px 10px;
   @media (min-width: ${smartTv}px) {
     padding: 0 30px;
   }

@@ -63,9 +63,9 @@ const PreviousNextPokemonContainer = styled.div`
   }
 
   .arrow-icon {
-    width: 50px;
+    width: 40px;
     @media (min-width: ${smartTv}px) {
-      width: 75px;
+      width: 90px;
     }
 
     opacity: 0.4;

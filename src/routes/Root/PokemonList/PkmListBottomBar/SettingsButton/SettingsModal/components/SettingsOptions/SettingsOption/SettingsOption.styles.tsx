@@ -30,6 +30,11 @@ const SettingsOptionContainer = styled.li`
       font-size: 2.5rem;
     }
   }
+  @media (max-width: 500px) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
 
   &&:has(.confirm-setting-apply.hidden),
   &&:has(.toggler-icon) {
