@@ -9,6 +9,7 @@ import { PkmListBottomBar } from "./PkmListBottomBar/PkmListBottomBar";
 // Contexts
 import { ThemeContext } from "../../../context/ThemeContext/ThemeContext";
 import { PokemonsContext } from "../../../context/PokemonsContext/PokemonsContext";
+import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 
 // Scripts
 import { addPkmsByAmountToList } from "./scripts/addPkmsByAmountToList";
@@ -20,11 +21,15 @@ import { useSaveListToLocalStorage } from "./hooks/useSaveListToLocalStorage";
 const PokemonList = () => {
   const { activeTheme } = useContext(ThemeContext)!;
   const { dispatchPokemons } = useContext(PokemonsContext)!;
+  const { pkmListStatus } = useContext(PkmListStatusContext);
 
   useSaveListToLocalStorage();
 
   return (
-    <S.PokemonList className="pokemon-list hidden" theme={activeTheme}>
+    <S.PokemonList
+      className={`pokemon-list ${pkmListStatus.isOpen ? "" : "hidden"}`}
+      theme={activeTheme}
+    >
       <PkmListTopBar />
       <Pokemons />
       <PkmListBottomBar
