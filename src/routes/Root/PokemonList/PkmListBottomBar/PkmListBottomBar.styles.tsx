@@ -8,14 +8,6 @@ const BottomBarWrapper = styled.div`
   bottom: 0;
 
   z-index: 1;
-
-  input {
-    transition: filter 0.5s;
-  }
-
-  input[disabled] {
-    filter: brightness(50%);
-  }
 `;
 
 const PkmListBottomBar = styled.div`

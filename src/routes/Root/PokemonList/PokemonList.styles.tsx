@@ -35,10 +35,8 @@ const PokemonList = styled.div<PokemonListProps>`
   &&.disabled {
     .pokemon .remove-pkm,
     #add-pkm-by-amount,
-    #add-pkm-by-input,
-    #filter-1,
-    #filter-2,
-    #filter-icon,
+    #add-pkm-by-input, 
+    #filter-1, #filter-2, #filter-icon,
     #pokemon-sorter,
     .theme-toggler,
     #settings-button {

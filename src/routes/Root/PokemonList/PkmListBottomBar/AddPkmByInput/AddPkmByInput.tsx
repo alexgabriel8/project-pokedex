@@ -20,7 +20,6 @@ const AddPkmByInput = (props: Props) => {
     <S.AddPkmByInputWrapper id="add-pkm-by-input">
       <S.AddPkmByInput
         theme={activeTheme}
-        id="input-add-pkm-by-input"
         onKeyDown={handleKeyDown}
         placeholder="Name or ID..."
       />
@@ -28,7 +27,7 @@ const AddPkmByInput = (props: Props) => {
         theme={activeTheme}
         onClick={() =>
           props.addPkmByInputToList(
-            document.querySelector<HTMLInputElement>("#input-add-pkm-by-input")!
+            document.querySelector<HTMLInputElement>("#add-pkm-by-input input")!
               .value,
           )
         }
