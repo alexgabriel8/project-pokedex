@@ -1,10 +1,12 @@
 # Summary
 
-- [The Project](#the-project)
+- [Project Pokédex](#project-pokédex)
    - [My Process](#my-process)
       - [Design/Prototype](#designprototype)
       - [Initial Coding Difficulties](#initial-coding-difficulties)
-      - [After Version 0.2.0](#after-version-020)
+      - [Version 0.3.0](#version-030)
+      - [List Filtering and Sorting](#list-filtering-and-sorting)
+      - [Version 1.0.0](#version-100)
    - [Functionalities](#functionalities)
    - [Built With](#built-with)
 - [Using the Project](#using-the-project)
@@ -14,11 +16,18 @@
    - [Testing](#testing)
    - [Linting + Formatting](#linting--formatting)
 
-# The Project (Work in Progress)
+# Project Pokédex
 
-(<b><abbr title="Work in progress">WIP</abbr></b>) This is a Quest, a special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course where I have to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/) and exhibit them on a list initially containing 10.
+![Project Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Falexgabriel8%2Fproject-pokedex%2Fmain%2Fpackage.json&query=%24.version&label=Version)
 
-<img src="./readme-assets/welcome-desktop-light.png" width="500"> <img src="./readme-assets/welcome-desktop-dark.png" width="500">
+Originally conceived as a Quest - special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course - where I have to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/), exhibits them on a list initially containing 10 and takes to a page detailing any Pokémon that is clicked. However, I wanted to develop much more than was asked and decided to turn it in a personal project.
+
+<div align="center">
+   <img src="./readme-assets/app-presentation-desktop.gif" width="700">
+   <br>
+   <br>
+   <img src="./readme-assets/app-presentation-mobile.gif">
+</div>
 
 ## My Process
 
@@ -31,82 +40,82 @@
    ### Design/Prototype
 
    If you want to check the Project's [design](https://www.figma.com/file/5D3noXVHYhTpYkDuyM9ttH), change the visibility of the Settings Modal and the pages inside Outlet in order to see only the part you want:
-   <img src="./readme-assets/navigate-figma-design.png" alt="screenshot of Figma design" width="500">
 
-   There were many things I wanted to develop, but I needed something to visualize them all working together, which made me create my first [Figma design](https://www.figma.com/file/5D3noXVHYhTpYkDuyM9ttH).
+   <div align="center">
+      <img src="./readme-assets/navigate-figma-design.png" alt="Figma's design screenshot" width="500">
 
-   This part was already challenging, because I had to decide what I would implement, how they should look and if they were feasible.
+   </div>
 
-   For the themes, I tried choosing colors that reminded something about Pokémon. The light theme used the Pokédex's red and a light gray to simulate the lit screen. The dark theme colors were inspired in the Master Ball.
+   I'm not a designer, but I needed a visual representation of everything I planned to develop, which led me to create my first [Figma design](https://www.figma.com/file/5D3noXVHYhTpYkDuyM9ttH).
+
+   I used [React Router's tutorial project](https://reactrouter.com/en/main/start/tutorial) as my initial inspiration, especially on the routing part. It's composed of two main components: the Pokémon list as the Root Route, the route that always stay on screen. And the Outlet Route, responsible for displaying the contents of every route accessed.
+
+   For the themes, I tried choosing colors that reminded something about the Pokémon world. The light theme used the Pokédex's red and a light gray to simulate the lit screen. The dark theme colors were inspired in the Master Ball.
 
    I wanted to create a theme structure that would allow me to use both light and dark themes by coding few conditionals, this led me to devise an object structure for them and create two versions of the app in my Figma design, to see if the colors looked good on both themes.
 
    ### Initial Coding Difficulties
 
-   Being my first personal project and one with a complexity I never dealed before, it was difficult coding it, with some highlights being:
+   Being my first personal project and one with a complexity I never dealed before, it was difficult coding it. Some of the initial difficulties were:
 
-   - Had to search and even ask ChatGPT for help with TypeScript because I recently started learning it when I decided to use on the Project.
+   - Had to google and even ask ChatGPT for help with TypeScript because I recently started learning it when I decided to use on the Project.
 
-   - Implementing two sections with their own scroll — the Pokémon List and the Outlet — that would smoothly adjust their sizes whenever the list was toggled open/closed along with creating top and bottom bars that would follow the user's scroll on the list required a lot of trial and error.
+   - Implementing two sections with their own scroll — the Pokémon List and the Outlet — that would smoothly adjust their sizes whenever the list was toggled open/closed along with creating top and bottom bars that would follow the user's scroll on the list required a lot of experimentation.
 
-   - How to store the Pokémons and how to manage its manipulation, from recovering from Local Storage to adding multiple Pokémons one after the other to the list.
+   - How to store the Pokémons and how to manage its manipulation, from recovering from Local Storage to adding multiple Pokémons, one after the other to the list.
 
-   ### After Version 0.2.0
+   ### Version 0.3.0
 
-   Since the basic structure of the project was done by version 0.2.0, I could focus more on the new features themselves, which reduced a bit of the complexity of developing the project.
+   After version 0.3.0, development got a bit easier. The basic structure of the project was done and the amount of time and effort it took for to get this far turned me into a better developer.
 
-   There was another reason for development to get easier: it took a lot of time to reach this version, which allowed me to improve as a developer and code future ones better.
+   ### List Filtering and Sorting
+
+   The remaining functionalities to reach version 1.0.0 were the list filtering and sorting. The greatest challenge this time wasn't with logic, but on their implementation. Alterations on existing code were necessary, which required me to ponder for some hours on solutions that produced a clean code without breaking any parts of the project.
+
+   I decided to not mutate the Pokémons List by copying to a new list the Pokémons meeting the filter criteria, then perform sorting on it. By counting the lenght of the filtered and unfiltered lists, it is obtained the amount of Pokémons on the list and the ones meeting the filter criteria.
+
+   In order to not break the delete Pokémon functionality, the Pokémon's position on the list is placed inside its object, allowing correct deletion even when the list is both ordered and filtered.
+   
+   The filter and sort rules; the amount of Pokémons on the list and the ones that meet the filter criteria are stored somewhere global: inside a React Context.
+
+   ### Version 1.0.0
+
+   This version marks that all the planned functionalities were developed. This does not mean no more work will be done, from time to time refactors and maybe new functionalities will be made.
 
 </details>
 
 ## Functionalities
 
-<details>
+**A list of Pokémons that:**
 
-   <summary>A list of Pokémons that:</summary>
+- [X] Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
+- [X] Adds Pokémons by typing its name or ID or by letting the App get 1 to 10 random ones.
+- [X] Exhibits amount of Pokémons inside it.
+- [X] Allows deleting a Pokémon from it.
+- [X] Can sort Pokémons by ID or name.
+- [X] Can filter by type(s).
 
-   - [X] Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
-   - [X] Can be increased by typing the Pokémon's name or ID or by letting the App get 1 to 10 random ones.
-   - [X] Exhibits amount of Pokémons inside it.
-   - [X] Allows deleting a Pokémon from it.
-   - [ ] Can sort Pokémons by ID, name or type(s).
-   - [ ] Can filter by type(s).
+**Page detailing a Pokémon:**
 
-</details>
+- [X] Shows Pokemon artwork, name, ID, Genus, types, stats, habitat, height, weight, generation, description, abilities and moves.
+- [X] Shows previous and next Pokémons based on the ID of the current Pokémon.
 
-<details>
+**Theme:**
 
-   <summary>Page containing details of a Pokémon:</summary>
+- [X] Starts with light or dark theme depending on user's preference.
+- [X] Toggle between light and dark themes.
 
-   - [X] Shows Pokemon artwork, name, ID, Genus, types, stats, habitat, height, weight, generation, description, abilities and moves.
-   - [X] Shows previous and next Pokémons based on the ID of the current Pokémon.
+**Settings:**
 
-</details>
-
-<details>
-
-   <summary>Theme:</summary>
-
-   - [X] Starts with light or dark theme depending on user's preference.
-   - [X] Toggle between light and dark themes.
-
-</details>
-
-<details>
-
-   <summary>Settings:</summary>
-
-   - [X] Let user choose animated or static sprites for the Pokémon List.
-   - [X] Allow to save or not Pokémon List in Local Storage.
-   - [X] Empty the Pokémon List.
-
-</details>
+- [X] Let user choose animated or static sprites for the Pokémon List.
+- [X] Allow to save or not Pokémon List in Local Storage.
+- [X] Empty the Pokémon List.
 
 ## Built With
 
-Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the following technologies:
+Used <strong>[Vite](https://vitejs.dev/)</strong> with the following technologies:
 
-- <strong>HTML5, CSS3</strong>: Provides necessary structure and styling for the app.
+- <strong>HTML5, CSS3</strong>: Provides structure and styling for the app.
 
 - <strong>JavaScript + [TypeScript](https://www.typescriptlang.org/)</strong>: JS allows interactions with the app and TS makes JS code type-safe, less prone to bugs.
 
@@ -119,16 +128,13 @@ Kickstarted with <strong>[Vite](https://vitejs.dev/)</strong> using the followin
 - <strong>[Vitest](https://vitest.dev/)</strong>: For testing the project.
 
 - Some <strong>[Testing Library](https://testing-library.com/)</strong> libraries:
-   - <strong>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</strong>: Make tests with React Components.
+   - <strong>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</strong>: Test React Components.
    - <strong>[User event](https://testing-library.com/docs/user-event/intro/)</strong>: Test events (mouse click, keyboard typing, etc.) with more accuracy.
 - <strong>[ESLint](https://eslint.org/)</strong>: Linter used to detect bugs in code.
 
 - <strong>[Prettier](https://prettier.io/)</strong>: Code formatter used to make the code visually better and standardized.
 
-
 # Using the project
-
-This section will explain how to install and use the project.
 
 ## Installation
 

@@ -24,7 +24,7 @@ async function addPkmByInputToList(
     });
 
     const addPkmInput = document.querySelector(
-      "#input-add-pkm-by-input",
+      "#add-pkm-by-input input",
     ) as HTMLInputElement;
     addPkmInput.value = "";
   } catch (err) {
