@@ -6,10 +6,7 @@ import { PkmMovesListTopBar } from "./components/PkmMovesListTopBar/PkmMovesList
 import { Moves } from "./components/Moves/Moves";
 
 // Scripts
-import { handlePkmMovesListScroll } from "./scripts/handlePkmMovesListScroll";
-
-// Scripts
-import { moveListHasScroll } from "./scripts/moveListHasScroll";
+import { addShadowToMoveList } from "./scripts/addShadowToMoveList";
 
 // Types
 import * as PkmTypes from "@typings/pokemon.types";
@@ -21,13 +18,18 @@ const PokemonMovesList = ({ moves }: { moves: PkmTypes.Move[] }) => {
   const { activeTheme } = useContext(ThemeContext)!;
 
   useEffect(() => {
-    moveListHasScroll();
+    const moveList = document.querySelector("#pokemon-moves-list")!;
+    addShadowToMoveList(moveList);
   }, [activeTheme]);
+
+  const handleScroll = (e: React.UIEvent) => {
+    addShadowToMoveList(e.currentTarget);
+  };
 
   return (
     <S.PokemonMovesListContainer
       id="pokemon-moves-list"
-      onScroll={handlePkmMovesListScroll}
+      onScroll={handleScroll}
       theme={activeTheme}
     >
       <PkmMovesListTopBar />
