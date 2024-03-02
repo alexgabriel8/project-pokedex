@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "./ThemeContext";
 
 // Constants
-import { themes } from "@constants/themes/themes";
+import { themes } from "@constants/themes";
 import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys";
 
 // Mocks

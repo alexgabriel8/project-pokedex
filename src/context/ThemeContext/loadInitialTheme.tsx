@@ -1,6 +1,6 @@
 // Constants
 import { lastUsedThemeLocalStorageKey } from "@constants/localStorageAccessKeys";
-import { themes } from "@constants/themes/themes";
+import { themes } from "@constants/themes";
 
 // Scripts
 import { getLocalStorageItem } from "@scripts/localStorage";

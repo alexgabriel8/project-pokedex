@@ -8,7 +8,7 @@ import { ToggleButton, ToggleButtonCircle } from "@components/ToggleButton";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 // Constants
-import { themes } from "@constants/themes/themes";
+import { themes } from "@constants/themes";
 
 const ThemeToggler = () => {
   const { activeTheme, setActiveTheme } = useContext(ThemeContext)!;
