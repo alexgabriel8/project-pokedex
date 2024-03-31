@@ -12,25 +12,25 @@ async function addPkmByInputToList(
 ) {
   if (input === "") return;
 
+  const addPkmInput = document.querySelector(
+    "#add-pkm-by-input input",
+  ) as HTMLInputElement;
+  
   try {
     allowPkmListInteraction(false);
 
-    input = slugifyString(input);
-
-    const fetchedPokemon = await getPokemon(input);
+    const fetchedPokemon = await getPokemon(slugifyString(input));
     dispatch({
       type: "ADD_PKM",
       pokemon: fetchedPokemon,
     });
 
-    const addPkmInput = document.querySelector(
-      "#add-pkm-by-input input",
-    ) as HTMLInputElement;
     addPkmInput.value = "";
   } catch (err) {
     console.error(err);
   } finally {
     allowPkmListInteraction(true);
+    addPkmInput.focus();
   }
 }
 
