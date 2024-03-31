@@ -86,9 +86,9 @@ Originally conceived as a Quest - special exercise from the [DevQuest](https://b
 
 ## Functionalities
 
-**A list of Pokémons that:**
+**Pokémon List:**
 
-- [X] Is initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
+- [X] Initially populated with 10 Pokémons fetched from the PokéAPI or recovered from user's Local Storage if saved there.
 - [X] Adds Pokémons by typing its name or ID or by letting the App get 1 to 10 random ones.
 - [X] Exhibits amount of Pokémons inside it.
 - [X] Allows deleting a Pokémon from it.
@@ -107,8 +107,8 @@ Originally conceived as a Quest - special exercise from the [DevQuest](https://b
 
 **Settings:**
 
-- [X] Let user choose animated or static sprites for the Pokémon List.
-- [X] Allow to save or not Pokémon List in Local Storage.
+- [X] Display animated or static sprites for the Pokémon List.
+- [X] Allow/Disallow saving the Pokémon List in the user's machine through Local Storage.
 - [X] Empty the Pokémon List.
 
 ## Built With
@@ -123,7 +123,8 @@ Used <strong>[Vite](https://vitejs.dev/)</strong> with the following technologie
 
    - <strong>[Styled Components](https://styled-components.com/)</strong>: Isolate styles, making them easier to be created, maintaned and escalated.
 
-   - <strong>[React Router DOM](https://reactrouter.com/)</strong>: Further improves user experience by leaving the routing to the Browser, allowing it to download only what has changed on the screen, instead of downloading everything again.
+   - <strong>[React Router DOM](https://reactrouter.com/)</strong>: Improves user experience by delegating routing to the Browser, downloading only what has changed on the screen instead of redownloading everything.
+
 
 - <strong>[Vitest](https://vitest.dev/)</strong>: For testing the project.
 
@@ -132,7 +133,7 @@ Used <strong>[Vite](https://vitejs.dev/)</strong> with the following technologie
    - <strong>[User event](https://testing-library.com/docs/user-event/intro/)</strong>: Test events (mouse click, keyboard typing, etc.) with more accuracy.
 - <strong>[ESLint](https://eslint.org/)</strong>: Linter used to detect bugs in code.
 
-- <strong>[Prettier](https://prettier.io/)</strong>: Code formatter used to make the code visually better and standardized.
+- <strong>[Prettier](https://prettier.io/)</strong>: Code formatter used to visually standardize the code.
 
 # Using the project
 
