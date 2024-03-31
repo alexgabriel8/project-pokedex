@@ -23,10 +23,10 @@
 Originally conceived as a Quest - special exercise from the [DevQuest](https://br.linkedin.com/school/devquest-dev-em-dobro/) course - where I have to come up with my own design and implementation of a <abbr title="Single Page Application">SPA</abbr> that fetches Pokémons from the [PokéAPI](https://pokeapi.co/), exhibits them on a list initially containing 10 and takes to a page detailing any Pokémon that is clicked. However, I wanted to develop much more than was asked and decided to turn it in a personal project.
 
 <div align="center">
-   <img src="./readme-assets/app-presentation-desktop.gif" width="700">
+   <img alt="Video for desktop version" src="./readme-assets/app-presentation-desktop.gif" width="700">
    <br>
    <br>
-   <img src="./readme-assets/app-presentation-mobile.gif">
+   <img alt="Video for mobile version" src="./readme-assets/app-presentation-mobile.gif">
 </div>
 
 ## My Process
