@@ -13,11 +13,15 @@ type Props = {
   theme: TTheme;
 };
 const RemovePokemonContainer = styled(XMarkSvg)<Props>`
+  --drop-shadow: drop-shadow(0 0 1px #000);
+
   position: absolute;
   top: 5px;
   right: 5px;
 
   fill: ${({ theme }) => theme.status.danger};
+
+  filter: var(--drop-shadow);
 
   width: 25px;
   height: 25px;
@@ -30,7 +34,7 @@ const RemovePokemonContainer = styled(XMarkSvg)<Props>`
 
   &:hover {
     cursor: pointer;
-    filter: brightness(150%);
+    filter: var(--drop-shadow) brightness(150%);
     scale: 1.5;
   }
 
