@@ -28,7 +28,7 @@ const ToggleButton = styled.div<Props>`
 
   background-color: ${({ theme }) =>
     theme.modalTogglerButton.backgroundDisabled};
-  &&.active {
+  &&.toggled {
     background-color: ${({ theme }) =>
       theme.modalTogglerButton.backgroundEnabled};
   }
@@ -38,7 +38,7 @@ const ToggleButton = styled.div<Props>`
   .toggler-circle {
     transform: translate(-40%, -6px);
   }
-  &&.active .toggler-circle {
+  &&.toggled .toggler-circle {
     transform: translate(100%, -6px);
     @media (min-width: ${smartTv}px) {
       transform: translate(100%, -12px);

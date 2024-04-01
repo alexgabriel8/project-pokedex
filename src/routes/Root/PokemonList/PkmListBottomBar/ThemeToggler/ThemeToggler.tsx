@@ -26,7 +26,7 @@ const ThemeToggler = () => {
         onClick={toggleTheme}
         className={`
                     theme-toggler 
-                    ${isLightTheme ? "" : "active"}
+                    ${isLightTheme ? "" : "toggled"}
                 `}
       >
         <ToggleButtonCircle className="toggler-circle" theme={activeTheme}>

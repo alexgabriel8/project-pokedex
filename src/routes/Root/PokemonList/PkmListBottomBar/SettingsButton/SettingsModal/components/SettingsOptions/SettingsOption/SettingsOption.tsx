@@ -44,7 +44,7 @@ const SettingsOption = (props: SettingsOptionProps) => {
       {props.type === "toggle" && (
         <ToggleButton
           className={`toggler-icon ${
-            props.settingValue === true ? "active" : ""
+            props.settingValue === true ? "toggled" : ""
           }`}
           theme={activeTheme}
         >
