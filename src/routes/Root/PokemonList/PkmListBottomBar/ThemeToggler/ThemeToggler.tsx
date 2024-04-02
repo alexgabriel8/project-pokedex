@@ -13,11 +13,9 @@ import { themes } from "@constants/themes";
 const ThemeToggler = () => {
   const { activeTheme, setActiveTheme } = useContext(ThemeContext)!;
 
-  const isLightTheme = activeTheme.name === "light";
+  const isLight = activeTheme.name === "light";
 
-  const toggleTheme = () => {
-    isLightTheme ? setActiveTheme(themes.dark) : setActiveTheme(themes.light);
-  };
+  const toggleTheme = () => setActiveTheme(isLight ? themes.dark : themes.light);
 
   return (
     <S.ThemeTogglerContainer>
@@ -25,16 +23,16 @@ const ThemeToggler = () => {
         theme={activeTheme}
         onClick={toggleTheme}
         className={`
-                    theme-toggler 
-                    ${isLightTheme ? "" : "toggled"}
-                `}
+            theme-toggler 
+            ${isLight ? "" : "toggled"}
+        `}
       >
         <ToggleButtonCircle className="toggler-circle" theme={activeTheme}>
-          {isLightTheme ? (
-            <S.ThemeTogglerSun theme={activeTheme} />
-          ) : (
-            <S.ThemeTogglerMoon theme={activeTheme} />
-          )}
+          {
+            isLight
+              ? <S.ThemeTogglerSun theme={activeTheme} />
+              : <S.ThemeTogglerMoon theme={activeTheme} />
+          }
         </ToggleButtonCircle>
       </ToggleButton>
     </S.ThemeTogglerContainer>
