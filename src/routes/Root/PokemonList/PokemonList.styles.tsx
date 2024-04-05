@@ -46,6 +46,10 @@ const PokemonList = styled.div<PokemonListProps>`
 
       transition: filter 0.5s;
     }
+
+    .list-bottom-bar {
+      cursor: not-allowed;
+    }
   }
 
   transition: flex-basis 0.5s;
