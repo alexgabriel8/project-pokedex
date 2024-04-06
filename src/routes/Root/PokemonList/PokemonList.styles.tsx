@@ -15,21 +15,25 @@ type PokemonListProps = {
 
 const PokemonList = styled.div<PokemonListProps>`
   ${noScrollBars};
-
   overflow-y: scroll;
 
   background-color: ${({ theme }) => theme.terciary};
 
   flex-shrink: 0;
   flex-basis: 350px;
-  &&.hidden {
-    flex-basis: 0px;
+  @media (min-width: ${smartTv}px) {
+    flex-basis: 700px;
   }
-  @media screen and (max-width: 400px) {
+  @media (max-width: 400px) {
     max-width: 87vw;
   }
-  @media screen and (min-width: ${smartTv}px) {
-    flex-basis: 700px;
+
+  &&.semi-hidden, &&.hidden {
+    flex-shrink: 0.5;
+    filter: brightness(50%);
+  }
+  &&.hidden {
+    flex-basis: 0px;
   }
 
   &&.disabled {

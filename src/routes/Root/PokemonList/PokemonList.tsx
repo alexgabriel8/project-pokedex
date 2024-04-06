@@ -17,18 +17,23 @@ import { addPkmByInputToList } from "./scripts/addPkmByInputToList";
 
 // Hooks
 import { useSaveListToLocalStorage } from "./hooks/useSaveListToLocalStorage";
+import { useSwipeToClosePokemonList } from "./hooks/useSwipeToClosePokemonList";
 
 const PokemonList = () => {
   const { activeTheme } = useContext(ThemeContext)!;
-  const { dispatchPokemons } = useContext(PokemonsContext)!;
+  const { dispatchPokemons } = useContext(PokemonsContext);
   const { pkmListStatus } = useContext(PkmListStatusContext);
 
   useSaveListToLocalStorage();
+  const [ handleTouchStart, handleTouchMove, handleTouchEnd ] = useSwipeToClosePokemonList();
 
   return (
     <S.PokemonList
       className={`pokemon-list ${pkmListStatus.isOpen ? "" : "hidden"}`}
       theme={activeTheme}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <PkmListTopBar />
       <Pokemons />
