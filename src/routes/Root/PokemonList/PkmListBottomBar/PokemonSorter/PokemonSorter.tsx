@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 // Constants
 import { sortOptions } from "./sortOptions";
@@ -11,50 +11,15 @@ import {
   SelectOptions,
 } from "@components/Select";
 
+// Hooks
+import { useHandlePokemonSorterClick } from "./useHandlePokemonSorterClick";
+
 // Contexts
-import { PkmListStatusContext } from "@context/PokemonListContext/PkmListStatusContext";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const PokemonSorter = () => {
   const { activeTheme } = useContext(ThemeContext)!;
-  const { setPkmListStatus } = useContext(PkmListStatusContext);
-  const [optionSelected, setOptionSelected] = useState("No Sort");
-
-  const handleClick = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const isUnselectedLI =
-      target.tagName === "LI" && !target.classList.contains("selected");
-    const sorter = document.querySelector("#pokemon-sorter")!;
-
-    if (isUnselectedLI) {
-      const targetBy = target.dataset.by as "id" | "name";
-      const targetOrder = target.dataset.order as "asc" | "desc";
-
-      setOptionSelected(target.innerHTML);
-
-      if (target.innerHTML === "No Sort") {
-        setPkmListStatus((prevStatus) => ({
-          ...prevStatus,
-          sort: {
-            by: null,
-            order: null,
-          },
-        }));
-      } else {
-        setPkmListStatus((prevStatus) => ({
-          ...prevStatus,
-          sort: {
-            by: targetBy,
-            order: targetOrder,
-          },
-        }));
-      }
-
-      sorter.classList.remove("open");
-    } else if (!target.classList.contains("selected")) {
-      sorter.classList.toggle("open");
-    }
-  };
+  const [ optionSelected, handleClick ] = useHandlePokemonSorterClick();
 
   return (
     <Select
