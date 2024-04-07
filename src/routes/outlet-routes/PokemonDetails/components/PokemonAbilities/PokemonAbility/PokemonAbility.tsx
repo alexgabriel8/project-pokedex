@@ -29,7 +29,7 @@ const PokemonAbility = ({ ability, theme, index }: Props) => {
       ) : (
         ""
       )}
-      <h3 className="ability-name">{ability.name.replace("-", " ")}</h3>
+      <h3 className="ability-name">{ability.name.replace(/-/g, " ")}</h3>
       <p
         className="ability-description"
         onScroll={handleAbilityDescriptionScroll}

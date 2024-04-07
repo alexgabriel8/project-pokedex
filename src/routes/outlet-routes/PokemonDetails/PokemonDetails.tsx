@@ -47,7 +47,7 @@ const PokemonDetails = () => {
     const genus = pokemon.speciesInfo!.genera;
     const primaryType = pokemon.types.primary;
     const secondaryType = pokemon.types.secondary;
-    const habitat = pokemon.speciesInfo?.habitat.replace("-", " ");
+    const habitat = pokemon.speciesInfo?.habitat.replace(/-/g, " ");
     const generation = pokemon.speciesInfo?.generation;
     const description = pokemon.speciesInfo?.description.replace("", " ");
     {

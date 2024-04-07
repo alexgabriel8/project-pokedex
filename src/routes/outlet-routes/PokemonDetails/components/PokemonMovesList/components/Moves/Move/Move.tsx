@@ -20,7 +20,7 @@ const Move = ({ move }: { move: PkmTypes.Move }) => {
       theme={activeTheme}
       onClick={(e) => handleMoveClick(e, move)}
     >
-      <h3 className="move-name">{move.name.replace("-", " ")}</h3>
+      <h3 className="move-name">{move.name.replace(/-/g, " ")}</h3>
       <p className="move-description"></p>
     </S.MoveContainer>
   );

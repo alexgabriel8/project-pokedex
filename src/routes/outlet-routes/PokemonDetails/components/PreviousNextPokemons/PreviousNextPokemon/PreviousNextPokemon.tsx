@@ -40,7 +40,7 @@ const PreviousNextPokemon = ({ position, pkmId }: Props) => {
           />
           <p>
             <span className="pokemon-name">
-              {pokemon.name.replace("-", " ")}
+              {pokemon.name.replace(/-/g, " ")}
             </span>
             <br />#{pokemon.id}
           </p>
