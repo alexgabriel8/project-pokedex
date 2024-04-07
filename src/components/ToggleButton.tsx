@@ -33,10 +33,12 @@ const ToggleButton = styled.div<Props>`
       theme.modalTogglerButton.backgroundEnabled};
   }
 
-  cursor: pointer;
-
   .toggler-circle {
     transform: translate(-40%, -6px);
+  }
+  &&:active .toggler-circle {
+    left: 4px;
+    filter: brightness(75%);
   }
   &&.toggled .toggler-circle {
     transform: translate(100%, -6px);
@@ -44,6 +46,12 @@ const ToggleButton = styled.div<Props>`
       transform: translate(100%, -12px);
     }
   }
+  &&.toggled:active .toggler-circle {
+    left: -4px;
+    filter: brightness(75%);
+  }
+
+  cursor: pointer;
 
   transition: background-color 0.25s;
 `;

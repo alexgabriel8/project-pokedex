@@ -61,6 +61,11 @@ const SearchIcon = styled(SearchSvg)<SearchIconProps>`
 
   fill: ${({ theme }) => theme.terciary};
 
+  &&:active {
+    margin-top: 2px;
+    filter: brightness(75%);
+  }
+
   cursor: pointer;
 `;
 

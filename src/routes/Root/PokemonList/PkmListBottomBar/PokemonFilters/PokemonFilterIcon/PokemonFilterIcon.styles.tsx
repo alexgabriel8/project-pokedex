@@ -26,6 +26,11 @@ const PokemonFilterIconWrapper = styled.div`
 
   &.filtered {
     cursor: pointer;
+
+    &:active svg {
+      margin-top: 2px;
+      filter: brightness(75%);
+    }
   }
   &:not(.filtered) {
     opacity: 0.5;

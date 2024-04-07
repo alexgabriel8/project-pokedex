@@ -61,7 +61,12 @@ const PlusIcon = styled(PlusSvg)<PlusIconProps>`
     height: 50px;
   }
 
-  :hover {
+  &&:active {
+    margin-top: 2px;
+    filter: brightness(75%);
+  }
+
+  &&:hover {
     cursor: pointer;
   }
 `;

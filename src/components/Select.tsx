@@ -58,6 +58,11 @@ const Select = styled.div<Props>`
     }
   }
 
+  &&:active .caret {
+    margin-top: 5px;
+    filter: brightness(75%);
+  }
+
   &.open .caret {
     transform: rotate(0);
   }

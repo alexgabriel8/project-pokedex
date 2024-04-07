@@ -39,6 +39,11 @@ const SettingsButtonContainer = styled.button<SettingsButtonCotainerProps>`
   &&:hover svg {
     transform: rotate(180deg);
   }
+
+  &&:active svg {
+    margin-top: 3px;
+    filter: brightness(75%);
+  }
 `;
 
 type GearIconProps = {
