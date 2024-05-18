@@ -6,9 +6,15 @@ import path from "path";
 
 const baseUrl = path.resolve(__dirname, "src");
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+
+  server: {
+    port: 3000,
+    host: true,
+    strictPort: true,
+    origin: "http://0.0.0.0:3000",
+  },
 
   resolve: {
     alias: {

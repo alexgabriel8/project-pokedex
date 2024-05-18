@@ -1,0 +1,7 @@
+readme-assets
+node_modules
+.eslint.cjs
+.gitignore
+README.md
+vercel.json
+.git

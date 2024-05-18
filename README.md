@@ -13,6 +13,7 @@
    - [Installation](#installation)
       - [Pre-requisites](#pre-requisites)
       - [Steps](#steps)
+   - [Docker](#docker)
    - [Testing](#testing)
    - [Linting + Formatting](#linting--formatting)
 
@@ -131,9 +132,12 @@ Used <strong>[Vite](https://vitejs.dev/)</strong> with the following technologie
 - Some <strong>[Testing Library](https://testing-library.com/)</strong> libraries:
    - <strong>[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)</strong>: Test React Components.
    - <strong>[User event](https://testing-library.com/docs/user-event/intro/)</strong>: Test events (mouse click, keyboard typing, etc.) with more accuracy.
+
 - <strong>[ESLint](https://eslint.org/)</strong>: Linter used to detect bugs in code.
 
 - <strong>[Prettier](https://prettier.io/)</strong>: Code formatter used to visually standardize the code.
+
+- <strong>[Docker](https://www.docker.com/)</strong>: Isolates the app by turning it in a Container, allowing execution in any Operational System that has Docker and eases installation by placing every dependency in the App instead of your machine, which also facilates uninstallation because the app and all its dependecies are removed just by deleting the container and its image.
 
 # Using the project
 
@@ -156,6 +160,18 @@ Want to test it in your own machine? Check the following guide:
 3. Enter the folder created by the clone and install its dependencies. (Using NPM: `npm i` or `npm install`)
 
 4. After installing, run the `dev` script (Using NPM: `npm run dev`) and paste the resulting URL on the Browser to see the project running!
+
+## Docker
+
+The Project has four scripts to use with Docker:
+
+- `docker-build`: builds a Docker image for Project Pokédex.
+
+- `docker-run`: creates a container in terminal mode using the Project Pokédex's image. The container will self-destruct when stopped.
+
+- `docker-stop`: if for some reason the container is still running after stopping it in the terminal, use this command to stop it.
+
+- `docker-test`: creates a container in terminal mode for running tests using the Project Pokédex's image. The container will self-destruct when stopped.
 
 ## Testing
 
